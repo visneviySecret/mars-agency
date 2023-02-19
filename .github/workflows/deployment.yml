@@ -1,0 +1,25 @@
+name: Deploy Next App
+on: push 
+jobs: 
+  eslint: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install
+      - name: Run application eslint
+        run: yarn eslint
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install
+      - name: Build application
+        run: yarn build
+      - name: Run application lint
+        run: yarn lint
+      - name: Run application lint
+        run: yarn lint
