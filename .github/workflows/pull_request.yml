@@ -1,4 +1,4 @@
-name: Deploy Next App
+name: Print Pull Request Context
 on: workflow_dispatch
 jobs: 
     print: 
