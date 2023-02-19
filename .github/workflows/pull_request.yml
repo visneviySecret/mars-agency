@@ -4,5 +4,7 @@ jobs:
   print: 
     runs-on: ubuntu-latest
     steps: 
-      - name: Print context
-        run: echo "${{ github }}"
+      # - name: Print context
+      #   run: echo "${{ github }}"
+      - name: Deploy
+        run: echo Deployment...
