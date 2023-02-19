@@ -1,7 +1,8 @@
 name: Deploy Next App
 on: workflow_dispatch
 jobs: 
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Print context
-        run: echo "${{ toJSON(github) }}"
+    print: 
+      runs-on: ubuntu-latest
+      steps: 
+        - name: Print context
+          run: echo "${{ toJSON(github) }}"
