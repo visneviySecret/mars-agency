@@ -7,6 +7,6 @@ jobs:
       - name: Get repository code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install
       - name: Run application lint
         run: yarn lint
