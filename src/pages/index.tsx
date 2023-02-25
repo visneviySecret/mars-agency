@@ -1,7 +1,25 @@
 import Head from 'next/head'
 import Hero from '@/sections/hero/hero'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
+  const { systemTheme, theme, setTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
+  const handleTheme = () => {
+    currentTheme === 'dark' ? setTheme('light') : setTheme('dark')
+  }
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
     <>
       <Head>
@@ -11,7 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Hero />
+        <Hero handleClick={handleTheme} />
       </main>
     </>
   )
