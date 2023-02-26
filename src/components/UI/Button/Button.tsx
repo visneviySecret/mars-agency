@@ -1,13 +1,15 @@
 import React, { ReactNode } from 'react'
 import { ButtonComponent } from './Button.styled'
+import { useTheme } from 'next-themes'
 
 interface IProps {
-  theme?: string
   onClick: () => void
   children: ReactNode
 }
 
-export default function Button({ onClick, children, theme = 'dark' }: IProps) {
+export default function Button({ onClick, children }: IProps) {
+  const { theme } = useTheme()
+
   return (
     <>
       <ButtonComponent theme={theme} onClick={onClick}>

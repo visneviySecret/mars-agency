@@ -1,1 +1,1 @@
-export const brealPoints = {}
+export const breakPoints = {}

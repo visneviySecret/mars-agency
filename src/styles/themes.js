@@ -1,9 +1,12 @@
+import { Consts } from '@/utils/consts'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-    body {
+    body, html {
       color: #000;
       background: #fff;
+      transition-property: background-color, color;
+      transition-duration: ${Consts.toggleModDuration} ;
     }
     
     [data-theme='dark'],
@@ -11,4 +14,5 @@ export const GlobalStyle = createGlobalStyle`
       color: #fff;
       background: #000;
     }
+
 `
