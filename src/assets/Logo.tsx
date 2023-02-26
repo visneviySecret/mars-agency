@@ -7,6 +7,7 @@ export const Logo = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Mars company logo</title>
       <path
         d="M0.65625 0.454723H8.62074L17.0327 20.9775H17.3906L25.8026 0.454723H33.767V31.0002H27.5028V11.1188H27.2493L19.3445 30.851H15.0788L7.17401 11.0442H6.92045V31.0002H0.65625V0.454723Z"
         fill="#202020"

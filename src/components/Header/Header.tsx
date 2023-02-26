@@ -6,9 +6,11 @@ import {
   Item,
   List,
   Phone,
+  Wrapper,
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
+import { Container } from '@/sections/container.style'
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
@@ -28,21 +30,25 @@ export default function Header() {
 
   return (
     <Section>
-      <LogoWrapper isDarkMode={isDarkMode} onClick={handleClick}>
-        <Logo />
-      </LogoWrapper>
+      <Container>
+        <Wrapper>
+          <LogoWrapper isDarkMode={isDarkMode} onClick={handleClick}>
+            <Logo />
+          </LogoWrapper>
 
-      <Navigation>
-        <List>
-          {navList.map((item, index) => (
-            <Item key={index}>
-              <a href={item.ancor}>{item.title}</a>
-            </Item>
-          ))}
-        </List>
-      </Navigation>
+          <Navigation>
+            <List>
+              {navList.map((item, index) => (
+                <Item key={index}>
+                  <a href={item.ancor}>{item.title}</a>
+                </Item>
+              ))}
+            </List>
+          </Navigation>
 
-      <Phone>{clientPhone}</Phone>
+          <Phone>{clientPhone}</Phone>
+        </Wrapper>
+      </Container>
     </Section>
   )
 }

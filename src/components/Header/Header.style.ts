@@ -2,10 +2,13 @@ import { Consts } from '@/utils/consts'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  display: flex;
-  justify-content: space-between;
   padding: 45px 0;
   margin-bottom: calc(165px - 45px);
+`
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
 
 export const LogoWrapper = styled.button<{ isDarkMode?: boolean }>`

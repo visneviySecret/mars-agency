@@ -16,10 +16,12 @@
 
 html,
 body {
-  width: calc(100vw - 8%);
-  max-width: 1600px;
-  margin: 0 auto;
+  width: 100vw;
   overflow-x: hidden;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 a {
