@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Section, ImageWrapper, Title, Wrapper } from './hero.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
-import { Container } from '../container.style'
+import { Container } from '../../styles/container.style'
 
 export default function Hero() {
   const [isModalActive, setIsModalActive] = useState(false)

@@ -6,6 +6,7 @@ import Button from '@/components/UI/Button/Button'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import About from '@/sections/about/about'
+import Steps from '@/sections/steps/steps'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -36,6 +37,7 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
+        <Steps />
         <Button onClick={handleTheme}>Switch theme</Button>
       </main>
     </>

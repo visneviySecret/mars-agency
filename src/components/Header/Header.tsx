@@ -10,7 +10,7 @@ import {
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
-import { Container } from '@/sections/container.style'
+import { Container } from '@/styles/container.style'
 
 export default function Header() {
   const { theme, setTheme } = useTheme()

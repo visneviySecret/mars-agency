@@ -29,13 +29,15 @@ export const Content = styled.p`
 
 export const ImageWrapper = styled.div`
   flex: 1;
+  align-items: baseline;
+  margin-top: auto;
 `
 
-export const List = styled.div`
+export const List = styled.ul`
   flex: 1;
 `
 
-export const Item = styled.div`
+export const Item = styled.li`
   display: flex;
   align-items: center;
   height: 5.55rem;

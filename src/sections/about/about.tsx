@@ -11,12 +11,12 @@ import {
   List,
 } from './about.style'
 import Image from 'next/image'
-import { Container } from '../container.style'
+import { Container } from '../../styles/container.style'
 import { list } from './about.utils'
 
 export default function About() {
   return (
-    <Section>
+    <Section id="about-us">
       <Container>
         <Wrapper>
           <Title>Почему нам доверяют</Title>
@@ -33,10 +33,6 @@ export default function About() {
               src="/about.png"
               width={355}
               height={430}
-              style={{
-                position: 'absolute',
-                inset: 'auto auto 0 0',
-              }}
             />
           </ImageWrapper>
 
