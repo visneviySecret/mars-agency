@@ -1,85 +1,53 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Section,
   Title,
-  Wrapper,
+  Header,
   Content,
   Item,
-  ItemNumber,
   ItemTitle,
   List,
-  Text,
-  ItemContentWrapper,
   ItemDescription,
-  ItemWrapper,
-  ItemCursorWrapper,
-  ItemCursor,
+  Wrapper,
+  ItemDescriptionWrapper,
 } from './offers.style'
 import { Container } from '@/styles/container.style'
 import { list } from './offers.utils'
-import Button from '@/components/UI/Button/Button'
 import { useTheme } from 'next-themes'
 import InvisButton from '@/features/easterEgg/components/InvisButton'
 
 export default function Offers() {
   const { theme } = useTheme()
-  const [isOpenModal, setIsOpenModal] = useState(false)
-  const [activeRow, setActiveRow] = useState(0)
 
   const isDarkMode = theme === 'dark'
 
-  const handleClick = () => {
-    setIsOpenModal((prev) => !prev)
-  }
-
-  const handleMouseClick = (index: number) => {
-    setActiveRow((prev) => (prev === index ? -1 : index))
-  }
-
   return (
-    <Section id="offers">
+    <Section id="offers" isDarkMode={isDarkMode}>
       <Container>
         <Wrapper>
-          <Title>
-            У<InvisButton value={'с'}>с</InvisButton>
-            луги
-          </Title>
-          <Content>
-            <Text>
-              Мы с заботой подходим к каждому клиенту, учитываем все потребности
-            </Text>
-            <Button onClick={handleClick}>Заказать услугу</Button>
-          </Content>
+          <Header>
+            <Title>
+              У<InvisButton value={'с'}>с</InvisButton>
+              луги
+            </Title>
+            <Content>
+              Помогаем с покупкой и продажей недвижимости так, чтобы сэкономить
+              время и силы клиентов
+            </Content>
+          </Header>
+
+          <List>
+            {list.map((item, index) => (
+              <Item key={index}>
+                <ItemTitle>{item.title}</ItemTitle>
+                <ItemDescriptionWrapper>
+                  <ItemDescription>{item.description}</ItemDescription>
+                </ItemDescriptionWrapper>
+              </Item>
+            ))}
+          </List>
         </Wrapper>
       </Container>
-
-      <List>
-        {list.map((item, index) => (
-          <Item
-            key={index}
-            onClick={() => handleMouseClick(index)}
-            isActive={activeRow === index}
-            isDarkMode={isDarkMode}
-          >
-            <ItemWrapper>
-              <ItemNumber>{'0' + (index + 1)}</ItemNumber>
-              <ItemContentWrapper>
-                <ItemTitle>{item.title}</ItemTitle>
-                {activeRow === index && (
-                  <ItemDescription>{item.description}</ItemDescription>
-                )}
-              </ItemContentWrapper>
-              <ItemCursorWrapper>
-                <ItemCursor
-                  isActive={activeRow === index}
-                  isDarkMode={isDarkMode}
-                />
-              </ItemCursorWrapper>
-            </ItemWrapper>
-          </Item>
-        ))}
-      </List>
-      {isOpenModal}
     </Section>
   )
 }

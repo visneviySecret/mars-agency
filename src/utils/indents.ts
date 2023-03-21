@@ -6,4 +6,7 @@ export const indents = {
   indent18: '1.125rem',
   indent20: '1.25rem',
   indent30: '1.875rem',
+  indent44: '2.75rem',
+  indent46: '2.875rem',
+  indent60: '3.75rem',
 }

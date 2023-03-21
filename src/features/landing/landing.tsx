@@ -43,8 +43,8 @@ function Landing() {
         <Hero />
         <Quize />
         <About />
-        <Steps />
         <Offers />
+        <Steps />
         <Partners />
         <Reviews />
         <Footer />
