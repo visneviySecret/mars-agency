@@ -1,12 +1,16 @@
+const pxToRem = (value: number) => {
+  const result = value / 16
+  return `${result}rem`
+}
+
 export const indents = {
-  indent2: '4px',
-  indent3: '8px',
-  indent4: '16px',
-  indent10: '0.625rem',
-  indent18: '1.125rem',
-  indent20: '1.25rem',
-  indent30: '1.875rem',
-  indent44: '2.75rem',
-  indent46: '2.875rem',
-  indent60: '3.75rem',
+  indent10: pxToRem(10),
+  indent18: pxToRem(18),
+  indent20: pxToRem(20),
+  indent30: pxToRem(30),
+  indent40: pxToRem(40),
+  indent44: pxToRem(44),
+  indent46: pxToRem(46),
+  indent60: pxToRem(60),
+  indent120: pxToRem(120),
 }

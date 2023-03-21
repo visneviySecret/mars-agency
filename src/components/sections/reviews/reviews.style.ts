@@ -1,15 +1,30 @@
+import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: 12.2rem;
+  margin-bottom: ${indents.indent120};
+`
+
+export const Header = styled.header`
+  display: flex;
+  margin-top: ${indents.indent20};
+  margin-bottom: ${indents.indent120};
 `
 
 export const Title = styled.h2`
   flex: 1;
-  font-size: clamp(1.5rem, 8vw, 2.8rem);
-  font-weight: 600;
-  line-height: 110%;
-  margin-bottom: 4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+`
+
+export const SubTitle = styled.h3`
+  flex: 1;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  margin-left: ${indents.indent10};
 `
 
 export const List = styled.ul`
@@ -18,7 +33,7 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   display: flex;
-  padding: 2rem;
+  padding-block: ${indents.indent20};
   align-items: center;
   border-top: 1px solid;
 
@@ -28,18 +43,21 @@ export const Item = styled.li`
 `
 
 export const ItemWrapper = styled.div`
-  position: relative;
   flex: 1;
+  display: flex;
+  gap: ${indents.indent20};
+  align-items: center;
 `
 
 export const ItemTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
 `
 
 export const ItemTitle = styled.span`
-  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
 `
 
 export const ItemDescription = styled.span`
@@ -53,10 +71,12 @@ export const ItemPhotoWrapper = styled.div``
 export const ItemComment = styled.p`
   flex: 1;
   font-weight: 400;
+  font-size: 18px;
   line-height: 130%;
+  padding-left: ${indents.indent10};
 `
 
 export const ButtonWrapper = styled.div`
   width: 215px;
-  margin: 2.2rem auto 0 auto;
+  margin: ${indents.indent40} auto 0 auto;
 `

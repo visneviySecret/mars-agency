@@ -53,8 +53,8 @@ export const usePartners = () => {
   useEffect(() => {
     if (isHovered === 'bank') return
     const bankInterval = setInterval(() => {
-      handleBankCount()
-    }, 3800)
+      // handleBankCount()
+    }, 4444)
 
     return () => {
       clearInterval(bankInterval)
@@ -65,8 +65,8 @@ export const usePartners = () => {
     if (isHovered === 'developer') return
 
     const devInterval = setInterval(() => {
-      handleDevelopCount()
-    }, 2500)
+      // handleDevelopCount()
+    }, 3333)
 
     return () => {
       clearInterval(devInterval)
