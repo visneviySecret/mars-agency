@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import Hero from '@/components/sections/hero/hero'
 import Header from '@/components/sections/header/Header'
-import Button from '@/components/UI/Button/Button'
-
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import About from '@/components/sections/about/about'
 import Steps from '@/components/sections/steps/steps'
@@ -11,15 +8,10 @@ import Offers from '@/components/sections/offers/offers'
 import Reviews from '@/components/sections/reviews/reviews'
 import Footer from '@/components/sections/footer/footer'
 import Partners from '@/components/sections/partners/partners'
+import Form from '@/components/sections/form/form'
 
 function Landing() {
   const [mounted, setMounted] = useState(false)
-  const { systemTheme, theme, setTheme } = useTheme()
-  const currentTheme = theme === 'system' ? systemTheme : theme
-
-  const handleTheme = () => {
-    currentTheme === 'dark' ? setTheme('light') : setTheme('dark')
-  }
 
   useEffect(() => {
     setMounted(true)
@@ -45,8 +37,8 @@ function Landing() {
         <Steps />
         <Partners />
         <Reviews />
+        <Form />
         <Footer />
-        <Button onClick={handleTheme}>Switch theme</Button>
       </main>
     </>
   )
