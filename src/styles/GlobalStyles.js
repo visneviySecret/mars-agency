@@ -3,23 +3,23 @@ import { Consts } from '@/utils/consts'
 import { createGlobalStyle } from 'styled-components'
 import localFont from '@next/font/local'
 
-export const cooper = localFont({
+export const NeueMachina = localFont({
   src: [
     {
       path: '../../public/fonts/NeueMachina-Bold.woff',
-      weight: 'bold',
+      weight: '800',
     },
     {
       path: '../../public/fonts/NeueMachina-Bold.woff2',
-      weight: 'bold',
+      weight: '800',
     },
     {
       path: '../../public/fonts/NeueMachina-Regular.woff',
-      weight: 'normal',
+      weight: '400',
     },
     {
       path: '../../public/fonts/NeueMachina-Regular.woff2',
-      weight: 'normal',
+      weight: '400',
     },
   ],
 })
@@ -60,9 +60,8 @@ export const GlobalStyle = createGlobalStyle`
     body {
       width: 100vw;
       overflow-x: hidden;
-      font-family: ${cooper.style.fontFamily}, 'Inter';
-      font-style: normal;
-      font-size: 16px;
+      font-family: ${NeueMachina.style.fontFamily}, 'Inter';
+      font-style: 400;
       line-height: 140%;
       color: ${Color.GREY}
     }

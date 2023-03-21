@@ -16,7 +16,7 @@ interface IProps {
   setStash: (val: string[]) => void
 }
 
-export default function Selector({ style, options, setStash }: IProps) {
+export default function Selector({ style, options }: IProps) {
   const { theme } = useTheme()
   const [isActive, setIsActive] = useState(false)
 
@@ -27,7 +27,7 @@ export default function Selector({ style, options, setStash }: IProps) {
   }
 
   const handleOption = (value: string) => {
-    setStash((prev: string[]) => [...prev, value])
+    return value
   }
 
   return (

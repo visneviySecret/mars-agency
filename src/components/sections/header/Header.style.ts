@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Section = styled.section`
   padding-top: 16px;
-  margin-bottom: calc(165px - 45px);
+  margin-bottom: 11px;
 `
 
 export const Wrapper = styled.nav`

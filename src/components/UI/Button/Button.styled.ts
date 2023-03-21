@@ -1,34 +1,20 @@
 import styled from 'styled-components'
-import { Color } from '@/utils/color'
 import { Consts } from '@/utils/consts'
-import { cooper } from '@/styles/GlobalStyles'
+import { NeueMachina } from '@/styles/GlobalStyles'
+import {
+  getThemeColor,
+  darkThemeHover,
+  lightThemeHover,
+  Theme,
+} from './Button.utils'
 
-const lightTheme = {
-  color: Color.WHITE,
-  backgroundColor: Color.GREY,
-  borderColor: Color.BLACK,
-}
-
-const darkTheme = {
-  color: Color.WHITE,
-  backgroundColor: Color.BLACK,
-  borderColor: Color.WHITE,
-}
-
-const lightThemeHover = {
-  color: Color.WHITE,
-  backgroundColor: Color.BLACK,
-}
-
-const darkThemeHover = {
-  color: Color.BLACK,
-  backgroundColor: Color.WHITE,
-}
-
-export const ButtonComponent = styled.button<{ theme: string }>`
+export const ButtonComponent = styled.button<{
+  theme: Theme
+  isCoral?: boolean
+}>`
   font-size: 14px;
   line-height: 140%;
-  font-family: ${cooper.style.fontFamily};
+  font-family: ${NeueMachina.style.fontFamily};
   cursor: pointer;
 
   text-transform: uppercase;
@@ -46,5 +32,5 @@ export const ButtonComponent = styled.button<{ theme: string }>`
     ${(props) => (props.theme === 'dark' && darkThemeHover) || lightThemeHover};
   }
 
-  ${(props) => (props.theme === 'dark' && darkTheme) || lightTheme};
+  ${(props) => getThemeColor(props.theme)}
 `

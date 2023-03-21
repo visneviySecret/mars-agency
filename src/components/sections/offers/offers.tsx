@@ -79,6 +79,7 @@ export default function Offers() {
           </Item>
         ))}
       </List>
+      {isOpenModal}
     </Section>
   )
 }

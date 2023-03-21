@@ -14,7 +14,7 @@ import Button from '@/components/UI/Button/Button'
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
-  const [isModalActive, setIsModalActive] = useState(false)
+  const [isOpenModal, setisOpenModal] = useState(false)
   const isDarkMode = theme === 'dark'
 
   const navList = [
@@ -30,7 +30,7 @@ export default function Header() {
   }
 
   const handleModal = () => {
-    setIsModalActive((prev) => !prev)
+    setisOpenModal((prev) => !prev)
   }
 
   return (
@@ -54,6 +54,7 @@ export default function Header() {
           </ButtonWrapper>
         </Wrapper>
       </Container>
+      {isOpenModal}
     </Section>
   )
 }

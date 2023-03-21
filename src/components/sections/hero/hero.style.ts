@@ -1,17 +1,23 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: 12.2rem;
+  margin-top: -0.6rem;
+  margin-bottom: 4.68rem;
 `
 
-export const Wrapper = styled.div`
+export const ButtonsWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.2rem;
+  gap: 20px;
+  margin-bottom: 1.25rem;
 `
 
 export const Title = styled.h1`
-  font-size: clamp(2rem, 10vw, 4.3rem);
-  line-height: 100%;
-  max-width: 1002px;
+  font-size: clamp(2rem, 8vw, 134px);
+  font-weight: 400;
+  line-height: 70%;
+  letter-spacing: -7px;
+  text-align: center;
+  width: calc(100% + 0.9vw);
+  margin-left: -0.9vw;
+  margin-bottom: 1.85rem;
 `

@@ -25,7 +25,9 @@ export default function Step2({ dealStatus }: IProps) {
     dealStatus === DealStatus.sail ? rent_types_to_buy : rent_types_to_sail
 
   const handleClick = (item: string) => {
+    setStash([])
     console.log('remove item: ', item)
+    console.log('dictionaries: ', dictionaries)
   }
 
   return (
