@@ -12,7 +12,7 @@ import {
   ItemWrapper,
   ButtonWrapper,
 } from './reviews.style'
-import { Container } from '@/styles/container.style'
+import { Container } from '@/components/UI/container.style'
 import { list } from './reviews.utils'
 import Button from '@/components/UI/Button/Button'
 

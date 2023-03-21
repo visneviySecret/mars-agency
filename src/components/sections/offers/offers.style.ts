@@ -12,15 +12,16 @@ const getModeColor = (isDarkMode: boolean) => {
 
 export const Section = styled.section<{ isDarkMode: boolean }>`
   margin-bottom: ${indents.indent46};
-  background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
   color: ${({ isDarkMode }) => getModeColor(isDarkMode)};
+  border-bottom: 1px solid ${Color.GREY};
 `
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ isDarkMode: boolean }>`
   padding: ${indents.indent30} ${indents.indent20} ${indents.indent44};
+  background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
 `
 
-export const Header = styled.div`
+export const Header = styled.header`
   position: relative;
   display: flex;
   justify-content: space-between;

@@ -1,92 +1,81 @@
+import { Color } from '@/utils/color'
+import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: 12.2rem;
+  border-top: 1px solid ${Color.GREY};
+  margin-bottom: 120px;
 `
 
 export const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: clamp(0.5rem, 2vw, 1.11rem);
+  padding-block: 20px;
 `
 
-export const Content = styled.div`
-  flex: 1;
+export const Header = styled.header`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `
 
 export const Title = styled.h2`
-  font-size: clamp(1.5rem, 8vw, 2.8rem);
-  font-weight: 600;
-  line-height: 110%;
+  flex: 1;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  padding-left: 11px;
+  text-transform: uppercase;
+`
+
+export const Content = styled.p`
+  flex: 1;
+  font-size: 25px;
+  line-height: 130%;
+  margin-bottom: 120px;
+  padding-left: 40px;
+`
+
+export const List = styled.ul``
+
+export const Card = styled.li`
+  display: flex;
+  border-top: 1px solid ${Color.GREY};
+  border-bottom: 1px solid ${Color.GREY};
+
+  & + li {
+    border-top: none;
+  }
 `
 
 export const ImageWrapper = styled.div`
-  display: flex;
-  gap: clamp(0.5rem, 2vw, 1.11rem);
-  align-items: baseline;
-  width: clamp(10rem, 20vw, 550px);
-`
-
-export const List = styled.ul`
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: clamp(0.5rem, 2vw, 1.11rem);
-
-  &::before {
-    content: '';
-    width: 0;
-    padding-bottom: 100%;
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-  }
-
-  & > *:first-child {
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-  }
-`
-
-export const Item = styled.li`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.11rem;
-  border: solid 1px;
-  max-width: 355px;
-  height: auto;
+  padding: 20px 20px 20px;
+  border-right: 1px solid ${Color.GREY};
 `
 
-export const ItemNumber = styled.span`
-  font-weight: 500;
+export const CardContent = styled.div`
+  flex: 1;
+`
+
+export const CardTitle = styled.h3`
+  font-size: 53px;
   line-height: 100%;
-  opacity: 0.8;
-`
-
-export const ItemWrapper = styled.div``
-
-export const ItemTitle = styled.span`
-  font-weight: 500;
-  line-height: 120%;
-  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-block: 46px;
+  border-bottom: 1px solid ${Color.GREY};
 `
 
 export const DesciptionList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
   list-style-type: none;
-  margin-top: 1.1rem;
 `
 
 export const DesciptionItem = styled.li`
-  font-weight: 400;
-  font-size: 1rem;
+  font-size: 25px;
   line-height: 130%;
+  padding-left: 15px;
+  padding-block: ${indents.indent20};
+  border-bottom: 1px solid ${Color.GREY};
 
-  opacity: 0.7;
+  & + li {
+    border-top: none;
+  }
 `

@@ -1,75 +1,65 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Section,
-  ImageWrapper,
   Title,
   Wrapper,
-  Item,
-  ItemNumber,
-  ItemTitle,
+  Card,
+  CardTitle,
   List,
   Content,
   DesciptionList,
   DesciptionItem,
-  ItemWrapper,
+  Header,
+  ImageWrapper,
+  CardContent,
 } from './steps.style'
-import Image from 'next/image'
-import { Container } from '@/styles/container.style'
+import { Container } from '@/components/UI/container.style'
 import { list } from './steps.utils'
 import InvisButton from '@/features/easterEgg/components/InvisButton'
+import Image from 'next/image'
 
 export default function Steps() {
-  const [isAcive, setIsActive] = useState(-1)
-
-  const handleMouseEnter = (index: number) => {
-    setIsActive(index)
-  }
-
-  const handleMouseLeave = () => {
-    setIsActive(-1)
-  }
-
   return (
     <Section>
-      <Container>
-        <Wrapper>
-          <Content>
+      <Wrapper>
+        <Container>
+          <Header>
             <Title>
               <InvisButton value={'Э'}>Э</InvisButton>
-              ффек
-              <InvisButton value={'т'}>т</InvisButton>ивная ра
+              <InvisButton value={'т'}>т</InvisButton>апы ра
               <InvisButton value={'б'}>б</InvisButton>
-              ота на каждом этапе
+              оты
             </Title>
-            <ImageWrapper>
-              <Image alt="Step 1" src="/steps1.png" width={355} height={430} />
-              <Image alt="Step 2" src="/steps2.png" width={178} height={215} />
-            </ImageWrapper>
-          </Content>
-          <List>
-            {list.map((item, index) => (
-              <Item
-                key={index}
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <ItemNumber>{'0' + (index + 1)}</ItemNumber>
-
-                <ItemWrapper>
-                  <ItemTitle>{item.title}</ItemTitle>
-                  {isAcive === index && (
-                    <DesciptionList>
-                      {item.description.map((item, index) => (
-                        <DesciptionItem key={index}>{item}</DesciptionItem>
-                      ))}
-                    </DesciptionList>
-                  )}
-                </ItemWrapper>
-              </Item>
-            ))}
-          </List>
-        </Wrapper>
-      </Container>
+            <Content>
+              Наша работа строится по принципу максимальной эффективности
+              каждого шага
+            </Content>
+          </Header>
+        </Container>
+        <List>
+          {list.map((item, index) => (
+            <Card key={index}>
+              <ImageWrapper>
+                <Image
+                  src={item.img}
+                  width={750}
+                  height={415}
+                  alt="interier"
+                  style={{ marginLeft: 'auto' }}
+                />
+              </ImageWrapper>
+              <CardContent>
+                <CardTitle>{item.title}</CardTitle>
+                <DesciptionList>
+                  {item.description.map((item, index) => (
+                    <DesciptionItem key={index}>{item}</DesciptionItem>
+                  ))}
+                </DesciptionList>
+              </CardContent>
+            </Card>
+          ))}
+        </List>
+      </Wrapper>
     </Section>
   )
 }

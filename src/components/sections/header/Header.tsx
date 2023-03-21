@@ -9,7 +9,7 @@ import {
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
-import { Container } from '@/styles/container.style'
+import { Container } from '@/components/UI/container.style'
 import Button from '@/components/UI/Button/Button'
 
 export default function Header() {

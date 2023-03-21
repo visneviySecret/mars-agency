@@ -1,6 +1,6 @@
 import React from 'react'
 import { Section, Title, Wrapper, Item, List } from './partners.style'
-import { Container } from '@/styles/container.style'
+import { Container } from '@/components/UI/container.style'
 import { list } from './partners.utils'
 
 export default function Partners() {
