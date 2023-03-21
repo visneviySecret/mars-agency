@@ -1,62 +1,58 @@
+import { Color } from '@/utils/color'
+import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: calc(12.2rem - 3.3rem);
+  margin-bottom: ${indents.indent30};
+  text-transform: uppercase;
 `
 
-export const Wrapper = styled.div`
+export const Header = styled.header`
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 3.3rem;
+  margin-bottom: ${indents.indent10};
 `
 
 export const Title = styled.h2`
   flex: 1;
-  font-size: clamp(1.5rem, 8vw, 2.8rem);
-  font-weight: 600;
-  line-height: 110%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 140%;
 `
 
 export const Content = styled.p`
-  position: relative;
-  flex: 1;
-  font-weight: 400;
+  flex: 2;
+  line-height: 110%;
+  text-align: justify;
   font-size: 34px;
   line-height: 130%;
 `
 
-export const ImageWrapper = styled.div`
-  flex: 1;
-  align-items: baseline;
-  margin-top: auto;
-`
-
 export const List = styled.ul`
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+  gap: clamp(0.5rem, 2vw, ${indents.indent10});
 `
 
 export const Item = styled.li`
   display: flex;
-  align-items: center;
-  height: 5.55rem;
-  border-top: solid 1px;
-  &:last-child {
-    border-bottom: solid 1px;
-  }
-`
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 
-export const ItemNumber = styled.span`
-  flex: 1;
-  font-weight: 500;
-  line-height: 100%;
-  opacity: 0.8;
+  height: 409px;
+  padding: ${indents.indent18};
+  background-color: ${Color.LIGHT};
 `
 
 export const ItemTitle = styled.span`
-  position: relative;
-  flex: 1;
-  font-weight: 400;
-  line-height: 130%;
-  font-size: 1rem;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 100%;
+`
+
+export const Accented = styled.span`
+  color: ${Color.CORAL};
 `
