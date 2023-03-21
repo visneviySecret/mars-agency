@@ -3,7 +3,7 @@ import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: ${indents.indent120};
+  margin-bottom: ${indents.indent20};
 `
 
 export const Wrapper = styled.div<{ isPadding?: boolean }>`

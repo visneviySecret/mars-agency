@@ -20,4 +20,5 @@ export const Title = styled.h1`
   width: calc(100% + 0.9vw);
   margin-left: -0.9vw;
   margin-bottom: 1.85rem;
+  translate: 0px -4px;
 `

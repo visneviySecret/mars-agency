@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
-import {
-  Section,
-  LogoWrapper,
-  Item,
-  List,
-  Wrapper,
-  ButtonWrapper,
-} from './Header.style'
+import { Section, LogoWrapper, Wrapper, ButtonWrapper } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
 import { Container } from '@/components/UI/container.style'
 import Button from '@/components/UI/Button/Button'
+import Navigation from '@/share/Navigation/Navigation'
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
@@ -41,13 +35,7 @@ export default function Header() {
             <Logo />
           </LogoWrapper>
 
-          <List>
-            {navList.map((item, index) => (
-              <Item key={index}>
-                <a href={item.ancor}>{item.title}</a>
-              </Item>
-            ))}
-          </List>
+          <Navigation />
 
           <ButtonWrapper>
             <Button onClick={handleModal}> Обратный звонок</Button>

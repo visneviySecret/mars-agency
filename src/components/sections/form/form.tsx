@@ -41,7 +41,7 @@ export default function Form() {
             alt="client"
             width={780}
             height={631}
-            style={{ height: '100%' }}
+            style={{ height: '100%', width: '100%' }}
           />
         </Wrapper>
 

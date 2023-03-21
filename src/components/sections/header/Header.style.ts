@@ -18,19 +18,6 @@ export const LogoWrapper = styled.div<{ isDarkMode?: boolean }>`
   transition: filter ${Consts.toggleModDuration};
 `
 
-export const List = styled.ul`
-  flex: 1;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-`
-
-export const Item = styled.li`
-  & > a {
-    text-decoration: none;
-  }
-`
-
 export const ButtonWrapper = styled.div`
   flex: 1;
 `

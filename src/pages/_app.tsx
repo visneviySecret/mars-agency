@@ -2,14 +2,19 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { GlobalStyle } from '@/styles/GlobalStyles'
 import { reduxWrapper } from '@/redux/store'
+import { Provider } from 'react-redux'
+function App({ Component, ...rest }: AppProps) {
+  const { store, props } = reduxWrapper.useWrappedStore(rest)
+  const { pageProps } = props
 
-function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider defaultTheme="dark">
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider defaultTheme="dark">
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Provider>
   )
 }
 
-export default reduxWrapper.withRedux(App)
+export default App

@@ -1,25 +1,15 @@
-export const navigation = {
-  title: 'Навигация',
-  items: [
-    { title: 'О нас', ancor: '#about-us' },
-    { title: 'Услуги', ancor: '#offers' },
-    { title: 'Контакты', ancor: '#contacts' },
-  ],
-}
+import { Instagram } from '@/assets/Icons/instagram'
+import { Telegram } from '@/assets/Icons/telegram'
+import { Whatsup } from '@/assets/Icons/whatsup'
 
-export const contacts = {
-  title: 'Контакты',
-  items: [
-    { title: 'Санкт-Петербург и Ленинградская область' },
-    { title: '+7 999 999 99-99', isPhone: true },
-  ],
-}
+export const contacts = [
+  { title: 'Место', name: 'Санкт-Петербург и Ленинградская область' },
+  { title: 'Телефон', name: '+7 999 999 99-99', isPhone: true },
+  { title: 'Почта', name: 'Mars-rent@gmail.com' },
+]
 
-export const social = {
-  title: 'Соцсети',
-  items: [
-    { title: 'Telegram', url: '' },
-    { title: 'WhatsApp', url: '' },
-    { title: 'Instagram', url: '' },
-  ],
-}
+export const social = [
+  { title: 'Telegram', url: '', img: Telegram },
+  { title: 'Instagram', url: '', img: Instagram },
+  { title: 'WhatsApp', url: '', img: Whatsup },
+]

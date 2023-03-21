@@ -12,7 +12,10 @@ export const indents = {
   indent40: pxToRem(40),
   indent44: pxToRem(44),
   indent46: pxToRem(46),
+  indent50: pxToRem(50),
   indent60: pxToRem(60),
+  indent80: pxToRem(80),
   indent120: pxToRem(120),
   indent140: pxToRem(140),
+  indent160: pxToRem(160),
 }

@@ -2,7 +2,7 @@ export const list = [
   {
     title: 'Подбор недвижимости',
     description: ['Служба индивидуальных показов', 'Онлайн-сервис'],
-    img: '/photo/step1.png',
+    img: '/picture/step1.png',
   },
   {
     title: 'Подготовка к сделке',
@@ -12,7 +12,7 @@ export const list = [
       'Проверка документов',
       'Трейд-ин: из вторички в новостройку',
     ],
-    img: '/photo/step2.png',
+    img: '/picture/step2.png',
   },
   {
     title: 'Совершение сделки',
@@ -20,7 +20,7 @@ export const list = [
       'Организация и проведение сделок любой сложности',
       'Присутствие менеджера на всех этапах сделки',
     ],
-    img: '/photo/step3.png',
+    img: '/picture/step3.png',
   },
   {
     title: 'ПОСТ-сопровождение',
@@ -29,6 +29,6 @@ export const list = [
       'Ремонтные работы',
       'Мебель и фурнитура',
     ],
-    img: '/photo/step4.png',
+    img: '/picture/step4.png',
   },
 ]
