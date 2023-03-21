@@ -14,8 +14,9 @@ import {
   ItemWrapper,
 } from './steps.style'
 import Image from 'next/image'
-import { Container } from '../../styles/container.style'
+import { Container } from '@/styles/container.style'
 import { list } from './steps.utils'
+import InvisButton from '@/features/easterEgg/components/InvisButton'
 
 export default function Steps() {
   const [isAcive, setIsActive] = useState(-1)
@@ -33,7 +34,13 @@ export default function Steps() {
       <Container>
         <Wrapper>
           <Content>
-            <Title>Эффективная работа на каждом этапе</Title>
+            <Title>
+              <InvisButton value={'Э'}>Э</InvisButton>
+              ффек
+              <InvisButton value={'т'}>т</InvisButton>ивная ра
+              <InvisButton value={'б'}>б</InvisButton>
+              ота на каждом этапе
+            </Title>
             <ImageWrapper>
               <Image alt="Step 1" src="/steps1.png" width={355} height={430} />
               <Image alt="Step 2" src="/steps2.png" width={178} height={215} />

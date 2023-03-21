@@ -11,7 +11,7 @@ import {
   List,
 } from './about.style'
 import Image from 'next/image'
-import { Container } from '../../styles/container.style'
+import { Container } from '@/styles/container.style'
 import { list } from './about.utils'
 
 export default function About() {

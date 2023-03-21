@@ -2,30 +2,27 @@ import { Consts } from '@/utils/consts'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  padding: 45px 0;
+  padding-top: 16px;
   margin-bottom: calc(165px - 45px);
 `
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
   display: flex;
-  justify-content: space-between;
+  align-items: top;
 `
 
-export const LogoWrapper = styled.button<{ isDarkMode?: boolean }>`
-  border: none;
-  background: none;
-  cursor: pointer;
+export const LogoWrapper = styled.div<{ isDarkMode?: boolean }>`
+  flex: 2;
 
   ${(props) => props.isDarkMode && `filter: invert(1);`}
   transition: filter ${Consts.toggleModDuration};
 `
 
-export const Navigation = styled.nav``
-
 export const List = styled.ul`
+  flex: 1;
   list-style-type: none;
   display: flex;
-  gap: 40px;
+  flex-direction: column;
 `
 
 export const Item = styled.li`
@@ -34,4 +31,6 @@ export const Item = styled.li`
   }
 `
 
-export const Phone = styled.span``
+export const ButtonWrapper = styled.div`
+  flex: 1;
+`

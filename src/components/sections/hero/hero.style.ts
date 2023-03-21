@@ -1,8 +1,7 @@
-import { Color } from '@/utils/color'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: 12rem;
+  margin-bottom: 12.2rem;
 `
 
 export const Wrapper = styled.div`
@@ -14,8 +13,5 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
   font-size: clamp(2rem, 10vw, 4.3rem);
   line-height: 100%;
-
-  color: ${Color.BLACK};
+  max-width: 1002px;
 `
-
-export const ImageWrapper = styled.div``

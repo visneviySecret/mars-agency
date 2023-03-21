@@ -1,9 +1,7 @@
-import { Color } from '@/utils/color'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: calc(12rem - 3.3rem);
-  color: ${Color.BLACK};
+  margin-bottom: calc(12.2rem - 3.3rem);
 `
 
 export const Wrapper = styled.div`
@@ -21,6 +19,7 @@ export const Title = styled.h2`
 `
 
 export const Content = styled.p`
+  position: relative;
   flex: 1;
   font-weight: 400;
   font-size: 34px;
@@ -41,9 +40,9 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   height: 5.55rem;
-  border-top: solid 1px ${Color.BLACK};
+  border-top: solid 1px;
   &:last-child {
-    border-bottom: solid 1px ${Color.BLACK};
+    border-bottom: solid 1px;
   }
 `
 
@@ -55,6 +54,7 @@ export const ItemNumber = styled.span`
 `
 
 export const ItemTitle = styled.span`
+  position: relative;
   flex: 1;
   font-weight: 400;
   line-height: 130%;

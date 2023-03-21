@@ -1,31 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Section,
   LogoWrapper,
-  Navigation,
   Item,
   List,
-  Phone,
   Wrapper,
+  ButtonWrapper,
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
 import { Container } from '@/styles/container.style'
+import Button from '@/components/UI/Button/Button'
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
+  const [isModalActive, setIsModalActive] = useState(false)
   const isDarkMode = theme === 'dark'
 
   const navList = [
     { title: 'О нас', ancor: '#about-us' },
-    { title: 'Услуги', ancor: '#services' },
+    { title: 'Услуги', ancor: '#offers' },
     { title: 'Отзывы', ancor: '#reviews' },
+    { title: 'Партнёры', ancor: '#partners' },
     { title: 'Контакты', ancor: '#contacts' },
   ]
-  const clientPhone = '+7 999 999 99-99'
 
   const handleClick = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
+  const handleModal = () => {
+    setIsModalActive((prev) => !prev)
   }
 
   return (
@@ -36,17 +41,17 @@ export default function Header() {
             <Logo />
           </LogoWrapper>
 
-          <Navigation>
-            <List>
-              {navList.map((item, index) => (
-                <Item key={index}>
-                  <a href={item.ancor}>{item.title}</a>
-                </Item>
-              ))}
-            </List>
-          </Navigation>
+          <List>
+            {navList.map((item, index) => (
+              <Item key={index}>
+                <a href={item.ancor}>{item.title}</a>
+              </Item>
+            ))}
+          </List>
 
-          <Phone>{clientPhone}</Phone>
+          <ButtonWrapper>
+            <Button onClick={handleModal}> Обратный звонок</Button>
+          </ButtonWrapper>
         </Wrapper>
       </Container>
     </Section>

@@ -1,43 +1,43 @@
 import styled from 'styled-components'
 import { Color } from '@/utils/color'
-import { indents } from '@/utils/indents'
 import { Consts } from '@/utils/consts'
+import { cooper } from '@/styles/GlobalStyles'
 
 const lightTheme = {
-  color: Color.BLACK,
-  backgroundColor: Color.LIGHT,
+  color: Color.WHITE,
+  backgroundColor: Color.GREY,
   borderColor: Color.BLACK,
 }
 
-const lightThemeHover = {
-  color: Color.LIGHT,
+const darkTheme = {
+  color: Color.WHITE,
   backgroundColor: Color.BLACK,
+  borderColor: Color.WHITE,
 }
 
-const darkTheme = {
-  color: '#363537',
-  backgroundColor: '#FAFAFA',
-  borderColor: '#999',
+const lightThemeHover = {
+  color: Color.WHITE,
+  backgroundColor: Color.BLACK,
 }
 
 const darkThemeHover = {
   color: Color.BLACK,
-  backgroundColor: Color.LIGHT,
+  backgroundColor: Color.WHITE,
 }
+
 export const ButtonComponent = styled.button<{ theme: string }>`
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 140%;
+  font-family: ${cooper.style.fontFamily};
   cursor: pointer;
 
   text-transform: uppercase;
 
-  width: auto;
-  padding: ${indents.indent10};
+  max-height: 57px;
+  padding: 14px 40px 12px 40px;
   border: solid 1px;
-  /* border-radius: 15px; */
+  border: none;
+  border-radius: 25px;
 
   transition-property: background-color, color;
   transition-duration: ${Consts.toggleModDuration};

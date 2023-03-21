@@ -1,9 +1,9 @@
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
-import { GlobalStyle } from '@/styles/themes'
+import { GlobalStyle } from '@/styles/GlobalStyles'
+import { reduxWrapper } from '@/redux/store'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="dark">
       <GlobalStyle />
@@ -11,3 +11,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   )
 }
+
+export default reduxWrapper.withRedux(App)

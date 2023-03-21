@@ -1,9 +1,7 @@
-import { Color } from '@/utils/color'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: calc(12rem);
-  color: ${Color.BLACK};
+  margin-bottom: 12.2rem;
 `
 
 export const Wrapper = styled.div`
@@ -58,7 +56,7 @@ export const Item = styled.li`
   flex-direction: column;
   justify-content: space-between;
   padding: 1.11rem;
-  border: solid 1px ${Color.BLACK};
+  border: solid 1px;
   max-width: 355px;
   height: auto;
 `
@@ -90,6 +88,5 @@ export const DesciptionItem = styled.li`
   font-size: 1rem;
   line-height: 130%;
 
-  color: ${Color.BLACK};
   opacity: 0.7;
 `
