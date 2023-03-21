@@ -10,7 +10,6 @@ import Steps from '@/components/sections/steps/steps'
 import Offers from '@/components/sections/offers/offers'
 import Reviews from '@/components/sections/reviews/reviews'
 import Footer from '@/components/sections/footer/footer'
-import Quize from '@/components/sections/quize/quize'
 import Partners from '@/components/sections/partners/partners'
 
 function Landing() {
@@ -41,7 +40,6 @@ function Landing() {
       <main>
         <Header />
         <Hero />
-        <Quize />
         <About />
         <Offers />
         <Steps />

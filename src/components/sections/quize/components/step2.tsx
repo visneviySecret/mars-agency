@@ -9,7 +9,6 @@ import {
 
 interface IProps {
   dealStatus: string
-  nextStep: () => void
 }
 
 const buttonStyle = {

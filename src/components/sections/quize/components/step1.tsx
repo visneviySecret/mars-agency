@@ -5,7 +5,6 @@ import { DealStatus } from '../quize.utils'
 
 interface IProps {
   setDealStatus: (val: DealStatus) => void
-  nextStep: () => void
 }
 
 const buttonStyle = {
@@ -15,15 +14,13 @@ const buttonStyle = {
   lineHeight: '130%',
 }
 
-export default function Step1({ setDealStatus, nextStep }: IProps) {
+export default function Step1({ setDealStatus }: IProps) {
   const handleBuy = () => {
     setDealStatus(DealStatus.buy)
-    nextStep()
   }
 
   const handleSail = () => {
     setDealStatus(DealStatus.sail)
-    nextStep()
   }
 
   return (

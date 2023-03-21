@@ -6,7 +6,6 @@ import Selector from '@/components/UI/Selector/Selector'
 
 interface IProps {
   dealStatus: string
-  nextStep: () => void
 }
 
 const buttonStyle = {
