@@ -7,7 +7,10 @@ export enum CrossSize {
   big = 'Big',
 }
 
-export const CrossIcon = styled.span<{ size: CrossSize }>`
+export const CrossIcon = styled.span<{
+  size: CrossSize
+  isLightBackground?: boolean
+}>`
   position: relative;
   width: ${({ size }) => (size === CrossSize.small ? '8px' : '28px')};
   height: ${({ size }) => (size === CrossSize.small ? '8px' : '28px')};
@@ -16,7 +19,8 @@ export const CrossIcon = styled.span<{ size: CrossSize }>`
   &::before {
     content: '';
     position: absolute;
-    background-color: ${Color.DARKGREY};
+    background-color: ${({ isLightBackground }) =>
+      isLightBackground ? Color.DARKGREY : Color.WHITE};
     width: ${({ size }) => (size === CrossSize.small ? '1.13px' : '3.96px')};
     height: ${({ size }) => (size === CrossSize.small ? '10.8px' : '35.64px')};
     translate: 350%;

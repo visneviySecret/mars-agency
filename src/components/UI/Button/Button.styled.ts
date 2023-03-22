@@ -11,7 +11,7 @@ import {
 export const ButtonComponent = styled.button<{
   appTheme?: string
   customTheme?: Theme
-  isCoral?: boolean
+  isBig?: boolean
 }>`
   font-size: 14px;
   line-height: 140%;
@@ -20,8 +20,7 @@ export const ButtonComponent = styled.button<{
   cursor: pointer;
 
   padding-inline: 40px;
-  padding-block: ${({ customTheme }) =>
-    customTheme === Theme.coral ? '21px 18px' : '14px 12px'};
+  padding-block: ${({ isBig }) => (isBig ? '21px 18px' : '14px 12px')};
   border: none;
   border-radius: 25px;
 

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const OptionsList = styled.ul`
   z-index: 100;
   position: absolute;
-  top: 45px;
+  top: 50px;
   list-style: none;
   display: flex;
   flex-direction: column;

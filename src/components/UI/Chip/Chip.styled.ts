@@ -20,7 +20,7 @@ export const ChipComponent = styled.button<{
   cursor: pointer;
 
   padding-inline: 20px;
-  padding-block: 12px 13px;
+  padding-block: 11px 14px;
   border: 1px solid;
   border-radius: 25px;
 

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { Color } from '@/utils/color'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,8 +11,8 @@ export const CheckboxContainer = styled.div`
   display: inline-block;
 `
 
-export const Text = styled.span`
-  color: ${Color.WHITE};
+export const Text = styled.span<{ isLanding?: boolean }>`
+  color: ${({ isLanding }) => isLanding && Color.WHITE};
   line-height: 120%;
 `
 export const Underlined = styled.a`

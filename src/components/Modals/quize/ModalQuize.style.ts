@@ -2,7 +2,9 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
-export const Section = styled.section``
+export const Section = styled.section`
+  margin-bottom: 20px;
+`
 
 export const ClosePanel = styled.div`
   display: flex;
@@ -35,5 +37,4 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${indents.indent20};
-  padding: 3.3rem 0;
 `

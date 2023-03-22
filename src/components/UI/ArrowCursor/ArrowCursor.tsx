@@ -13,7 +13,7 @@ const getModeColor = (isDarkMode: boolean) => {
 
 export const CursorWrapper = styled.span`
   position: absolute;
-  top: 20px;
+  top: 24px;
   right: 32px;
 `
 
@@ -28,7 +28,7 @@ export const Component = styled.span<{
     content: '';
     position: absolute;
     left: 0;
-    width: 14px;
+    width: 10px;
     height: 1px;
     background: ${({ isDarkMode }) => getModeColor(isDarkMode)};
     transition: rotate 250ms ease-in-out;
@@ -38,7 +38,7 @@ export const Component = styled.span<{
     rotate: ${({ isActive }) => (isActive ? '45deg' : '135deg')};
   }
   &::after {
-    translate: -10px;
+    translate: -7px;
     rotate: ${({ isActive }) => (isActive ? '-45deg' : '-135deg')};
   }
 `

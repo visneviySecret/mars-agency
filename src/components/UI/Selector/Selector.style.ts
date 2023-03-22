@@ -17,7 +17,8 @@ export const Input = styled.input<{ theme: string }>`
   font-size: 14px;
   line-height: 140%;
 
-  padding: ${indents.indent10} 25px;
+  padding-inline: 20px;
+  padding-block: 13px 11px;
   border: solid 1px;
   border-radius: 30px;
 

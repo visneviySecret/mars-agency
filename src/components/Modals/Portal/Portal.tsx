@@ -14,7 +14,8 @@ const Overlay = styled.div`
   translate: -50% -50%;
   background-color: ${Color.WHITE};
   width: 100vw;
-  min-height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
 `
 
 function Portal({ children }: PortalProps) {

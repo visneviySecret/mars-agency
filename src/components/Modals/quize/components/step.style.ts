@@ -17,8 +17,7 @@ export const Title = styled.span`
 
 export const FieldsWrapper = styled.div`
   flex: 1;
-  max-width: 100%;
-  margin-bottom: ${indents.indent140};
+  margin-bottom: ${indents.indent40};
 `
 
 export const List = styled.ul`

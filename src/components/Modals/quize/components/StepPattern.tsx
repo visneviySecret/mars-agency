@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { List, FieldsWrapper, Title, Wrapper } from './step.style'
 
 import Chip from '@/components/UI/Chip/Chip'
 import Selector from '@/components/UI/Selector/Selector'
 import { DealStatus } from '../quize.utils'
+import TextField from '@/components/UI/TextField/TextField'
 
 interface IProps {
-  title: string
-  nodes: Array<string>
-  handleClick: (value: string) => void
+  children?: ReactNode
+  nodes?: Array<string>
+  handleClick?: (value: string) => void
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  title?: string
+  textFieldValue?: string
   dealStatus?: DealStatus
   isSelector?: boolean
   dictionaries?: Array<string>
@@ -16,9 +20,12 @@ interface IProps {
 }
 
 function StepPattern({
+  children,
   title,
   nodes,
   handleClick,
+  handleChange,
+  textFieldValue,
   dealStatus,
   isSelector,
   dictionaries,
@@ -28,25 +35,37 @@ function StepPattern({
     <Wrapper>
       <Title>{title}</Title>
       <FieldsWrapper>
-        {isSelector && (
+        {isSelector && handleClick && (
           <Selector
-            options={dictionaries || nodes}
+            options={dictionaries || nodes || []}
             setStash={handleClick}
-            selected={nodes}
+            selected={nodes || []}
             dealStatus={dealStatus}
           />
         )}
         <List>
-          {nodes.map((item) => (
-            <Chip
-              key={item}
-              onClick={() => handleClick(item)}
-              isActiveNode={isActiveNode}
-            >
-              {item}
-            </Chip>
-          ))}
+          {handleClick &&
+            nodes?.map((item) => (
+              <Chip
+                key={item}
+                onClick={() => handleClick(item)}
+                isActiveNode={isActiveNode}
+              >
+                {item}
+              </Chip>
+            ))}
         </List>
+        {textFieldValue && handleChange && (
+          <TextField
+            name={'area'}
+            placeholder={textFieldValue}
+            value={textFieldValue}
+            onChange={handleChange}
+            isQuize
+            style={{ marginTop: nodes?.length && '30px' }}
+          />
+        )}
+        {children}
       </FieldsWrapper>
     </Wrapper>
   )

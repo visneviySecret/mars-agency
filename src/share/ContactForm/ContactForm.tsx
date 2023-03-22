@@ -9,6 +9,8 @@ interface IProps {
   isChecked: boolean
   setIsChecked: (val: boolean) => void
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  isQuize?: boolean
+  isLanding?: boolean
 }
 
 const Wrapper = styled.div`
@@ -17,7 +19,14 @@ const Wrapper = styled.div`
   gap: ${indents.indent35};
 `
 
-function ContactForm({ form, isChecked, setIsChecked, handleChange }: IProps) {
+function ContactForm({
+  form,
+  isChecked,
+  setIsChecked,
+  handleChange,
+  isQuize,
+  isLanding,
+}: IProps) {
   return (
     <Wrapper>
       {' '}
@@ -26,6 +35,7 @@ function ContactForm({ form, isChecked, setIsChecked, handleChange }: IProps) {
         placeholder="ИМЯ"
         onChange={handleChange}
         value={form.name}
+        isQuize={isQuize}
       />
       <TextField
         name="phone"
@@ -33,8 +43,13 @@ function ContactForm({ form, isChecked, setIsChecked, handleChange }: IProps) {
         onChange={handleChange}
         value={form.phone}
         errorMessage={''}
+        isQuize={isQuize}
       />
-      <PersonalAgreement isChecked={isChecked} setIsChecked={setIsChecked} />
+      <PersonalAgreement
+        isChecked={isChecked}
+        setIsChecked={setIsChecked}
+        isLanding={isLanding}
+      />
     </Wrapper>
   )
 }

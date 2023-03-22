@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
+import CSS from 'csstype'
 import { ButtonComponent } from './Button.styled'
 import { useTheme } from 'next-themes'
-import CSS from 'csstype'
 import { Theme } from './Button.utils'
 
 interface IProps {
@@ -9,6 +9,7 @@ interface IProps {
   children: ReactNode
   style?: CSS.Properties
   customTheme?: Theme
+  isBig?: boolean
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
   children,
   style,
   customTheme,
+  isBig,
 }: IProps) {
   const { theme } = useTheme()
 
@@ -26,6 +28,7 @@ export default function Button({
         style={style}
         appTheme={theme}
         customTheme={customTheme}
+        isBig={isBig}
       >
         {children}
       </ButtonComponent>

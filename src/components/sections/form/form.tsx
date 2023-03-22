@@ -58,6 +58,7 @@ export default function Form() {
               isChecked={isChecked}
               setIsChecked={setIsChecked}
               handleChange={handleChange}
+              isLanding
             />
             <ButtonWrapper>
               <Button onClick={handleClick}>Оставить заявку</Button>

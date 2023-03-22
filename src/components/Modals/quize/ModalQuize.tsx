@@ -15,6 +15,8 @@ import { DealStatus } from './quize.utils'
 import Portal from '../Portal/Portal'
 import { CrossIcon, CrossSize } from '@/components/UI/Cross/Cross'
 import { Contacts } from '@/utils/consts'
+import Step4 from './components/step4'
+import Step5 from './components/step5'
 
 interface ModadProps {
   onClose: () => void
@@ -29,7 +31,7 @@ function ModalQuize({ onClose, dealStatus }: ModadProps) {
     <Portal>
       <Section>
         <ClosePanel onClick={onClose}>
-          <CrossIcon size={CrossSize.big} />
+          <CrossIcon size={CrossSize.big} isLightBackground />
         </ClosePanel>
         <Container>
           <Header>
@@ -43,6 +45,8 @@ function ModalQuize({ onClose, dealStatus }: ModadProps) {
             <Step1 dealStatus={dealStatus} />
             <Step2 dealStatus={dealStatus} />
             <Step3 dealStatus={dealStatus} />
+            <Step4 dealStatus={dealStatus} />
+            <Step5 />
           </Wrapper>
         </Container>
       </Section>

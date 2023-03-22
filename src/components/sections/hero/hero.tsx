@@ -6,6 +6,7 @@ import { Container } from '@/components/UI/Container/container.style'
 import { Theme } from '@/components/UI/Button/Button.utils'
 import ModalQuize from '@/components/Modals/quize/ModalQuize'
 import { DealStatus } from '@/components/Modals/quize/quize.utils'
+import { blockScroll, unlockScroll } from './utils'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -14,6 +15,7 @@ export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleClick = (status: DealStatus) => {
+    blockScroll()
     openModal(status)
   }
 
@@ -24,6 +26,7 @@ export default function Hero() {
 
   const onClose = () => {
     setIsModalOpen(false)
+    unlockScroll()
   }
 
   return (
@@ -36,6 +39,7 @@ export default function Hero() {
               onClick={() => handleClick(DealStatus.buy)}
               customTheme={Theme.coral}
               style={customButtonStyle}
+              isBig
             >
               Купить
             </Button>
@@ -43,6 +47,7 @@ export default function Hero() {
               onClick={() => handleClick(DealStatus.sail)}
               customTheme={Theme.coral}
               style={customButtonStyle}
+              isBig
             >
               Продать
             </Button>
