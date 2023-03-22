@@ -5,16 +5,13 @@ import { indents } from '@/utils/indents'
 import React, { useState } from 'react'
 import { StepPattern } from './StepPattern'
 
-interface IProps {}
-
 const initialState = {
   name: '',
   phone: '',
 }
 
-export default function Step5({}: IProps) {
-  const [state, setState] = useState()
-  const [form, setForm] = useState(initialState)
+export default function Step5() {
+  const [form] = useState(initialState)
   const [isChecked, setIsChecked] = useState(true)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
