@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     body, html {
       color: ${Color.GREY};
       background: ${Color.WHITE};
-      border-color: ${Color.BLACK};
+      border-color: ${Color.GREY};
       transition-property: background-color, color;
       transition-duration: ${Consts.toggleModDuration} ;
     }
@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     [data-theme='dark'],
     [data-theme='dark'] body {
       color: ${Color.WHITE};
-      background: ${Color.BLACK};
+      background: ${Color.GREY};
       border-color: ${Color.WHITE}
     }
 
@@ -44,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
       --link-hover: #909090;
     }
     
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
       :root {
         --link-hover: #909090;
       }
