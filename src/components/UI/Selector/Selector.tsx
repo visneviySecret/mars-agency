@@ -1,52 +1,63 @@
 import React, { useState } from 'react'
-import {
-  SelectorComponent,
-  SelectorWrapper,
-  OptionsList,
-  Option,
-  ItemCursorWrapper,
-  ItemCursor,
-} from './Selector.style'
+import { Input, Component, Wrapper } from './Selector.style'
 import { useTheme } from 'next-themes'
-import CSS from 'csstype'
+import { ArrowCursor } from '../ArrowCursor/ArrowCursor'
+import Options from './Components/Options'
+import { DealStatus } from '@/components/Modals/quize/quize.utils'
 
 interface IProps {
-  style?: CSS.Properties
   options: string[]
-  setStash: (val: string[]) => void
+  selected: string[]
+  setStash: (val: string) => void
+  dealStatus?: DealStatus
 }
 
-export default function Selector({ style, options }: IProps) {
-  const { theme } = useTheme()
+export default function Selector({
+  options,
+  selected,
+  setStash,
+  dealStatus,
+}: IProps) {
   const [isActive, setIsActive] = useState(false)
-
+  const [searchingOptions, setSearchingOptions] = useState(options)
+  const { theme } = useTheme()
   const isDarkMode = theme === 'dark'
+  const placeHolder = dealStatus === DealStatus.buy ? 'Выбрать' : 'Название'
 
   const handleClick = () => {
     setIsActive((prev) => !prev)
   }
 
   const handleOption = (value: string) => {
-    return value
+    setStash(value)
+  }
+
+  const handleChange = (value: string) => {
+    setIsActive(true)
+    const search = options.filter((option) => option.indexOf(value) !== -1)
+    const result = search.length === 0 ? [value] : search
+    setSearchingOptions(result)
   }
 
   return (
-    <SelectorWrapper>
-      <SelectorComponent theme={theme} style={style} onClick={handleClick}>
-        Выбрать
-      </SelectorComponent>
-      {isActive && (
-        <OptionsList>
-          {options.map((option, index) => (
-            <Option key={index} onClick={() => handleOption(option)}>
-              {option}
-            </Option>
-          ))}
-        </OptionsList>
-      )}
-      <ItemCursorWrapper>
-        <ItemCursor isDarkMode={isDarkMode} isActive={isActive} />
-      </ItemCursorWrapper>
-    </SelectorWrapper>
+    <Component>
+      <Wrapper>
+        <Input
+          type="text"
+          placeholder={placeHolder}
+          onChange={(e) => handleChange(e.target.value)}
+          theme={theme}
+          onClick={handleClick}
+        />
+        <ArrowCursor isActive={isActive} isDarkMode={isDarkMode} />
+        {isActive && (
+          <Options
+            options={searchingOptions}
+            selected={selected}
+            handleOption={handleOption}
+          />
+        )}
+      </Wrapper>
+    </Component>
   )
 }

@@ -1,45 +1,37 @@
-import Button from '@/components/UI/Button/Button'
 import React, { useState } from 'react'
-import { List } from './step.style'
-import {
-  DealStatus,
-  rent_types_to_buy,
-  rent_types_to_sail,
-} from '../quize.utils'
+import { DealStatus, locations } from '../quize.utils'
+import { StepPattern } from './StepPattern'
 
 interface IProps {
-  dealStatus: string
-}
-
-const buttonStyle = {
-  minWidth: '100px',
-  fontWeight: '400',
-  fontSize: '18px',
-  lineHeight: '130%',
+  dealStatus: DealStatus
 }
 
 export default function Step2({ dealStatus }: IProps) {
-  const [stash, setStash] = useState<string[]>([])
-  const dictionaries =
-    dealStatus === DealStatus.sail ? rent_types_to_buy : rent_types_to_sail
+  const [areas, setAreas] = useState<string[]>([])
+  const title =
+    dealStatus === DealStatus.buy ? '2. В каких районах?' : '2. В каком районе?'
 
-  const handleClick = (item: string) => {
-    setStash([])
-    console.log('remove item: ', item)
-    console.log('dictionaries: ', dictionaries)
+  const dictionaries = locations
+
+  const handleClick = (value: string) => {
+    if (areas.indexOf(value) === -1) {
+      const result = [...areas, value]
+      setAreas(result)
+      return
+    }
+    const result = areas.filter((item) => item !== value)
+    setAreas(result)
   }
 
   return (
-    <List>
-      {stash.map((item, index) => (
-        <Button
-          key={index}
-          style={buttonStyle}
-          onClick={() => handleClick(item)}
-        >
-          {item}
-        </Button>
-      ))}
-    </List>
+    <StepPattern
+      title={title}
+      nodes={areas}
+      dictionaries={dictionaries}
+      handleClick={handleClick}
+      dealStatus={dealStatus}
+      isSelector
+      isActiveNode
+    />
   )
 }

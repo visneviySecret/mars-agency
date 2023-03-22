@@ -1,30 +1,6 @@
 import React from 'react'
-import {
-  Wrapper,
-  Label,
-  HiddenCheckbox,
-  StyledCheckbox,
-  Text,
-  Underlined,
-  Icon,
-} from './PersonalAgreement.style'
-
-const Checkbox = ({
-  checked,
-  onChange,
-}: {
-  checked: boolean
-  onChange: () => void
-}) => (
-  <>
-    <HiddenCheckbox checked={checked} onChange={onChange} />
-    <StyledCheckbox checked={checked}>
-      <Icon viewBox="0 0 24 24">
-        <polyline points="20 6 9 17 4 12" />
-      </Icon>
-    </StyledCheckbox>
-  </>
-)
+import { Checkbox } from '@/components/UI/Checkbox/CheckBox'
+import { Wrapper, Label, Text, Underlined } from './PersonalAgreement.style'
 
 function PersonalAgreement({
   isChecked,

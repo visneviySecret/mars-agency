@@ -6,12 +6,17 @@ import Cross from '../Cross/Cross'
 interface IProps {
   onClick: () => void
   children: ReactNode
+  isActiveNode?: boolean
 }
 
-export default function Chip({ onClick, children }: IProps) {
+export default function Chip({
+  onClick,
+  children,
+  isActiveNode = false,
+}: IProps) {
   const { theme } = useTheme()
   const currentTheme = theme
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(isActiveNode)
 
   const handleClick = () => {
     onClick()

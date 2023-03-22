@@ -4,6 +4,7 @@ const pxToRem = (value: number) => {
 }
 
 export const indents = {
+  indent6: pxToRem(6),
   indent10: pxToRem(10),
   indent18: pxToRem(18),
   indent20: pxToRem(20),

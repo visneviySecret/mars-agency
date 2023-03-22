@@ -22,6 +22,9 @@ interface ModadProps {
 }
 
 function ModalQuize({ onClose, dealStatus }: ModadProps) {
+  const title =
+    dealStatus === DealStatus.buy ? 'Купить объект' : 'Продать объект'
+
   return (
     <Portal>
       <Section>
@@ -30,11 +33,7 @@ function ModalQuize({ onClose, dealStatus }: ModadProps) {
         </ClosePanel>
         <Container>
           <Header>
-            <Title>
-              {dealStatus === DealStatus.buy
-                ? 'Купить объект'
-                : 'Продать объект'}
-            </Title>
+            <Title>{title}</Title>
             <Description>
               Оставьте заявку, либо звоните, мы пообщаемся и сами все заполним:{' '}
               {Contacts.phone}

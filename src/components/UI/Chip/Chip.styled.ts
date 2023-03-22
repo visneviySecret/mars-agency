@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Consts } from '@/utils/consts'
 import { NeueMachina } from '@/styles/GlobalStyles'
-import { getThemeColor, Theme } from './Chip.utils'
 import { indents } from '@/utils/indents'
 import { CrossIcon } from '../Cross/Cross'
+import { getThemeColor, Theme } from '@/utils/helpers/getThemeColors'
 
 export const ChipComponent = styled.button<{
   theme: Theme

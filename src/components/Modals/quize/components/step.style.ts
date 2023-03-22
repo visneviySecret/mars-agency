@@ -18,10 +18,11 @@ export const Title = styled.span`
 export const FieldsWrapper = styled.div`
   flex: 1;
   max-width: 100%;
+  margin-bottom: ${indents.indent140};
 `
 
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
+  gap: ${indents.indent10};
 `

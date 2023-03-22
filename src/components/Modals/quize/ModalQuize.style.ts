@@ -32,22 +32,8 @@ export const Description = styled.p`
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 3.3rem 0;
-`
-
-export const Item = styled.li`
   display: flex;
-  align-items: center;
-  height: 5.55rem;
-  border-top: solid 1px;
-  &:last-child {
-    border-bottom: solid 1px;
-  }
-`
-
-export const ItemTitle = styled.span`
-  flex: 1;
-  font-weight: 400;
-  line-height: 130%;
-  font-size: 1rem;
+  flex-direction: column;
+  gap: ${indents.indent20};
+  padding: 3.3rem 0;
 `

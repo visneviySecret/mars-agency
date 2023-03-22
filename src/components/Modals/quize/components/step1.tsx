@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { List, FieldsWrapper, Title, Wrapper } from './step.style'
+import React, { useState } from 'react'
 import {
   DealStatus,
   rent_types_to_buy,
   rent_types_to_sail,
 } from '../quize.utils'
-import Chip from '@/components/UI/Chip/Chip'
+import { StepPattern } from './StepPattern'
 
 interface IProps {
   dealStatus: DealStatus
@@ -31,22 +30,7 @@ export default function Step1({ dealStatus }: IProps) {
     setObjects(result)
   }
 
-  useEffect(() => {
-    console.log(objects)
-  }, [objects])
-
   return (
-    <Wrapper>
-      <Title>{title}</Title>
-      <FieldsWrapper>
-        <List>
-          {dictionaries.map((item) => (
-            <Chip key={item} onClick={() => handleClick(item)}>
-              {item}
-            </Chip>
-          ))}
-        </List>
-      </FieldsWrapper>
-    </Wrapper>
+    <StepPattern title={title} nodes={dictionaries} handleClick={handleClick} />
   )
 }
