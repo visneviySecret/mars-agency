@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Section, StepWrapper, Title, Wrapper, StepTitle } from './quize.style'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import { DealStatus } from './quize.utils'
 import Step1 from './components/step1'
 import Step2 from './components/step2'

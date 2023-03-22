@@ -1,5 +1,5 @@
 import { LogoWhite } from '@/assets/Logo'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import React from 'react'
 import {
   FooterWrapper,

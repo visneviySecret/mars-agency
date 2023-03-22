@@ -18,11 +18,15 @@ export default function Button({
   customTheme,
 }: IProps) {
   const { theme } = useTheme()
-  const currentTheme = customTheme || theme
 
   return (
     <>
-      <ButtonComponent theme={currentTheme} onClick={onClick} style={style}>
+      <ButtonComponent
+        onClick={onClick}
+        style={style}
+        appTheme={theme}
+        customTheme={customTheme}
+      >
         {children}
       </ButtonComponent>
     </>

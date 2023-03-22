@@ -9,28 +9,31 @@ import {
 } from './Button.utils'
 
 export const ButtonComponent = styled.button<{
-  theme: Theme
+  appTheme?: string
+  customTheme?: Theme
   isCoral?: boolean
 }>`
   font-size: 14px;
   line-height: 140%;
   font-family: ${NeueMachina.style.fontFamily};
+  text-transform: uppercase;
   cursor: pointer;
 
-  text-transform: uppercase;
-
-  max-height: 57px;
-  padding: 14px 40px 12px 40px;
-  border: solid 1px;
+  padding-inline: 40px;
+  padding-block: ${({ customTheme }) =>
+    customTheme === Theme.coral ? '21px 18px' : '14px 12px'};
   border: none;
   border-radius: 25px;
 
   transition-property: background-color, color;
   transition-duration: ${Consts.toggleModDuration};
 
-  &:hover {
-    ${(props) => (props.theme === 'dark' && darkThemeHover) || lightThemeHover};
-  }
+  ${({ customTheme, appTheme }) => getThemeColor(customTheme || appTheme)}
 
-  ${(props) => getThemeColor(props.theme)}
+  &:hover {
+    ${({ appTheme }) =>
+      appTheme === 'dark' ? darkThemeHover : lightThemeHover};
+    background-color: transparent;
+    border: 1px solid;
+  }
 `

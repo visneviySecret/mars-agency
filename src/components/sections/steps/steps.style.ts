@@ -47,12 +47,11 @@ export const Card = styled.li`
 export const ImageWrapper = styled.div`
   flex: 1;
   display: flex;
-  padding: 20px 20px 20px;
   border-right: 1px solid ${Color.GREY};
 `
 
 export const CardContent = styled.div`
-  flex: 1;
+  flex: 1.01;
 `
 
 export const CardTitle = styled.h3`

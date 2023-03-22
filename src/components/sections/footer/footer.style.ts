@@ -71,6 +71,10 @@ export const Icons = styled.ul`
 
   & > * {
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `
 

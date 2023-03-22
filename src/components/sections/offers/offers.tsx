@@ -11,7 +11,7 @@ import {
   Wrapper,
   ItemDescriptionWrapper,
 } from './offers.style'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import { list } from './offers.utils'
 import { useTheme } from 'next-themes'
 import InvisButton from '@/features/easterEgg/components/InvisButton'

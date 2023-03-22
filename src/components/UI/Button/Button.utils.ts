@@ -6,7 +6,7 @@ export enum Theme {
   coral = 'coral',
 }
 
-export const getThemeColor = (theme: Theme) => {
+export const getThemeColor = (theme?: Theme | string) => {
   switch (theme) {
     case Theme.dark:
       return darkTheme
@@ -17,29 +17,37 @@ export const getThemeColor = (theme: Theme) => {
   }
 }
 
+const getPadding = {
+  paddingInline: '39px',
+  paddingBlock: '13px 11px',
+}
+
 const lightTheme = {
   color: Color.WHITE,
-  backgroundColor: Color.GREY,
   borderColor: Color.GREY,
+  backgroundColor: Color.GREY,
 }
 
 const coralTheme = {
   color: Color.WHITE,
+  borderColor: Color.GREY,
   backgroundColor: Color.CORAL,
-  borderColor: Color.BLACK,
+}
+
+const darkTheme = {
+  color: Color.GREY,
+  borderColor: Color.WHITE,
+  backgroundColor: Color.WHITE,
 }
 
 export const lightThemeHover = {
-  color: Color.WHITE,
-  backgroundColor: Color.BLACK,
-}
-const darkTheme = {
-  color: Color.WHITE,
-  backgroundColor: Color.BLACK,
-  borderColor: Color.WHITE,
+  ...getPadding,
+  color: Color.GREY,
+  borderColor: Color.GREY,
 }
 
 export const darkThemeHover = {
-  color: Color.BLACK,
-  backgroundColor: Color.WHITE,
+  ...getPadding,
+  color: Color.WHITE,
+  borderColor: Color.WHITE,
 }

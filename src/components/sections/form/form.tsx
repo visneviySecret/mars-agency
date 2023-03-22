@@ -7,10 +7,10 @@ import {
   Wrapper,
   FormWrapper,
 } from './form.style'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
-import TextInput from '@/components/UI/TextInput/TextInput'
+import TextField from '@/components/UI/TextField/TextField'
 import PersonalAgreement from './component/PersonalAgreement'
 
 const initialState = {
@@ -54,17 +54,18 @@ export default function Form() {
           </Header>
 
           <FormWrapper>
-            <TextInput
+            <TextField
               name="name"
               placeholder="ИМЯ"
               onChange={handleChange}
               value={form.name}
             />
-            <TextInput
+            <TextField
               name="phone"
               placeholder="ТЕЛЕФОН"
               onChange={handleChange}
               value={form.phone}
+              errorMessage={''}
             />
             <PersonalAgreement
               isChecked={isChecked}

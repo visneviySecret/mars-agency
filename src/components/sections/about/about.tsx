@@ -9,7 +9,7 @@ import {
   List,
   Accented,
 } from './about.style'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import { list } from './about.utils'
 
 export default function About() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Section, Title, Wrapper, List, Partner } from './partners.style'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import { usePartners } from './partners.utils'
 import Image from 'next/image'
 import { motion } from 'framer-motion'

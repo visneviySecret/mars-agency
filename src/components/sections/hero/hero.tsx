@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Section, Title, ButtonsWrapper } from './hero.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import { Theme } from '@/components/UI/Button/Button.utils'
 
 const customButtonStyle = { flex: 1, width: '100%' }

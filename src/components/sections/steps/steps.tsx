@@ -13,7 +13,7 @@ import {
   ImageWrapper,
   CardContent,
 } from './steps.style'
-import { Container } from '@/components/UI/container.style'
+import { Container } from '@/components/UI/Container/container.style'
 import { list } from './steps.utils'
 import InvisButton from '@/features/easterEgg/components/InvisButton'
 import Image from 'next/image'
@@ -45,7 +45,7 @@ export default function Steps() {
                   width={750}
                   height={415}
                   alt="interier"
-                  style={{ marginLeft: 'auto' }}
+                  style={{ margin: '20px 20px 20px', marginLeft: 'auto' }}
                 />
               </ImageWrapper>
               <CardContent>
