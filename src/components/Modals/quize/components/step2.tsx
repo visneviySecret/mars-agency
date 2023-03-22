@@ -1,6 +1,6 @@
 import Button from '@/components/UI/Button/Button'
 import React, { useState } from 'react'
-import { List } from '../quize.style'
+import { List } from './step.style'
 import {
   DealStatus,
   rent_types_to_buy,

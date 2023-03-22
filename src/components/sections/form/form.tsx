@@ -10,8 +10,7 @@ import {
 import { Container } from '@/components/UI/Container/container.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
-import TextField from '@/components/UI/TextField/TextField'
-import PersonalAgreement from './component/PersonalAgreement'
+import ContactForm from '@/share/ContactForm/ContactForm'
 
 const initialState = {
   name: '',
@@ -54,22 +53,11 @@ export default function Form() {
           </Header>
 
           <FormWrapper>
-            <TextField
-              name="name"
-              placeholder="ИМЯ"
-              onChange={handleChange}
-              value={form.name}
-            />
-            <TextField
-              name="phone"
-              placeholder="ТЕЛЕФОН"
-              onChange={handleChange}
-              value={form.phone}
-              errorMessage={''}
-            />
-            <PersonalAgreement
+            <ContactForm
+              form={form}
               isChecked={isChecked}
               setIsChecked={setIsChecked}
+              handleChange={handleChange}
             />
             <ButtonWrapper>
               <Button onClick={handleClick}>Оставить заявку</Button>

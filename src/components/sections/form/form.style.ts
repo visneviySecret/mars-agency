@@ -12,11 +12,7 @@ export const Wrapper = styled.div<{ isPadding?: boolean }>`
   padding-inline: ${({ isPadding }) => isPadding && indents.indent20};
 `
 
-export const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${indents.indent35};
-`
+export const FormWrapper = styled.div``
 
 export const Header = styled.header`
   margin-top: ${indents.indent40};
@@ -30,4 +26,10 @@ export const Title = styled.h2`
   color: ${Color.WHITE};
 `
 
-export const ButtonWrapper = styled.div``
+export const ButtonWrapper = styled.div`
+  margin-top: ${indents.indent40};
+
+  & > * {
+    width: 100%;
+  }
+`
