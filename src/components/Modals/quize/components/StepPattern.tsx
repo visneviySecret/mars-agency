@@ -8,14 +8,14 @@ import TextField from '@/components/UI/TextField/TextField'
 
 interface IProps {
   children?: ReactNode
-  nodes?: Array<string>
-  handleClick?: (value: string) => void
-  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   title?: string
+  nodes?: Array<string>
+  dictionaries?: Array<string>
+  handleClick?: (value: string) => void
+  handleChange?: (key: string, value: string) => void
   textFieldValue?: string
   dealStatus?: DealStatus
   isSelector?: boolean
-  dictionaries?: Array<string>
   isActiveNode?: boolean
 }
 
@@ -23,12 +23,12 @@ function StepPattern({
   children,
   title,
   nodes,
+  dictionaries,
   handleClick,
   handleChange,
   textFieldValue,
   dealStatus,
   isSelector,
-  dictionaries,
   isActiveNode,
 }: IProps) {
   return (

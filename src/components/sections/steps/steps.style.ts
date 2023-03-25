@@ -20,7 +20,6 @@ export const Title = styled.h2`
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  padding-left: 11px;
   text-transform: uppercase;
 `
 
@@ -29,18 +28,21 @@ export const Content = styled.p`
   font-size: 25px;
   line-height: 130%;
   margin-bottom: 120px;
-  padding-left: 40px;
+  padding-left: 10px;
 `
 
 export const List = styled.ul``
 
-export const Card = styled.li`
+export const Card = styled.li<{ index: number }>`
+  position: sticky;
+  top: ${({ index }) => index * 145}px;
   display: flex;
   border-top: 1px solid ${Color.GREY};
-  border-bottom: 1px solid ${Color.GREY};
+  background-color: ${Color.WHITE};
 
-  & + li {
-    border-top: none;
+  &:last-child {
+    border-bottom: 1px solid ${Color.GREY};
+    z-index: 1000;
   }
 `
 
@@ -51,12 +53,13 @@ export const ImageWrapper = styled.div`
 `
 
 export const CardContent = styled.div`
-  flex: 1.01;
+  flex: 1.03;
 `
 
 export const CardTitle = styled.h3`
   font-size: 53px;
   line-height: 100%;
+  font-weight: 400;
   text-transform: uppercase;
   padding-left: 20px;
   padding-block: 46px;

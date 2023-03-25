@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DealStatus, preferences } from '../quize.utils'
 import { StepPattern } from './StepPattern'
 
 interface IProps {
   dealStatus: string
+  handleForm: (key: string, value: string[]) => void
 }
 
-export default function Step3({ dealStatus }: IProps) {
+export default function Step3({ dealStatus, handleForm }: IProps) {
   const [areas, setAreas] = useState<string[]>([])
 
   const title =
@@ -24,9 +25,14 @@ export default function Step3({ dealStatus }: IProps) {
     setAreas(result)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e)
+  const handleChange = (value: string) => {
+    const result = `${value}, м²`
+    setAreas([result])
   }
+
+  useEffect(() => {
+    handleForm(title, areas)
+  }, [areas])
 
   return (
     <StepPattern

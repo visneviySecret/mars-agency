@@ -13,6 +13,7 @@ export const ButtonComponent = styled.button<{
   customTheme?: Theme
   isBig?: boolean
 }>`
+  width: 100%;
   font-size: 14px;
   line-height: 140%;
   font-family: ${NeueMachina.style.fontFamily};
@@ -20,7 +21,7 @@ export const ButtonComponent = styled.button<{
   cursor: pointer;
 
   padding-inline: 40px;
-  padding-block: ${({ isBig }) => (isBig ? '21px 18px' : '14px 12px')};
+  padding-block: ${({ isBig }) => (isBig ? '18px 21px' : '14px 12px')};
   border: none;
   border-radius: 25px;
 
@@ -34,5 +35,6 @@ export const ButtonComponent = styled.button<{
       appTheme === 'dark' ? darkThemeHover : lightThemeHover};
     background-color: transparent;
     border: 1px solid;
+    padding-block: ${({ isBig }) => isBig && '8px 11px'};
   }
 `

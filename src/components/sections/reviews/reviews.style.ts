@@ -1,5 +1,10 @@
+import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
+
+const getCustomThemeColor = (isLightTheme: boolean) => {
+  return isLightTheme ? Color.GREY : Color.WHITE
+}
 
 export const Section = styled.section`
   margin-bottom: ${indents.indent120};
@@ -25,6 +30,7 @@ export const SubTitle = styled.h3`
   font-size: 25px;
   line-height: 130%;
   margin-left: ${indents.indent10};
+  padding-left: ${indents.indent10};
 `
 
 export const List = styled.ul`
@@ -76,7 +82,19 @@ export const ItemComment = styled.p`
   padding-left: ${indents.indent10};
 `
 
-export const ButtonWrapper = styled.div`
-  width: 215px;
+export const ButtonWrapper = styled.div<{ isLightTheme: boolean }>`
   margin: ${indents.indent40} auto 0 auto;
+
+  & > * {
+    background-color: transparent;
+    color: ${({ isLightTheme }) => getCustomThemeColor(isLightTheme)};
+    border: 1px solid ${({ isLightTheme }) => getCustomThemeColor(isLightTheme)};
+  }
+
+  &:hover > * {
+    background-color: ${({ isLightTheme }) =>
+      getCustomThemeColor(isLightTheme)};
+    color: ${({ isLightTheme }) => getCustomThemeColor(!isLightTheme)};
+    border: 2px solid;
+  }
 `

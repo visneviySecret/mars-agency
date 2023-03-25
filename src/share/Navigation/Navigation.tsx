@@ -10,6 +10,7 @@ const navList = [
 ]
 
 export const List = styled.ul`
+  z-index: 500;
   flex: 1;
   list-style-type: none;
   display: flex;

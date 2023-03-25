@@ -14,7 +14,7 @@ const Overlay = styled.div`
   translate: -50% -50%;
   background-color: ${Color.WHITE};
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   overflow: auto;
 `
 

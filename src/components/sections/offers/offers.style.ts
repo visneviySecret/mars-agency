@@ -41,6 +41,7 @@ export const Content = styled.p`
   font-size: 25px;
   line-height: 130%;
   margin-top: ${indents.indent10};
+  padding-left: ${indents.indent10};
 `
 
 export const List = styled.ul``
@@ -74,4 +75,5 @@ export const ItemDescription = styled.span`
   display: block;
   max-width: 355px;
   line-height: 120%;
+  padding-left: ${indents.indent10};
 `

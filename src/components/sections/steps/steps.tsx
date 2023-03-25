@@ -38,14 +38,19 @@ export default function Steps() {
         </Container>
         <List>
           {list.map((item, index) => (
-            <Card key={index}>
+            <Card key={index} index={index}>
               <ImageWrapper>
                 <Image
                   src={item.img}
                   width={750}
                   height={415}
                   alt="interier"
-                  style={{ margin: '20px 20px 20px', marginLeft: 'auto' }}
+                  style={{
+                    margin: '20px 20px 20px',
+                    marginLeft: 'auto',
+                    maxWidth: '100%',
+                    objectFit: 'contain',
+                  }}
                 />
               </ImageWrapper>
               <CardContent>

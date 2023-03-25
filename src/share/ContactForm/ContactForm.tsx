@@ -8,9 +8,10 @@ interface IProps {
   form: { [key: string]: string }
   isChecked: boolean
   setIsChecked: (val: boolean) => void
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleChange: (key: string, value: string) => void
   isQuize?: boolean
   isLanding?: boolean
+  errorMessage?: { name: string; phone: string }
 }
 
 const Wrapper = styled.div`
@@ -26,23 +27,25 @@ function ContactForm({
   handleChange,
   isQuize,
   isLanding,
+  errorMessage,
 }: IProps) {
   return (
     <Wrapper>
-      {' '}
       <TextField
         name="name"
         placeholder="ИМЯ"
         onChange={handleChange}
         value={form.name}
+        errorMessage={errorMessage?.name || ''}
         isQuize={isQuize}
       />
       <TextField
         name="phone"
+        type="tel"
         placeholder="ТЕЛЕФОН"
         onChange={handleChange}
         value={form.phone}
-        errorMessage={''}
+        errorMessage={errorMessage?.phone || ''}
         isQuize={isQuize}
       />
       <PersonalAgreement

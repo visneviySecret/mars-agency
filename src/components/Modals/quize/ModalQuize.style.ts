@@ -2,9 +2,7 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
-export const Section = styled.section`
-  margin-bottom: 20px;
-`
+export const Section = styled.section``
 
 export const ClosePanel = styled.div`
   display: flex;

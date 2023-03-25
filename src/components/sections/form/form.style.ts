@@ -6,13 +6,14 @@ export const Section = styled.section`
   margin-bottom: ${indents.indent20};
 `
 
-export const Wrapper = styled.div<{ isPadding?: boolean }>`
+export const Wrapper = styled.div`
   flex: 1;
   background-color: ${Color.CORAL};
-  padding-inline: ${({ isPadding }) => isPadding && indents.indent20};
 `
 
-export const FormWrapper = styled.div``
+export const FormWrapper = styled.div`
+  padding-inline: ${indents.indent20};
+`
 
 export const Header = styled.header`
   margin-top: ${indents.indent40};

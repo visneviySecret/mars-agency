@@ -18,16 +18,12 @@ import { Container } from '@/components/UI/Container/container.style'
 import { clients } from './reviews.utils'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
-import { Color } from '@/utils/color'
-
-const customButton = {
-  border: `1px solid ${Color.GREY}`,
-  background: Color.WHITE,
-  color: Color.GREY,
-}
+import { Theme } from '@/utils/helpers/getThemeColors'
+import { useTheme } from 'next-themes'
 
 export default function Reviews() {
   const [isActive, setIsActive] = useState(false)
+  const { theme } = useTheme()
 
   const handleClick = () => {
     setIsActive((prev) => !prev)
@@ -64,8 +60,8 @@ export default function Reviews() {
               )
           })}
         </List>
-        <ButtonWrapper>
-          <Button onClick={handleClick} style={customButton}>
+        <ButtonWrapper isLightTheme={theme === Theme.light}>
+          <Button onClick={handleClick}>
             {isActive ? 'Скрыть' : 'Показать еще'}
           </Button>
         </ButtonWrapper>

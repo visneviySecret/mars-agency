@@ -59,7 +59,6 @@ export const GlobalStyle = createGlobalStyle`
     html,
     body {
       width: 100vw;
-      overflow-x: hidden;
       font-family: ${NeueMachina.style.fontFamily}, 'Inter';
       font-style: 400;
       line-height: 140%;

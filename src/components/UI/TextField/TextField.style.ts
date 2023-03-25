@@ -6,6 +6,10 @@ const getColor = (isQuize?: boolean) => {
   return isQuize ? Color.GREY : Color.WHITE
 }
 
+const getQuizeColor = (isQuize?: boolean) => {
+  return isQuize ? Color.RED : Color.DARKRED
+}
+
 export const Wrapper = styled.div`
   position: relative;
 `
@@ -19,7 +23,8 @@ export const Input = styled.input<{ isError?: boolean; isQuize?: boolean }>`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid
-    ${({ isError, isQuize }) => (isError ? Color.RED : getColor(isQuize))};
+    ${({ isError, isQuize }) =>
+      isError ? getQuizeColor(isQuize) : getColor(isQuize)};
   padding-bottom: ${indents.indent5};
 
   &::placeholder {
@@ -36,7 +41,7 @@ export const Input = styled.input<{ isError?: boolean; isQuize?: boolean }>`
   }
 `
 
-export const Error = styled.span`
+export const Error = styled.span<{ isQuize?: boolean }>`
   position: absolute;
   left: 0;
   bottom: -25px;
@@ -44,5 +49,5 @@ export const Error = styled.span`
   line-height: 140%;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: ${Color.RED};
+  color: ${({ isQuize }) => (isQuize ? Color.RED : Color.DARKRED)};
 `

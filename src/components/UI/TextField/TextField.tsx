@@ -1,15 +1,17 @@
 import React from 'react'
 import CSS from 'csstype'
 import { Error, Input, Wrapper } from './TextField.style'
+import { getFormattedValue } from './TextField.utils'
 
 interface IProps {
   name: string
   placeholder: string
   value: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: (key: string, value: string) => void
   errorMessage?: string
   isQuize?: boolean
   style?: CSS.Properties
+  type?: string
 }
 
 function TextField({
@@ -20,18 +22,27 @@ function TextField({
   errorMessage,
   style,
   isQuize,
+  type = 'text',
 }: IProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    const formattedValue = getFormattedValue(value, name)
+    const key = e.target.name
+    onChange(key, formattedValue)
+  }
+
   return (
     <Wrapper style={style}>
       <Input
-        type="text"
+        type={type}
         name={name}
-        placeholder={placeholder || value}
-        onChange={(e) => onChange(e)}
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => handleChange(e)}
         isError={!!errorMessage}
         isQuize={isQuize}
       />
-      <Error>{errorMessage}</Error>
+      <Error isQuize={isQuize}>{errorMessage}</Error>
     </Wrapper>
   )
 }

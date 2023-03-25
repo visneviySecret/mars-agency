@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   DealStatus,
   rent_types_to_buy,
@@ -8,10 +8,11 @@ import { StepPattern } from './StepPattern'
 
 interface IProps {
   dealStatus: DealStatus
+  handleForm: (key: string, value: string[]) => void
 }
 
-export default function Step1({ dealStatus }: IProps) {
-  const [objects, setObjects] = useState<string[]>([])
+export default function Step1({ dealStatus, handleForm }: IProps) {
+  const [selected, setSelected] = useState<string[]>([])
   const title =
     dealStatus === DealStatus.buy
       ? '1. Какие объекты вы ищите?'
@@ -21,14 +22,17 @@ export default function Step1({ dealStatus }: IProps) {
     dealStatus === DealStatus.buy ? rent_types_to_buy : rent_types_to_sail
 
   const handleClick = (value: string) => {
-    if (objects.indexOf(value) === -1) {
-      const result = [...objects, value]
-      setObjects(result)
+    if (selected.indexOf(value) === -1) {
+      setSelected([...selected, value])
       return
     }
-    const result = objects.filter((item) => item !== value)
-    setObjects(result)
+    const result = selected.filter((item) => item !== value)
+    setSelected(result)
   }
+
+  useEffect(() => {
+    handleForm(title, selected)
+  }, [selected])
 
   return (
     <StepPattern title={title} nodes={dictionaries} handleClick={handleClick} />

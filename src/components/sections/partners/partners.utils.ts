@@ -1,4 +1,11 @@
+import { usePrevious } from '@/hooks/usePrevious'
+import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import useMeasure from 'react-use-measure'
+
+interface VariantProps {
+  [key: string]: number
+}
 
 const banks = [
   { img: '/partners/bank1.png' },
@@ -22,16 +29,24 @@ const developers = [
 ]
 
 export const usePartners = () => {
+  const [ref, { width }] = useMeasure()
   const [bankCount, setBankCount] = useState(0)
-  const [developCount, setDevelopCount] = useState(0)
+  const [devCount, setDevelopCount] = useState(0)
+  const prevBankCount = usePrevious(bankCount)
+  const prevDevCount = usePrevious(devCount)
+  const bankDirection = bankCount > prevBankCount ? 1 : -1
+  const devDirection = devCount > prevDevCount ? 1 : -1
   const [isHovered, setIsHoverd] = useState('')
+  const { theme } = useTheme()
 
-  const handleBankCount = () => {
-    setBankCount((prev) => prev + 1)
+  const handleBankCount = (direction: string) => {
+    const increment = direction === 'right' ? 1 : -1
+    setBankCount((prev) => prev + increment)
   }
 
-  const handleDevelopCount = () => {
-    setDevelopCount((prev) => prev + 1)
+  const handleDevelopCount = (direction: string) => {
+    const increment = direction === 'right' ? 1 : -1
+    setDevelopCount((prev) => prev + increment)
   }
 
   const getBankImg = () => {
@@ -39,7 +54,7 @@ export const usePartners = () => {
   }
 
   const getDevImg = () => {
-    return developers[Math.abs(developCount) % 9].img
+    return developers[Math.abs(devCount) % 9].img
   }
 
   const handleMouseEnter = (value: string) => {
@@ -73,13 +88,39 @@ export const usePartners = () => {
     }
   }, [isHovered])
 
+  const bankVariants = {
+    enter: ({ bankDirection, width }: VariantProps) => ({
+      x: bankDirection * width,
+    }),
+    center: { x: 0 },
+    exit: ({ bankDirection, width }: VariantProps) => ({
+      x: bankDirection * -width,
+    }),
+  }
+  const devVariants = {
+    enter: ({ devDirection, width }: VariantProps) => ({
+      x: devDirection * width,
+    }),
+    center: { x: 0 },
+    exit: ({ devDirection, width }: VariantProps) => ({
+      x: devDirection * -width,
+    }),
+  }
+
   return {
+    ref,
+    width,
+    theme,
     bankCount,
-    developCount,
+    developCount: devCount,
+    devDirection,
+    bankDirection,
     handleBankCount,
     handleDevelopCount,
     handleMouseEnter,
     handleMouseLeave,
+    bankVariants,
+    devVariants,
     getBankImg,
     getDevImg,
   }

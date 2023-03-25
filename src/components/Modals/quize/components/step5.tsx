@@ -2,34 +2,46 @@ import Button from '@/components/UI/Button/Button'
 import { Theme } from '@/components/UI/Button/Button.utils'
 import ContactForm from '@/share/ContactForm/ContactForm'
 import { indents } from '@/utils/indents'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StepPattern } from './StepPattern'
 
-const initialState = {
-  name: '',
-  phone: '',
+interface IProps {
+  handleForm: (title: string, value: { [key: string]: string }) => void
+  submitForm: () => void
+  errorMessage?: { name: string; phone: string }
 }
 
-export default function Step5() {
-  const [form] = useState(initialState)
+export default function Step5({
+  handleForm,
+  submitForm,
+  errorMessage,
+}: IProps) {
+  const [contacts, setContacts] = useState({})
   const [isChecked, setIsChecked] = useState(true)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e)
+  const title = '5. Контактные данные'
+
+  const handleChange = (key: string, value: string) => {
+    setContacts({ ...contacts, [key]: value })
   }
 
   const handleClick = () => {
-    console.log(form)
+    submitForm()
   }
 
+  useEffect(() => {
+    handleForm(title, contacts)
+  }, [contacts])
+
   return (
-    <StepPattern title="5. Контактные данные">
+    <StepPattern title={title}>
       <>
         <ContactForm
-          form={form}
+          form={contacts}
           isChecked={isChecked}
           setIsChecked={setIsChecked}
           handleChange={handleChange}
+          errorMessage={errorMessage}
           isQuize
         />
         <Button

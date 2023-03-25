@@ -20,15 +20,21 @@ const initialState = {
 export default function Form() {
   const [form, setForm] = useState(initialState)
   const [isChecked, setIsChecked] = useState(true)
+  const [errorMessage, setErrorMessage] = useState(initialState)
 
   const handleClick = () => {
     if (!isChecked) return
-    console.log(form)
+    if (form.name !== '' && form.phone !== '') return alert(form)
+    const errorText = 'Это поле не может быть пустым'
+    setErrorMessage({
+      name: (form.name === '' && errorText) || '',
+      phone: (form.phone === '' && errorText) || '',
+    })
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    setForm((prev) => ({ ...prev, [e.target.name]: value }))
+  const handleChange = (key: string, value: string) => {
+    setForm((prev) => ({ ...prev, [key]: value }))
+    setErrorMessage((prev) => ({ ...prev, [key]: '' }))
   }
 
   return (
@@ -40,24 +46,25 @@ export default function Form() {
             alt="client"
             width={780}
             height={631}
-            style={{ height: '100%', width: '100%' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </Wrapper>
 
-        <Wrapper isPadding>
-          <Header>
-            <Title>
-              Оставьте заявку на бесплатную консультацию и мы свяжемся с вами в
-              ближайшее время
-            </Title>
-          </Header>
-
+        <Wrapper>
           <FormWrapper>
+            <Header>
+              <Title>
+                Оставьте заявку на бесплатную консультацию и мы свяжемся с вами
+                в ближайшее время
+              </Title>
+            </Header>
+
             <ContactForm
               form={form}
               isChecked={isChecked}
               setIsChecked={setIsChecked}
               handleChange={handleChange}
+              errorMessage={errorMessage}
               isLanding
             />
             <ButtonWrapper>

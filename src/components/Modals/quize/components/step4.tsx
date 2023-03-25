@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DealStatus, cost_range, deal_date } from '../quize.utils'
 import { StepPattern } from './StepPattern'
 
 interface IProps {
   dealStatus: string
+  handleForm: (key: string, value: string[]) => void
 }
 
-export default function Step4({ dealStatus }: IProps) {
+export default function Step4({ dealStatus, handleForm }: IProps) {
   const [state, setState] = useState<string[]>([])
+
   const title =
     dealStatus === DealStatus.buy
       ? '4. Желаемая стоимость'
@@ -25,9 +27,15 @@ export default function Step4({ dealStatus }: IProps) {
     setState(result)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e)
+  const handleChange = (value: string) => {
+    const icon = dealStatus === DealStatus.buy ? 'Р' : 'месяцев'
+    const result = `${value}, ${icon}`
+    setState([result])
   }
+
+  useEffect(() => {
+    handleForm(title, state)
+  }, [state])
 
   return (
     <StepPattern

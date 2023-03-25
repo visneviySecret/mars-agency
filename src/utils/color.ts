@@ -6,4 +6,5 @@ export const Color = {
   BLACK: '#202020',
   CORAL: '#C4542B',
   RED: '#C54003',
+  DARKRED: '#891A01',
 }
