@@ -11,15 +11,14 @@ import {
   Contacts,
   Contact,
   Name,
-  Social,
   Wrapper,
   BottomLine,
-  Icons,
+  SocialWrapper,
 } from './footer.style'
-import { contacts, social } from './footer.utils'
+import { contacts } from './footer.utils'
 import { useTheme } from 'next-themes'
 import Navigation from '@/share/Navigation/Navigation'
-import Link from 'next/link'
+import { Social } from '@/share/Social/Social'
 
 export default function Footer() {
   const { theme, setTheme } = useTheme()
@@ -30,7 +29,7 @@ export default function Footer() {
   }
 
   return (
-    <Container>
+    <Container id="#footer">
       <FooterWrapper>
         <Wrapper>
           <ColumnWrapper>
@@ -39,7 +38,6 @@ export default function Footer() {
               <Navigation />
             </NavigationWrapper>
           </ColumnWrapper>
-
           <Contacts>
             {contacts.map((contact) => (
               <Contact key={contact.name}>
@@ -48,18 +46,12 @@ export default function Footer() {
               </Contact>
             ))}
           </Contacts>
-          <Social>
+          <SocialWrapper>
             <LogoWrapper onClick={handleClick} isDarkMode={isDarkMode}>
               <LogoWhite />
             </LogoWrapper>
-            <Icons>
-              {social.map((item) => (
-                <li key={item.title}>
-                  <Link href={item.url}>{item.img()}</Link>
-                </li>
-              ))}
-            </Icons>
-          </Social>
+            <Social />
+          </SocialWrapper>
         </Wrapper>
         <BottomLine />
       </FooterWrapper>

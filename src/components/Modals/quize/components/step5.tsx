@@ -31,6 +31,7 @@ export default function Step5({
 
   useEffect(() => {
     handleForm(title, contacts)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contacts])
 
   return (

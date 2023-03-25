@@ -35,6 +35,7 @@ export default function Step4({ dealStatus, handleForm }: IProps) {
 
   useEffect(() => {
     handleForm(title, state)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state])
 
   return (

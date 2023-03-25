@@ -38,7 +38,7 @@ export default function Form() {
   }
 
   return (
-    <Section>
+    <Section id="form">
       <Container isFlex={true}>
         <Wrapper>
           <Image

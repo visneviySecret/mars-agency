@@ -47,8 +47,7 @@ export const Name = styled.span`
   flex: 1;
   line-height: 120%;
 `
-
-export const Social = styled.div`
+export const SocialWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: ${indents.indent20};
@@ -62,20 +61,6 @@ export const LogoWrapper = styled.button<{ isDarkMode?: boolean }>`
 
   ${(props) => props.isDarkMode && `filter: invert(1);`}
   transition: filter ${Consts.toggleModDuration};
-`
-
-export const Icons = styled.ul`
-  display: flex;
-  gap: ${indents.indent20};
-  list-style-type: none;
-
-  & > * {
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.5;
-    }
-  }
 `
 
 export const BottomLine = styled.div`

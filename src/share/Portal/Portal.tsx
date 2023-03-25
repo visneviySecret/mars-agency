@@ -8,6 +8,7 @@ interface PortalProps {
 }
 
 const Overlay = styled.div`
+  z-index: 1000;
   position: fixed;
   top: 50%;
   left: 50%;
