@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const Input = styled.input<{ isError?: boolean; isQuize?: boolean }>`
   font-weight: 400;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
   line-height: 140%;
   color: ${({ isQuize }) => getColor(isQuize)};
   width: 100%;

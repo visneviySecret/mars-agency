@@ -17,7 +17,7 @@ interface IProps {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${indents.indent35};
+  gap: clamp(${indents.indent10}, 4.4vw, ${indents.indent35});
 `
 
 function ContactForm({

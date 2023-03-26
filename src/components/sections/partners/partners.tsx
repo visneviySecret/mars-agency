@@ -19,6 +19,7 @@ export default function Partners() {
     handleDevelopCount,
     handleMouseEnter,
     handleMouseLeave,
+    isSmallScreen,
     bankVariants,
     devVariants,
     getBankImg,
@@ -56,6 +57,7 @@ export default function Partners() {
                       objectFit: 'contain',
                       position: 'absolute',
                       display: 'flex',
+                      width: width,
                     }}
                   />
                 </motion.div>
@@ -70,7 +72,7 @@ export default function Partners() {
             <CursorHandler onClick={handleDevelopCount} />
             <Title
               style={{
-                paddingLeft: '20px',
+                paddingLeft: (!isSmallScreen && '20px') || '',
               }}
             >
               Застройщики
@@ -94,6 +96,7 @@ export default function Partners() {
                     style={{
                       objectFit: 'contain',
                       position: 'absolute',
+                      width: width,
                     }}
                   />
                 </motion.li>

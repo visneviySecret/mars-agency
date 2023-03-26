@@ -57,7 +57,11 @@ export default function Hero() {
             src={'/Hero.png'}
             width={1560}
             height={560}
-            style={{ width: '100%', height: 'auto' }}
+            style={{
+              width: '100%',
+              objectFit: 'cover',
+              height: 'clamp(375px, 50vw, 560px)',
+            }}
           />
         </Container>
       </Section>

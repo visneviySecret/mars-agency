@@ -1,10 +1,12 @@
 import Button from '@/components/UI/Button/Button'
+import Toggler from '@/components/UI/Toggler/Toggler'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
 import Link from 'next/link'
 import React from 'react'
 import {
   ButtonWrapper,
+  FlexWrapper,
   NavWrapper,
   SocialWrapper,
   Wrapper,
@@ -24,17 +26,21 @@ function BurgerMenuModal({ onClose }: { onClose: () => void }) {
         <Navigation onClose={onClose} />
       </NavWrapper>
 
-      <ButtonWrapper>
-        <Link href={'#form'}>
-          <Button onClick={handleClick} style={customButton}>
-            Оставить заявку
-          </Button>
-        </Link>
-      </ButtonWrapper>
+      <FlexWrapper>
+        <ButtonWrapper />
+        <ButtonWrapper>
+          <Link href={'#form'}>
+            <Button onClick={handleClick} style={customButton}>
+              Оставить заявку
+            </Button>
+          </Link>
+        </ButtonWrapper>
 
-      <SocialWrapper>
-        <Social />
-      </SocialWrapper>
+        <SocialWrapper>
+          <Social />
+          <Toggler />
+        </SocialWrapper>
+      </FlexWrapper>
     </Wrapper>
   )
 }

@@ -1,9 +1,10 @@
+import { breakPoints } from '@/utils/breakPoints'
 import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: ${indents.indent30};
+  margin-bottom: clamp(${indents.indent15}, 4.5vw, ${indents.indent30});
   text-transform: uppercase;
 `
 
@@ -12,28 +13,46 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   margin-bottom: ${indents.indent10};
+
+  @media (max-width: ${breakPoints.Tablet}) {
+    margin-bottom: ${indents.indent10};
+    display: block;
+  }
 `
 
 export const Title = styled.h2`
   flex: 1;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 140%;
+
+  @media (max-width: ${breakPoints.Touch}) {
+    font-size: 11px;
+  }
 `
 
 export const Content = styled.p`
   flex: 2;
   line-height: 110%;
   text-align: justify;
-  font-size: 34px;
+  font-size: clamp(18px, 3vw, 53px);
   line-height: 130%;
 `
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
 
   gap: clamp(0.5rem, 2vw, ${indents.indent10});
+
+  @media (max-width: ${breakPoints.Tablet}) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  @media (max-width: ${breakPoints.Touch}) {
+    column-gap: 10px;
+  }
 `
 
 export const Item = styled.li`
@@ -42,14 +61,18 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: flex-start;
 
-  height: 409px;
-  padding: ${indents.indent18};
+  height: clamp(145px, 30vw, 409px);
+  padding: clamp(10px, 2.5vw, ${indents.indent18});
   background-color: ${Color.LIGHT};
+`
+
+export const IconWrapper = styled.div`
+  width: clamp(20px, 6.4vw, 75px);
 `
 
 export const ItemTitle = styled.span`
   font-weight: 800;
-  font-size: 28px;
+  font-size: clamp(12px, 2vw, 28px);
   line-height: 100%;
 `
 

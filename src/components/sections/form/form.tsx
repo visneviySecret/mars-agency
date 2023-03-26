@@ -11,6 +11,8 @@ import { Container } from '@/components/UI/Container/container.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
 import ContactForm from '@/share/ContactForm/ContactForm'
+import { breakPoints } from '@/utils/breakPoints'
+import { useMediaQuery } from '@/hooks/useMedia'
 
 const initialState = {
   name: '',
@@ -18,6 +20,7 @@ const initialState = {
 }
 
 export default function Form() {
+  const isSmallScreen = useMediaQuery(`(max-width: ${breakPoints.Tablet})`)
   const [form, setForm] = useState(initialState)
   const [isChecked, setIsChecked] = useState(true)
   const [errorMessage, setErrorMessage] = useState(initialState)
@@ -39,7 +42,7 @@ export default function Form() {
 
   return (
     <Section id="form">
-      <Container isFlex={true}>
+      <Container isFlex={!isSmallScreen}>
         <Wrapper>
           <Image
             src={'/picture/form.png'}

@@ -17,12 +17,16 @@ import { Container } from '@/components/UI/Container/container.style'
 import { list } from './steps.utils'
 import InvisButton from '@/features/easterEgg/components/InvisButton'
 import Image from 'next/image'
+import { useMediaQuery } from '@/hooks/useMedia'
+import { breakPoints } from '@/utils/breakPoints'
 
 export default function Steps() {
+  const isLargeScreen = useMediaQuery(`(max-width: ${breakPoints.Large})`)
+
   return (
     <Section>
       <Wrapper>
-        <Container>
+        <Container isDeactive={isLargeScreen}>
           <Header>
             <Title>
               <InvisButton value={'Э'}>Э</InvisButton>
@@ -46,10 +50,9 @@ export default function Steps() {
                   height={415}
                   alt="interier"
                   style={{
-                    margin: '20px 20px 20px',
                     marginLeft: 'auto',
                     maxWidth: '100%',
-                    objectFit: 'contain',
+                    objectFit: 'cover',
                   }}
                 />
               </ImageWrapper>

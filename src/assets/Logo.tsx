@@ -35,10 +35,10 @@ export const Logo = () => {
     </svg>
   )
 }
-export const LogoWhite = () => {
+export const LogoWhite = ({ width }: { width: number }) => {
   return (
     <svg
-      width="150"
+      width={width}
       height="30"
       viewBox="0 0 150 30"
       fill="none"

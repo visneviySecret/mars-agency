@@ -15,6 +15,7 @@ export const List = styled.nav`
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  font-size: clamp(10px, 1.9vw, 16px);
 `
 
 export const Item = styled.li<{ onClick?: () => void }>`

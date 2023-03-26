@@ -61,6 +61,7 @@ export const GlobalStyle = createGlobalStyle`
       font-family: ${NeueMachina.style.fontFamily}, 'Inter';
       font-style: 400;
       line-height: 140%;
+      font-size: clamp(12px, 2.5vw, 16px);
       color: ${Color.GREY}
     }
     

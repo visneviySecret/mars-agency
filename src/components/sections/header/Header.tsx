@@ -3,9 +3,9 @@ import {
   Section,
   LogoWrapper,
   Wrapper,
-  ButtonWrapper,
   MenuWrapper,
   NavigationWrapper,
+  TogglerAndButtonWrapper,
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
@@ -18,16 +18,13 @@ import { BurgerMenu } from '@/components/UI/BurgerMenu/BurgerMenu'
 import { useMediaQuery } from '@/hooks/useMedia'
 import { breakPoints } from '@/utils/breakPoints'
 import { blockScroll, unlockScroll } from '../hero/utils'
+import Toggler from '@/components/UI/Toggler/Toggler'
 
 export default function Header() {
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
   const isSmallScreen = useMediaQuery(`(max-width: ${breakPoints.Tablet})`)
   const [isOpenMenu, setIsOpeMenu] = useState(false)
   const isDarkMode = theme === 'dark'
-
-  const handleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
 
   const handleMenu = () => {
     setIsOpeMenu((prev) => !prev)
@@ -52,7 +49,7 @@ export default function Header() {
     <Section>
       <Container>
         <Wrapper>
-          <LogoWrapper isDarkMode={isDarkMode} onClick={handleTheme}>
+          <LogoWrapper isDarkMode={isDarkMode}>
             <Logo />
           </LogoWrapper>
 
@@ -61,11 +58,12 @@ export default function Header() {
               <Navigation />
             </NavigationWrapper>
 
-            <Link href={'#form'}>
-              <ButtonWrapper>
+            <TogglerAndButtonWrapper>
+              <Toggler />
+              <Link href={'#form'}>
                 <Button onClick={handleEmptyClick}>Обратный звонок</Button>
-              </ButtonWrapper>
-            </Link>
+              </Link>
+            </TogglerAndButtonWrapper>
           </MenuWrapper>
           <BurgerMenu
             onClick={handleMenu}

@@ -19,8 +19,10 @@ import { contacts } from './footer.utils'
 import { useTheme } from 'next-themes'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
+import useMeasure from 'react-use-measure'
 
 export default function Footer() {
+  const [ref, { width }] = useMeasure()
   const { theme, setTheme } = useTheme()
   const isDarkMode = theme === 'dark'
 
@@ -47,8 +49,12 @@ export default function Footer() {
             ))}
           </Contacts>
           <SocialWrapper>
-            <LogoWrapper onClick={handleClick} isDarkMode={isDarkMode}>
-              <LogoWhite />
+            <LogoWrapper
+              onClick={handleClick}
+              isDarkMode={isDarkMode}
+              ref={ref}
+            >
+              <LogoWhite width={width} />
             </LogoWrapper>
             <Social />
           </SocialWrapper>

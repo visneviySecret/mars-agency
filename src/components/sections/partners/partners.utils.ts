@@ -2,6 +2,8 @@ import { usePrevious } from '@/hooks/usePrevious'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import useMeasure from 'react-use-measure'
+import { useMediaQuery } from '@/hooks/useMedia'
+import { breakPoints } from '@/utils/breakPoints'
 
 interface VariantProps {
   [key: string]: number
@@ -30,6 +32,7 @@ const developers = [
 
 export const usePartners = () => {
   const [ref, { width }] = useMeasure()
+  const isSmallScreen = useMediaQuery(`(max-width: ${breakPoints.Tablet})`)
   const [bankCount, setBankCount] = useState(0)
   const [devCount, setDevelopCount] = useState(0)
   const prevBankCount = usePrevious(bankCount)
@@ -119,6 +122,7 @@ export const usePartners = () => {
     handleDevelopCount,
     handleMouseEnter,
     handleMouseLeave,
+    isSmallScreen,
     bankVariants,
     devVariants,
     getBankImg,

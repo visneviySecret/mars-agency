@@ -15,7 +15,6 @@ export const Section = styled.section`
 export const Wrapper = styled.nav`
   position: relative;
   display: flex;
-  align-items: top;
 `
 
 export const LogoWrapper = styled.div<{ isDarkMode?: boolean }>`
@@ -37,6 +36,8 @@ export const NavigationWrapper = styled.div`
   flex: 1;
 `
 
-export const ButtonWrapper = styled.div`
+export const TogglerAndButtonWrapper = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: space-between;
 `

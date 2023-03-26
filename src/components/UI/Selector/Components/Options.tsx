@@ -1,6 +1,7 @@
 import React from 'react'
-import { CheckArrowBlack } from '@/assets/Icons/checkArrow'
+import { CheckArrow } from '@/assets/Icons/checkArrow'
 import { Option, OptionsList } from './Options.style'
+import { Color } from '@/utils/color'
 
 interface OptionsProps {
   options: Array<string>
@@ -19,7 +20,7 @@ function Options({ options, selected, handleOption }: OptionsProps) {
             onClick={() => handleOption(option)}
             isActive={isActiveOption}
           >
-            {isActiveOption && <CheckArrowBlack />}
+            {isActiveOption && <CheckArrow color={Color.GREY} />}
             <span>{option}</span>
           </Option>
         )
