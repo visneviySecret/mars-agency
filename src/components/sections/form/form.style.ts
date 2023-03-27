@@ -16,12 +16,15 @@ export const Wrapper = styled.div`
 `
 
 export const FormWrapper = styled.div`
-  padding-inline: ${indents.indent20};
+  padding-inline: clamp(${indents.indent10}, 2.4vw, ${indents.indent20});
 `
 
 export const Header = styled.header`
-  padding-top: clamp(${indents.indent10}, 4.5vw, ${indents.indent40});
-  margin-bottom: clamp(${indents.indent20}, 11vw, ${indents.indent140});
+  padding-top: clamp(${indents.indent10}, 2vw, ${indents.indent40});
+  margin-bottom: ${indents.indent140};
+  @media (max-width: ${breakPoints.Tablet}) {
+    margin-bottom: clamp(${indents.indent20}, 10vw, ${indents.indent80});
+  }
 `
 
 export const Title = styled.h2`
@@ -32,10 +35,14 @@ export const Title = styled.h2`
 `
 
 export const ButtonWrapper = styled.div`
-  margin-top: ${indents.indent40};
+  margin-top: clamp(${indents.indent20}, 4.5vw, ${indents.indent40});
+  margin-top: 30px;
   margin-bottom: clamp(${indents.indent20}, 4.5vw, ${indents.indent30});
 
   & > * {
     width: 100%;
+  }
+  @media (max-width: ${breakPoints.Tablet}) {
+    margin-bottom: 0;
   }
 `

@@ -28,6 +28,10 @@ export const Title = styled.h2`
   font-size: 14px;
   line-height: 140%;
 
+  @media (max-width: ${breakPoints.Tablet}) {
+    padding-bottom: max(5px, 1.5vw);
+  }
+
   @media (max-width: ${breakPoints.Touch}) {
     font-size: 11px;
   }

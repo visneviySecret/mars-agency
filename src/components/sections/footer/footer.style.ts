@@ -47,6 +47,10 @@ export const Title = styled.span`
   flex: 1;
   font-size: 14px;
   text-transform: uppercase;
+
+  @media (max-width: ${breakPoints.Tablet}) {
+    font-size: max(11px, 2.2vw);
+  }
 `
 
 export const Name = styled.span`

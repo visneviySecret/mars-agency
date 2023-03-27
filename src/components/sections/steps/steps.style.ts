@@ -46,6 +46,7 @@ export const Content = styled.p`
 
   @media (max-width: ${breakPoints.Tablet}) {
     padding-left: 0;
+    margin-top: max(5px, 1.5vw);
   }
 `
 
@@ -88,7 +89,7 @@ export const CardContent = styled.div`
 `
 
 export const CardTitle = styled.h3`
-  font-size: clamp(18px, 5.5vw, 53px);
+  font-size: clamp(18px, 5vw, 53px);
   line-height: 100%;
   font-weight: 400;
   text-transform: uppercase;

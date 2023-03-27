@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const Input = styled.input<{ isError?: boolean; isQuize?: boolean }>`
   font-weight: 400;
-  font-size: clamp(12px, 1.5vw, 14px);
+  font-size: clamp(10px, 1.9vw, 14px);
   line-height: 140%;
   color: ${({ isQuize }) => getColor(isQuize)};
   width: 100%;
@@ -44,8 +44,8 @@ export const Input = styled.input<{ isError?: boolean; isQuize?: boolean }>`
 export const Error = styled.span<{ isQuize?: boolean }>`
   position: absolute;
   left: 0;
-  bottom: -25px;
-  font-size: 12px;
+  bottom: max(-4.3vw, -25px);
+  font-size: clamp(10px, 1.5vw, 12px);
   line-height: 140%;
   letter-spacing: 1px;
   text-transform: uppercase;

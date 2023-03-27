@@ -47,6 +47,10 @@ export const Title = styled.h2`
   line-height: 140%;
   text-transform: uppercase;
 
+  @media (max-width: ${breakPoints.Tablet}) {
+    padding-bottom: max(5px, 1.5vw);
+  }
+
   @media (max-width: ${breakPoints.Touch}) {
     font-size: 11px;
   }

@@ -7,6 +7,7 @@ import {
   lightThemeHover,
   Theme,
 } from './Button.utils'
+import { breakPoints } from '@/utils/breakPoints'
 
 export const ButtonComponent = styled.button<{
   appTheme?: string
@@ -22,7 +23,8 @@ export const ButtonComponent = styled.button<{
   cursor: pointer;
 
   padding-inline: 40px;
-  padding-block: ${({ isBig }) => (isBig ? '18px 21px' : '14px 12px')};
+  padding-block: 14px 12px;
+  padding-block: ${({ isBig }) => isBig && '21px 18px'};
   border: none;
   border-radius: 25px;
 
@@ -36,6 +38,13 @@ export const ButtonComponent = styled.button<{
       appTheme === 'dark' ? darkThemeHover : lightThemeHover};
     background-color: transparent;
     border: 1px solid;
-    padding-block: ${({ isBig }) => isBig && '8px 11px'};
+    padding-block: ${({ isBig }) => isBig && '20px 17px'};
+  }
+
+  @media (max-width: ${breakPoints.Touch}) {
+    padding-block: ${({ isBig }) => isBig && '14.5px 11.5px'};
+    &:hover {
+      padding-block: ${({ isBig }) => isBig && '13.5px 10.5px'};
+    }
   }
 `
