@@ -1,16 +1,19 @@
 import { Color } from '@/utils/color'
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
-  z-index: 1000;
-  position: absolute;
+  z-index: 500;
+  position: fixed;
   width: 100%;
   height: 100vh;
-  bottom: 0;
-  translate: 0% 100%;
+  top: -100vh;
+  left: 5px;
+  translate: ${({ isActive }) => isActive && '0% 108%'};
   background-color: ${Color.WHITE};
+  padding: 20px;
+  transition: translate 0.5s ease-in-out;
 `
 
 export const NavWrapper = styled.div`

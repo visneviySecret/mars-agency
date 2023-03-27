@@ -28,8 +28,10 @@ export default function Header() {
 
   const handleMenu = () => {
     setIsOpeMenu((prev) => !prev)
-    if (isOpenMenu) blockScroll()
-    unlockScroll()
+    blockScroll()
+    if (isOpenMenu) {
+      return unlockScroll()
+    }
   }
 
   const handleClose = () => {
@@ -70,7 +72,7 @@ export default function Header() {
             theme={theme}
             isActive={isOpenMenu}
           />
-          {isOpenMenu && <BurgerMenuModal onClose={handleClose} />}
+          <BurgerMenuModal onClose={handleClose} isActive={isOpenMenu} />
         </Wrapper>
       </Container>
     </Section>

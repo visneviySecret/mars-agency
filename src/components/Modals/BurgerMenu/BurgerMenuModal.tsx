@@ -10,18 +10,24 @@ import {
   NavWrapper,
   SocialWrapper,
   Wrapper,
-} from './BurgerMenu.style'
+} from './BurgerMenuModal.style'
 
 const customButton = {
   fontSize: 'max(10px, 1.9vw)',
 }
 
-function BurgerMenuModal({ onClose }: { onClose: () => void }) {
+function BurgerMenuModal({
+  onClose,
+  isActive,
+}: {
+  onClose: () => void
+  isActive: boolean
+}) {
   const handleClick = () => {
     onClose()
   }
   return (
-    <Wrapper>
+    <Wrapper isActive={isActive}>
       <NavWrapper>
         <Navigation onClose={onClose} />
       </NavWrapper>
