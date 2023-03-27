@@ -31,8 +31,8 @@ export default function Hero() {
 
   return (
     <>
-      <Section>
-        <Container>
+      <Container>
+        <Section>
           <Title>Агентство недвижимости с космическим сервисом</Title>
           <ButtonsWrapper>
             <Button
@@ -63,9 +63,13 @@ export default function Hero() {
               height: 'clamp(375px, 50vw, 560px)',
             }}
           />
-        </Container>
-      </Section>
-      {isModalOpen && <ModalQuize onClose={onClose} dealStatus={dealStatus} />}
+        </Section>
+      </Container>
+      <ModalQuize
+        isActive={isModalOpen}
+        onClose={onClose}
+        dealStatus={dealStatus}
+      />
     </>
   )
 }

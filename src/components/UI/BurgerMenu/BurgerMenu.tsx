@@ -40,4 +40,13 @@ export const BurgerMenu = styled.span<{ isActive: boolean }>`
   @media (max-width: ${breakPoints.Tablet}) {
     display: block;
   }
+
+  @media (max-width: ${breakPoints.Touch}) {
+    &::after,
+    &::before,
+    & {
+      width: 14px;
+      height: 1.33px;
+    }
+  }
 `

@@ -25,29 +25,38 @@ export const NeueMachina = localFont({
 })
 
 export const GlobalStyle = createGlobalStyle`
+    html::-webkit-scrollbar {
+      width: 0.8vw;
+    }
+    html::-webkit-scrollbar-thumb {
+      background-color: ${Color.GREY};
+    }
+    html::-webkit-scrollbar-track {
+      background-color: ${Color.LIGHT};
+    }
+
     body, html {
       color: ${Color.GREY};
       background: ${Color.WHITE};
       border-color: ${Color.GREY};
       transition-property: background-color, color;
       transition-duration: ${Consts.toggleModDuration} ;
+
+      scrollbar-width: normal;
+      scrollbar-color: ${Color.GREY} ${Color.LIGHT};
     }
     
     [data-theme='dark'],
     [data-theme='dark'] body {
       color: ${Color.WHITE};
       background: ${Color.GREY};
-      border-color: ${Color.WHITE}
+      border-color: ${Color.WHITE};
+      
+      scrollbar-color: ${Color.LIGHT} ${Color.GREY};
     }
 
     :root {
       --link-hover: #909090;
-    }
-    
-    @media (prefers-color-scheme: light) {
-      :root {
-        --link-hover: #909090;
-      }
     }
     
     * {

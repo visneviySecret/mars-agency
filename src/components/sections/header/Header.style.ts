@@ -1,5 +1,5 @@
 import { breakPoints } from '@/utils/breakPoints'
-import { Consts } from '@/utils/consts'
+import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
@@ -17,11 +17,12 @@ export const Wrapper = styled.nav`
   display: flex;
 `
 
-export const LogoWrapper = styled.div<{ isDarkMode?: boolean }>`
+export const LogoWrapper = styled.div`
   flex: 1;
-
-  ${(props) => props.isDarkMode && `filter: invert(1);`}
-  transition: filter ${Consts.toggleModDuration};
+`
+export const LogoWidthWrapper = styled.div`
+  width: clamp(${indents.indent60}, 15.5vw, ${indents.indent150});
+  height: clamp(${indents.indent12}, 3.3vw, ${indents.indent30});
 `
 
 export const MenuWrapper = styled.div`

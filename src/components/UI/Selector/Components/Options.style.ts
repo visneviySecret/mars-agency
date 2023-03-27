@@ -2,23 +2,37 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
-export const OptionsList = styled.ul`
+export const OptionsWrapper = styled.div`
   z-index: 100;
-  position: absolute;
   top: 50px;
+  position: absolute;
+  padding: ${indents.indent20};
+  border: 1px solid ${Color.GREY};
+  border-radius: 30px;
+  background: ${Color.WHITE};
+  width: 100%;
+`
+
+export const OptionsList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: ${indents.indent10};
 
-  background: ${Color.WHITE};
-  border: 1px solid ${Color.GREY};
-  border-radius: 30px;
-  padding: ${indents.indent20};
   overflow-y: scroll;
 
   max-height: 240px;
-  width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 0.3vw;
+    height: 2em;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${Color.GREY};
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${Color.LIGHT};
+  }
 `
 
 export const Option = styled.li<{ isActive: boolean }>`

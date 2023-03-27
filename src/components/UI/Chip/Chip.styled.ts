@@ -2,19 +2,20 @@ import styled from 'styled-components'
 import { Consts } from '@/utils/consts'
 import { NeueMachina } from '@/styles/GlobalStyles'
 import { indents } from '@/utils/indents'
-import { CrossIcon } from '../Cross/Cross'
 import { getThemeColor, Theme } from '@/utils/helpers/getThemeColors'
+import { breakPoints } from '@/utils/breakPoints'
 
 export const ChipComponent = styled.button<{
   theme: Theme
   isActive?: boolean
+  order?: number
 }>`
   display: flex;
   align-items: center;
   gap: ${indents.indent10};
   max-height: 44px;
   width: auto;
-  font-size: 14px;
+  font-size: clamp(12px, 2.19vw, 16px);
   line-height: 140%;
   font-family: ${NeueMachina.style.fontFamily};
   cursor: pointer;
@@ -31,9 +32,12 @@ export const ChipComponent = styled.button<{
 
   &:hover {
     opacity: 0.5;
+  }
 
-    ${CrossIcon} {
-      opacity: 0.5;
-    }
+  @media (max-width: ${breakPoints.Tablet}) {
+    order: ${({ order }) => order};
+  }
+  @media (max-width: ${breakPoints.Touch}) {
+    order: 0;
   }
 `

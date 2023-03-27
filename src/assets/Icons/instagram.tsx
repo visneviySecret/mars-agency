@@ -1,9 +1,11 @@
+import { Color } from '@/utils/color'
+
 export const Instagram = ({
   width,
-  color,
+  color = Color.WHITE,
 }: {
   width: number
-  color: string
+  color?: string
 }) => {
   return (
     <svg

@@ -76,7 +76,6 @@ export const ImageWrapper = styled.div`
   display: flex;
   border-right: 1px solid ${Color.GREY};
   padding: min(1vw, 20px) min(1vw, 20px) min(1vw, 20px);
-
   @media (max-width: ${breakPoints.Tablet}) {
     border: none;
     padding: 0; //необходимо, чтобы обнулить прошлый стиль
@@ -89,13 +88,11 @@ export const CardContent = styled.div`
 `
 
 export const CardTitle = styled.h3`
-  font-size: clamp(18px, 5vw, 53px);
+  font-size: clamp(18px, 4.9vw, 53px);
   line-height: 100%;
   font-weight: 400;
   text-transform: uppercase;
   padding-left: min(1vw, 20px);
-  padding-top: clamp(14px, 3.7vw, 47px);
-  padding-bottom: clamp(12px, 3.3vw, 45px);
   padding-block: min(1.3vw, 24px) min(1vw, 20px);
   border-bottom: 1px solid ${Color.GREY};
 
@@ -110,7 +107,7 @@ export const DesciptionList = styled.ul`
 `
 
 export const DesciptionItem = styled.li`
-  font-size: clamp(14px, 3.13vw, 25px);
+  font-size: clamp(14px, 2.5vw, 25px);
   line-height: 130%;
   padding-left: min(1vw, 20px);
   padding-block: clamp(${indents.indent10}, 2.3vw, ${indents.indent20});

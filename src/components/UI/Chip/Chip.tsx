@@ -7,12 +7,14 @@ interface IProps {
   onClick: () => void
   children: ReactNode
   isActiveNode?: boolean
+  order?: number
 }
 
 export default function Chip({
   onClick,
   children,
   isActiveNode = false,
+  order,
 }: IProps) {
   const { theme } = useTheme()
   const currentTheme = theme
@@ -29,6 +31,7 @@ export default function Chip({
         theme={currentTheme}
         onClick={handleClick}
         isActive={isActive}
+        order={order}
       >
         {children}
         {isActive && <Cross />}

@@ -12,8 +12,11 @@ export const CrossIcon = styled.span<{
   isLightBackground?: boolean
 }>`
   position: relative;
-  width: ${({ size }) => (size === CrossSize.small ? '8px' : '28px')};
-  height: ${({ size }) => (size === CrossSize.small ? '8px' : '28px')};
+  width: ${({ size }) =>
+    size === CrossSize.small ? '8px' : 'clamp(12px, 2.5vw, 28px)'};
+  height: ${({ size }) =>
+    size === CrossSize.small ? '8px' : 'clamp(12px, 2.5vw, 28px)'};
+  height: 16px;
 
   &::after,
   &::before {
@@ -21,8 +24,10 @@ export const CrossIcon = styled.span<{
     position: absolute;
     background-color: ${({ isLightBackground }) =>
       isLightBackground ? Color.DARKGREY : Color.WHITE};
-    width: ${({ size }) => (size === CrossSize.small ? '1.13px' : '3.96px')};
-    height: ${({ size }) => (size === CrossSize.small ? '10.8px' : '35.64px')};
+    width: ${({ size }) =>
+      size === CrossSize.small ? '1.13px' : 'clamp(1.5px, 0.5vw, 3.96px)'};
+    height: ${({ size }) =>
+      size === CrossSize.small ? '10.8px' : 'clamp(15.5px, 3.5vw,35.64px)'};
     translate: 350%;
   }
 

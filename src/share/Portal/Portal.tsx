@@ -5,21 +5,35 @@ import styled from 'styled-components'
 
 interface PortalProps {
   children: ReactNode
+  isActive: boolean
 }
 
-const Overlay = styled.div`
+const Overlay = styled.div<{ isActive: boolean }>`
   z-index: 1000;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+  top: ${({ isActive }) => (isActive ? '50%' : '100%')};
+  left: ${({ isActive }) => (isActive ? '50%' : '100%')};
+  translate: ${({ isActive }) => isActive && '-50% -50%'};
   background-color: ${Color.WHITE};
   width: 100vw;
   height: 100vh;
   overflow: auto;
+
+  transition: translate 0.3s;
+
+  &::-webkit-scrollbar {
+    width: 0.8vw;
+    height: 2em;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${Color.GREY};
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${Color.LIGHT};
+  }
 `
 
-function Portal({ children }: PortalProps) {
+function Portal({ isActive, children }: PortalProps) {
   const ref = useRef<Element | null>(null)
   const [mounted, setMounted] = useState(false)
 
@@ -30,7 +44,10 @@ function Portal({ children }: PortalProps) {
 
   if (!mounted || !ref.current) return null
 
-  return createPortal(<Overlay>{children}</Overlay>, ref.current)
+  return createPortal(
+    <Overlay isActive={isActive}>{children}</Overlay>,
+    ref.current,
+  )
 }
 
 export default Portal

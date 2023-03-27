@@ -52,6 +52,7 @@ export default function Steps() {
                   style={{
                     marginLeft: 'auto',
                     maxWidth: '100%',
+                    maxHeight: 'min(70vw, 415px)',
                     objectFit: 'cover',
                   }}
                 />

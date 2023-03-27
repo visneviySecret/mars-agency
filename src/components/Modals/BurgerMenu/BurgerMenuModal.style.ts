@@ -1,23 +1,22 @@
-import { Color } from '@/utils/color'
 import styled from 'styled-components'
 
-export const Wrapper = styled.div<{ isActive: boolean }>`
+export const Wrapper = styled.div<{ isActive: boolean; color: string }>`
   display: flex;
   flex-direction: column;
-  z-index: 500;
+  z-index: 1000;
   position: fixed;
   width: 100%;
   height: 100vh;
-  top: -100vh;
-  left: 5px;
-  translate: ${({ isActive }) => isActive && '0% 108%'};
-  background-color: ${Color.WHITE};
+  bottom: -50px;
+  right: -100%;
+  translate: ${({ isActive }) => isActive && '-100% 0%'};
+  background-color: ${({ color }) => color};
   padding: 20px;
-  transition: translate 0.5s ease-in-out;
+  transition: translate 0.3s, background-color 0.3s;
 `
 
 export const NavWrapper = styled.div`
-  padding-block: 80px 0px;
+  padding-top: min(80px, 13vw);
 `
 
 export const FlexWrapper = styled.div`
@@ -39,5 +38,4 @@ export const SocialWrapper = styled.div`
   flex: 1;
   display: flex;
   justify-content: space-between;
-  align-self: flex-end;
 `

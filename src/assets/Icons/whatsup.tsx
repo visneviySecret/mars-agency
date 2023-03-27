@@ -1,4 +1,12 @@
-export const Whatsup = ({ width, color }: { width: number; color: string }) => {
+import { Color } from '@/utils/color'
+
+export const Whatsup = ({
+  width,
+  color = Color.WHITE,
+}: {
+  width: number
+  color?: string
+}) => {
   return (
     <svg
       width={width}

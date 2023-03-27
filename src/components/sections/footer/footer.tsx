@@ -1,4 +1,4 @@
-import { LogoWhite } from '@/assets/Logo'
+import { Logo } from '@/assets/Logo'
 import { Container } from '@/components/UI/Container/container.style'
 import React from 'react'
 import {
@@ -16,22 +16,15 @@ import {
   SocialWrapper,
 } from './footer.style'
 import { contacts } from './footer.utils'
-import { useTheme } from 'next-themes'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
 import useMeasure from 'react-use-measure'
 
 export default function Footer() {
-  const [ref, { width }] = useMeasure()
-  const { theme, setTheme } = useTheme()
-  const isDarkMode = theme === 'dark'
-
-  const handleClick = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
+  const [ref, { width, height }] = useMeasure()
 
   return (
-    <Container id="#footer">
+    <Container id="footer">
       <FooterWrapper>
         <Wrapper>
           <ColumnWrapper>
@@ -49,12 +42,8 @@ export default function Footer() {
             ))}
           </Contacts>
           <SocialWrapper>
-            <LogoWrapper
-              onClick={handleClick}
-              isDarkMode={isDarkMode}
-              ref={ref}
-            >
-              <LogoWhite width={width} />
+            <LogoWrapper ref={ref}>
+              <Logo width={width} height={height} />
             </LogoWrapper>
             <Social />
           </SocialWrapper>

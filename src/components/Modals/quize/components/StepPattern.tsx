@@ -45,15 +45,24 @@ function StepPattern({
         )}
         <List>
           {handleClick &&
-            nodes?.map((item) => (
-              <Chip
-                key={item}
-                onClick={() => handleClick(item)}
-                isActiveNode={isActiveNode}
-              >
-                {item}
-              </Chip>
-            ))}
+            nodes?.map((item, index) => {
+              const newOrder =
+                (item === 'Планировка' && 7) ||
+                (item === 'Объекты без ремонта' && 4) ||
+                (item === 'Новостройки в эксплуатации' && 5) ||
+                (item === 'Объекты стоимостью ниже рыночной' && 3) ||
+                index
+              return (
+                <Chip
+                  key={item}
+                  onClick={() => handleClick(item)}
+                  isActiveNode={isActiveNode}
+                  order={newOrder}
+                >
+                  {item}
+                </Chip>
+              )
+            })}
         </List>
         {textFieldValue && handleChange && (
           <TextField

@@ -20,6 +20,7 @@ import Step5 from './components/step5'
 import * as _ from 'lodash'
 
 interface ModadProps {
+  isActive: boolean
   onClose: () => void
   dealStatus: DealStatus
 }
@@ -27,7 +28,7 @@ export interface IField {
   [key: string]: string[] | { [key: string]: string }
 }
 
-function ModalQuize({ onClose, dealStatus }: ModadProps) {
+function ModalQuize({ isActive, onClose, dealStatus }: ModadProps) {
   const [errorMessage, setErrorMessage] = useState({
     name: '',
     phone: '',
@@ -88,7 +89,7 @@ function ModalQuize({ onClose, dealStatus }: ModadProps) {
   }
 
   return (
-    <Portal>
+    <Portal isActive={isActive}>
       <Section>
         <ClosePanel onClick={handleClose}>
           <CrossIcon size={CrossSize.big} isLightBackground />

@@ -6,16 +6,13 @@ import { Instagram } from '@/assets/Icons/instagram'
 import { Telegram } from '@/assets/Icons/telegram'
 import { Whatsup } from '@/assets/Icons/whatsup'
 import useMeasure from 'react-use-measure'
-import { Theme } from '@/components/UI/Button/Button.utils'
-import { Color } from '@/utils/color'
-import { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
 
 export const Icons = styled.ul`
   display: flex;
   gap: ${indents.indent20};
   list-style-type: none;
   align-items: flex-end;
+  max-height: 30px;
 
   & > * {
     cursor: pointer;
@@ -30,14 +27,8 @@ export const IconWrapper = styled.div`
   width: clamp(${indents.indent15}, 3.2vw, ${indents.indent25});
 `
 
-function Social() {
+function Social({ color }: { color?: string }) {
   const [ref, { width }] = useMeasure()
-  const { theme } = useTheme()
-  const [color, setColor] = useState(Color.WHITE)
-
-  useEffect(() => {
-    setColor(theme === Theme.light ? Color.WHITE : Color.GREY)
-  }, [theme])
 
   return (
     <Icons>

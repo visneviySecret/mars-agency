@@ -2,6 +2,7 @@ import Button from '@/components/UI/Button/Button'
 import Toggler from '@/components/UI/Toggler/Toggler'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
+import { Color } from '@/utils/color'
 import Link from 'next/link'
 import React from 'react'
 import {
@@ -12,22 +13,25 @@ import {
   Wrapper,
 } from './BurgerMenuModal.style'
 
+interface IProps {
+  onClose: () => void
+  isActive: boolean
+  theme?: string
+}
+
 const customButton = {
   fontSize: 'max(10px, 1.9vw)',
 }
 
-function BurgerMenuModal({
-  onClose,
-  isActive,
-}: {
-  onClose: () => void
-  isActive: boolean
-}) {
+function BurgerMenuModal({ onClose, isActive, theme }: IProps) {
+  const bgColor = theme === 'light' ? Color.WHITE : Color.GREY
+  const iconColor = theme === 'light' ? Color.GREY : Color.WHITE
   const handleClick = () => {
     onClose()
   }
+
   return (
-    <Wrapper isActive={isActive}>
+    <Wrapper isActive={isActive} color={bgColor}>
       <NavWrapper>
         <Navigation onClose={onClose} />
       </NavWrapper>
@@ -43,7 +47,7 @@ function BurgerMenuModal({
         </ButtonWrapper>
 
         <SocialWrapper>
-          <Social />
+          <Social color={iconColor} />
           <Toggler />
         </SocialWrapper>
       </FlexWrapper>

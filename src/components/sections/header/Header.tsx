@@ -6,6 +6,7 @@ import {
   MenuWrapper,
   NavigationWrapper,
   TogglerAndButtonWrapper,
+  LogoWidthWrapper,
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { useTheme } from 'next-themes'
@@ -19,12 +20,15 @@ import { useMediaQuery } from '@/hooks/useMedia'
 import { breakPoints } from '@/utils/breakPoints'
 import { blockScroll, unlockScroll } from '../hero/utils'
 import Toggler from '@/components/UI/Toggler/Toggler'
+import useMeasure from 'react-use-measure'
+import { Color } from '@/utils/color'
 
 export default function Header() {
+  const [ref, { width, height }] = useMeasure()
   const { theme } = useTheme()
   const isSmallScreen = useMediaQuery(`(max-width: ${breakPoints.Tablet})`)
   const [isOpenMenu, setIsOpeMenu] = useState(false)
-  const isDarkMode = theme === 'dark'
+  const color = theme === 'dark' ? Color.WHITE : Color.GREY
 
   const handleMenu = () => {
     setIsOpeMenu((prev) => !prev)
@@ -51,8 +55,10 @@ export default function Header() {
     <Section>
       <Container>
         <Wrapper>
-          <LogoWrapper isDarkMode={isDarkMode}>
-            <Logo />
+          <LogoWrapper>
+            <LogoWidthWrapper ref={ref}>
+              <Logo width={width} height={height} color={color} />
+            </LogoWidthWrapper>
           </LogoWrapper>
 
           <MenuWrapper>
@@ -72,7 +78,11 @@ export default function Header() {
             theme={theme}
             isActive={isOpenMenu}
           />
-          <BurgerMenuModal onClose={handleClose} isActive={isOpenMenu} />
+          <BurgerMenuModal
+            onClose={handleClose}
+            isActive={isOpenMenu}
+            theme={theme}
+          />
         </Wrapper>
       </Container>
     </Section>

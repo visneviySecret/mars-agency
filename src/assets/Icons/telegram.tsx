@@ -1,9 +1,11 @@
+import { Color } from '@/utils/color'
+
 export const Telegram = ({
   width,
-  color,
+  color = Color.WHITE,
 }: {
   width: number
-  color: string
+  color?: string
 }) => {
   return (
     <svg

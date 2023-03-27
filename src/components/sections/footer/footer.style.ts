@@ -1,6 +1,5 @@
 import { breakPoints } from '@/utils/breakPoints'
 import { Color } from '@/utils/color'
-import { Consts } from '@/utils/consts'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
@@ -63,11 +62,10 @@ export const SocialWrapper = styled.div`
   padding-bottom: ${indents.indent20};
 `
 
-export const LogoWrapper = styled.div<{ isDarkMode?: boolean }>`
+export const LogoWrapper = styled.div`
   cursor: pointer;
   width: clamp(${indents.indent60}, 15.5vw, ${indents.indent150});
-
-  transition: filter ${Consts.toggleModDuration};
+  height: clamp(12px, 3.3vw, 30px);
 `
 
 export const BottomLine = styled.div`

@@ -11,7 +11,8 @@ const navList = [
 ]
 
 export const List = styled.nav`
-  z-index: 200;
+  z-index: 1000;
+  position: relative;
   list-style-type: none;
   display: flex;
   flex-direction: column;
