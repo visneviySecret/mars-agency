@@ -20,6 +20,7 @@ import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
 import { Theme } from '@/utils/helpers/getThemeColors'
 import { useTheme } from 'next-themes'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function Reviews() {
   const [isActive, setIsActive] = useState(false)
@@ -33,8 +34,14 @@ export default function Reviews() {
     <Section id="reviews">
       <Container>
         <Header>
-          <Title>отзывы</Title>
-          <SubTitle>Что клиенты думают о сотрудничестве с нами</SubTitle>
+          <Title>
+            <AnimationFadeIn>отзывы</AnimationFadeIn>
+          </Title>
+          <SubTitle>
+            <AnimationFadeIn>
+              Что клиенты думают о сотрудничестве с нами
+            </AnimationFadeIn>
+          </SubTitle>
         </Header>
         <List>
           {clients.map((client, index) => {
@@ -43,19 +50,27 @@ export default function Reviews() {
                 <Item key={index}>
                   <ItemWrapper>
                     <ItemPhotoWrapper>
-                      <Image
-                        src={client.photo}
-                        alt="client"
-                        width={80}
-                        height={80}
-                      />
+                      <AnimationFadeIn>
+                        <Image
+                          src={client.photo}
+                          alt="client"
+                          width={80}
+                          height={80}
+                        />
+                      </AnimationFadeIn>
                     </ItemPhotoWrapper>
                     <ItemTitleWrapper>
-                      <ItemTitle>{client.name}</ItemTitle>
-                      <ItemDescription>{client.description}</ItemDescription>
+                      <ItemTitle>
+                        <AnimationFadeIn>{client.name}</AnimationFadeIn>
+                      </ItemTitle>
+                      <ItemDescription>
+                        <AnimationFadeIn>{client.description}</AnimationFadeIn>
+                      </ItemDescription>
                     </ItemTitleWrapper>
                   </ItemWrapper>
-                  <ItemComment>{client.comment}</ItemComment>
+                  <ItemComment>
+                    <AnimationFadeIn>{client.comment} </AnimationFadeIn>
+                  </ItemComment>
                 </Item>
               )
           })}

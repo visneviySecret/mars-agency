@@ -22,14 +22,14 @@ const Overlay = styled.div<{ isActive: boolean }>`
   transition: translate 0.3s;
 
   &::-webkit-scrollbar {
-    width: 0.8vw;
-    height: 2em;
+    width: 0.5vw;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${Color.GREY};
+    background-color: ${Color.CORAL};
+    border-radius: 20px;
   }
   &::-webkit-scrollbar-track {
-    background-color: ${Color.LIGHT};
+    background-color: ${Color.LIGHT10};
   }
 `
 

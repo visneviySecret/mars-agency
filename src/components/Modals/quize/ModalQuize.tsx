@@ -18,6 +18,8 @@ import { Contacts } from '@/utils/consts'
 import Step4 from './components/step4'
 import Step5 from './components/step5'
 import * as _ from 'lodash'
+import { useTheme } from 'next-themes'
+import { Theme } from '@/components/UI/Button/Button.utils'
 
 interface ModadProps {
   isActive: boolean
@@ -29,6 +31,8 @@ export interface IField {
 }
 
 function ModalQuize({ isActive, onClose, dealStatus }: ModadProps) {
+  const { theme } = useTheme()
+  const isDarkMode = theme === Theme.dark
   const [errorMessage, setErrorMessage] = useState({
     name: '',
     phone: '',
@@ -90,9 +94,9 @@ function ModalQuize({ isActive, onClose, dealStatus }: ModadProps) {
 
   return (
     <Portal isActive={isActive}>
-      <Section>
+      <Section isDarkMode={isDarkMode}>
         <ClosePanel onClick={handleClose}>
-          <CrossIcon size={CrossSize.big} isLightBackground />
+          <CrossIcon size={CrossSize.big} isDarkMode={!isDarkMode} />
         </ClosePanel>
         <Container>
           <Header>

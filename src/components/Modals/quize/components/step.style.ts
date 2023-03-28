@@ -3,9 +3,13 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+const getModeBackground = (isDarkMode: boolean) => {
+  return isDarkMode ? Color.DARK10 : Color.LIGHT10
+}
+
+export const Wrapper = styled.div<{ isDarkMode: boolean }>`
   display: flex;
-  background-color: ${Color.DARK_LIGHT};
+  background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
   padding: clamp(${indents.indent10}, 2.5vw, ${indents.indent20});
 
   @media (max-width: ${breakPoints.Tablet}) {

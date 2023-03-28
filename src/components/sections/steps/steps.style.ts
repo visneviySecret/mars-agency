@@ -3,6 +3,10 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
+const getModeBackground = (isDarkMode: boolean) => {
+  return isDarkMode ? Color.GREY : Color.WHITE
+}
+
 export const Section = styled.section`
   margin-bottom: clamp(${indents.indent50}, 14vw, ${indents.indent120});
 `
@@ -52,15 +56,17 @@ export const Content = styled.p`
 
 export const List = styled.ul``
 
-export const Card = styled.li<{ index: number }>`
+export const Card = styled.li<{ index: number; isDarkMode: boolean }>`
   position: sticky;
   top: ${({ index }) => index * 145}px;
   display: flex;
-  background-color: ${Color.WHITE};
-  border-top: 1px solid ${Color.GREY};
+  background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
+
+  border-top: 1px solid ${({ isDarkMode }) => getModeBackground(!isDarkMode)};
 
   &:last-child {
-    border-bottom: 1px solid ${Color.GREY};
+    border-bottom: 1px solid
+      ${({ isDarkMode }) => getModeBackground(!isDarkMode)};
     z-index: 1000;
   }
 
@@ -71,10 +77,10 @@ export const Card = styled.li<{ index: number }>`
   }
 `
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{ isDarkMode: boolean }>`
   flex: 1;
   display: flex;
-  border-right: 1px solid ${Color.GREY};
+  border-right: 1px solid;
   padding: min(1vw, 20px) min(1vw, 20px) min(1vw, 20px);
   @media (max-width: ${breakPoints.Tablet}) {
     border: none;
@@ -87,14 +93,14 @@ export const CardContent = styled.div`
   flex: 1.03;
 `
 
-export const CardTitle = styled.h3`
+export const CardTitle = styled.h3<{ isDarkMode: boolean }>`
   font-size: clamp(18px, 4.9vw, 53px);
   line-height: 100%;
   font-weight: 400;
   text-transform: uppercase;
   padding-left: min(1vw, 20px);
   padding-block: min(1.3vw, 24px) min(1vw, 20px);
-  border-bottom: 1px solid ${Color.GREY};
+  border-bottom: 1px solid ${({ isDarkMode }) => getModeBackground(!isDarkMode)};
 
   @media (max-width: ${breakPoints.Tablet}) {
     font-size: clamp(18px, 5.5vw, 53px);
@@ -106,12 +112,12 @@ export const DesciptionList = styled.ul`
   list-style-type: none;
 `
 
-export const DesciptionItem = styled.li`
+export const DesciptionItem = styled.li<{ isDarkMode: boolean }>`
   font-size: clamp(14px, 2.5vw, 25px);
   line-height: 130%;
   padding-left: min(1vw, 20px);
   padding-block: clamp(${indents.indent10}, 2.3vw, ${indents.indent20});
-  border-bottom: 1px solid ${Color.GREY};
+  border-bottom: 1px solid ${({ isDarkMode }) => getModeBackground(!isDarkMode)};
 
   & + li {
     border-top: none;

@@ -79,6 +79,7 @@ export const ItemTitle = styled.span`
   font-weight: 800;
   font-size: clamp(12px, 2vw, 28px);
   line-height: 100%;
+  color: ${Color.GREY};
 `
 
 export const Accented = styled.span`

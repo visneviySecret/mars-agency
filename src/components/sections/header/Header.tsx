@@ -13,7 +13,6 @@ import { useTheme } from 'next-themes'
 import { Container } from '@/components/UI/Container/container.style'
 import Button from '@/components/UI/Button/Button'
 import Navigation from '@/share/Navigation/Navigation'
-import Link from 'next/link'
 import BurgerMenuModal from '@/components/Modals/BurgerMenu/BurgerMenuModal'
 import { BurgerMenu } from '@/components/UI/BurgerMenu/BurgerMenu'
 import { useMediaQuery } from '@/hooks/useMedia'
@@ -22,6 +21,7 @@ import { blockScroll, unlockScroll } from '../hero/utils'
 import Toggler from '@/components/UI/Toggler/Toggler'
 import useMeasure from 'react-use-measure'
 import { Color } from '@/utils/color'
+import { handleLink } from '@/utils/helpers/smoothScroll'
 
 export default function Header() {
   const [ref, { width, height }] = useMeasure()
@@ -68,9 +68,9 @@ export default function Header() {
 
             <TogglerAndButtonWrapper>
               <Toggler />
-              <Link href={'#form'}>
+              <a onClick={handleLink}>
                 <Button onClick={handleEmptyClick}>Обратный звонок</Button>
-              </Link>
+              </a>
             </TogglerAndButtonWrapper>
           </MenuWrapper>
           <BurgerMenu

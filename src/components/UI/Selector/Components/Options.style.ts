@@ -2,18 +2,22 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
-export const OptionsWrapper = styled.div`
+const getModeBackground = (isDarkMode?: boolean) => {
+  return isDarkMode ? Color.DARK10 : Color.LIGHT10
+}
+
+export const OptionsWrapper = styled.div<{ isDarkMode?: boolean }>`
   z-index: 100;
   top: 50px;
   position: absolute;
   padding: ${indents.indent20};
   border: 1px solid ${Color.GREY};
   border-radius: 30px;
-  background: ${Color.DARK_LIGHT};
+  background: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
   width: 100%;
 `
 
-export const OptionsList = styled.ul`
+export const OptionsList = styled.ul<{ isDarkMode?: boolean }>`
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -25,14 +29,14 @@ export const OptionsList = styled.ul`
 
   &::-webkit-scrollbar {
     width: 0.2vw;
-    height: 2em;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${Color.GREY};
+    background-color: ${Color.CORAL};
     border-radius: 20px;
   }
   &::-webkit-scrollbar-track {
-    background-color: ${Color.DARK_LIGHT};
+    background-color: ${({ isDarkMode }) =>
+      isDarkMode ? Color.GREY : Color.WHITE};
   }
 `
 

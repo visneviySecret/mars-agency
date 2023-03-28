@@ -15,6 +15,7 @@ import { Container } from '@/components/UI/Container/container.style'
 import { list } from './offers.utils'
 import { useTheme } from 'next-themes'
 import InvisButton from '@/features/easterEgg/components/InvisButton'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function Offers() {
   const { theme } = useTheme()
@@ -27,21 +28,29 @@ export default function Offers() {
         <Wrapper isDarkMode={isDarkMode}>
           <Header>
             <Title>
-              У<InvisButton value={'с'}>с</InvisButton>
-              луги
+              <AnimationFadeIn>
+                У<InvisButton value={'с'}>с</InvisButton>
+                луги
+              </AnimationFadeIn>
             </Title>
             <Content>
-              Помогаем с покупкой и продажей недвижимости так, чтобы сэкономить
-              время и силы клиентов
+              <AnimationFadeIn>
+                Помогаем с покупкой и продажей недвижимости <br /> так, чтобы
+                сэкономить время и силы клиентов
+              </AnimationFadeIn>
             </Content>
           </Header>
 
           <List>
             {list.map((item, index) => (
               <Item key={index}>
-                <ItemTitle>{item.title}</ItemTitle>
+                <ItemTitle>
+                  <AnimationFadeIn>{item.title}</AnimationFadeIn>
+                </ItemTitle>
                 <ItemDescriptionWrapper>
-                  <ItemDescription>{item.description}</ItemDescription>
+                  <ItemDescription>
+                    <AnimationFadeIn>{item.description}</AnimationFadeIn>
+                  </ItemDescription>
                 </ItemDescriptionWrapper>
               </Item>
             ))}

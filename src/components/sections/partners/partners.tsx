@@ -5,6 +5,7 @@ import { usePartners } from './partners.utils'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import CursorHandler from './components/CursorHandler'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function Partners() {
   const {
@@ -36,7 +37,9 @@ export default function Partners() {
             theme={theme}
           >
             <CursorHandler onClick={handleBankCount} />
-            <Title>партнеры</Title>
+            <Title>
+              <AnimationFadeIn>партнеры</AnimationFadeIn>
+            </Title>
             <List theme={theme} ref={ref}>
               <AnimatePresence custom={{ bankDirection, width }}>
                 <motion.div
@@ -76,7 +79,7 @@ export default function Partners() {
                 paddingLeft: (!isSmallScreen && '20px') || '',
               }}
             >
-              Застройщики
+              <AnimationFadeIn>Застройщики</AnimationFadeIn>
             </Title>
             <List theme={theme}>
               <AnimatePresence custom={{ devDirection, width }}>

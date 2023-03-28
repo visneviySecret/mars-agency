@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { indents } from '@/utils/indents'
 import { getThemeColor } from '@/utils/helpers/getThemeColors'
+import { NeueMachina } from '@/styles/GlobalStyles'
 
 export const Component = styled.div`
   max-width: 560px;
@@ -26,6 +27,7 @@ export const Input = styled.input<{ theme: string }>`
 
   &::placeholder {
     text-transform: uppercase;
+    font-family: ${NeueMachina.style.fontFamily}, 'Inter';
   }
 
   &:focus {

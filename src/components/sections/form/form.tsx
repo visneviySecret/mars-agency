@@ -13,6 +13,7 @@ import Image from 'next/image'
 import ContactForm from '@/share/ContactForm/ContactForm'
 import { breakPoints } from '@/utils/breakPoints'
 import { useMediaQuery } from '@/hooks/useMedia'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 const initialState = {
   name: '',
@@ -41,41 +42,47 @@ export default function Form() {
   }
 
   return (
-    <Section id="form">
-      <Container isFlex={!isSmallScreen}>
-        <Wrapper>
-          <Image
-            src={'/picture/form.png'}
-            alt="client"
-            width={780}
-            height={631}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </Wrapper>
-
-        <Wrapper>
-          <FormWrapper>
-            <Header>
-              <Title>
-                Оставьте заявку на бесплатную консультацию и мы свяжемся с вами
-                в ближайшее время
-              </Title>
-            </Header>
-
-            <ContactForm
-              form={form}
-              isChecked={isChecked}
-              setIsChecked={setIsChecked}
-              handleChange={handleChange}
-              errorMessage={errorMessage}
-              isLanding
+    <AnimationFadeIn delay={0.1}>
+      <Section id="form">
+        <Container isFlex={!isSmallScreen}>
+          <Wrapper>
+            <Image
+              src={'/picture/form.png'}
+              alt="client"
+              width={780}
+              height={631}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
-            <ButtonWrapper>
-              <Button onClick={handleClick}>Оставить заявку</Button>
-            </ButtonWrapper>
-          </FormWrapper>
-        </Wrapper>
-      </Container>
-    </Section>
+          </Wrapper>
+
+          <Wrapper>
+            <FormWrapper>
+              <Header>
+                <Title>
+                  <AnimationFadeIn delay={0.5}>
+                    Оставьте заявку на бесплатную консультацию и мы свяжемся с
+                    вами в ближайшее время
+                  </AnimationFadeIn>
+                </Title>
+              </Header>
+
+              <ContactForm
+                form={form}
+                isChecked={isChecked}
+                setIsChecked={setIsChecked}
+                handleChange={handleChange}
+                errorMessage={errorMessage}
+                isLanding
+              />
+              <ButtonWrapper>
+                <AnimationFadeIn delay={0.5}>
+                  <Button onClick={handleClick}>Оставить заявку</Button>
+                </AnimationFadeIn>
+              </ButtonWrapper>
+            </FormWrapper>
+          </Wrapper>
+        </Container>
+      </Section>
+    </AnimationFadeIn>
   )
 }

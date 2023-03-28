@@ -4,16 +4,12 @@ import { indents } from '@/utils/indents'
 import { breakPoints } from '@/utils/breakPoints'
 
 const getModeBackground = (isDarkMode: boolean) => {
-  return isDarkMode ? Color.WHITE : Color.BLACK
-}
-
-const getModeColor = (isDarkMode: boolean) => {
-  return isDarkMode ? Color.BLACK : Color.WHITE
+  return isDarkMode ? Color.DARK10 : Color.BLACK
 }
 
 export const Section = styled.section<{ isDarkMode: boolean }>`
   margin-bottom: clamp(${indents.indent20}, 1.5vw, ${indents.indent45});
-  color: ${({ isDarkMode }) => getModeColor(isDarkMode)};
+  color: ${Color.WHITE};
 `
 
 export const Wrapper = styled.div<{ isDarkMode: boolean }>`

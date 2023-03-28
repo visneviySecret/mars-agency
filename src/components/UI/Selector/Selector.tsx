@@ -55,6 +55,7 @@ export default function Selector({
             options={searchingOptions}
             selected={selected}
             handleOption={handleOption}
+            isDarkMode={isDarkMode}
           />
         )}
       </Wrapper>

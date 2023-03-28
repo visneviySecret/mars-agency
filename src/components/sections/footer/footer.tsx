@@ -19,6 +19,7 @@ import { contacts } from './footer.utils'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
 import useMeasure from 'react-use-measure'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function Footer() {
   const [ref, { width, height }] = useMeasure()
@@ -36,16 +37,24 @@ export default function Footer() {
           <Contacts>
             {contacts.map((contact) => (
               <Contact key={contact.name}>
-                <Title>{contact.title}</Title>
-                <Name>{contact.name}</Name>
+                <Title>
+                  <AnimationFadeIn>{contact.title}</AnimationFadeIn>
+                </Title>
+                <Name>
+                  <AnimationFadeIn>{contact.name}</AnimationFadeIn>
+                </Name>
               </Contact>
             ))}
           </Contacts>
           <SocialWrapper>
             <LogoWrapper ref={ref}>
-              <Logo width={width} height={height} />
+              <AnimationFadeIn>
+                <Logo width={width} height={height} />
+              </AnimationFadeIn>
             </LogoWrapper>
-            <Social />
+            <AnimationFadeIn>
+              <Social />
+            </AnimationFadeIn>
           </SocialWrapper>
         </Wrapper>
         <BottomLine />

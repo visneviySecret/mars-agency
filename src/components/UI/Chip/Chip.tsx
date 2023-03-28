@@ -34,7 +34,7 @@ export default function Chip({
         order={order}
       >
         {children}
-        {isActive && <Cross />}
+        {isActive && <Cross currentTheme={currentTheme} />}
       </ChipComponent>
     </>
   )

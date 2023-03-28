@@ -19,9 +19,14 @@ import InvisButton from '@/features/easterEgg/components/InvisButton'
 import Image from 'next/image'
 import { useMediaQuery } from '@/hooks/useMedia'
 import { breakPoints } from '@/utils/breakPoints'
+import { useTheme } from 'next-themes'
+import { Theme } from '@/utils/helpers/getThemeColors'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function Steps() {
   const isLargeScreen = useMediaQuery(`(max-width: ${breakPoints.Large})`)
+  const { theme } = useTheme()
+  const isDarkMode = theme === Theme.dark
 
   return (
     <Section>
@@ -29,39 +34,49 @@ export default function Steps() {
         <Container isDeactive={isLargeScreen}>
           <Header>
             <Title>
-              <InvisButton value={'Э'}>Э</InvisButton>
-              <InvisButton value={'т'}>т</InvisButton>апы ра
-              <InvisButton value={'б'}>б</InvisButton>
-              оты
+              <AnimationFadeIn>
+                <InvisButton value={'Э'}>Э</InvisButton>
+                <InvisButton value={'т'}>т</InvisButton>апы ра
+                <InvisButton value={'б'}>б</InvisButton>
+                оты
+              </AnimationFadeIn>
             </Title>
             <Content>
-              Наша работа строится по принципу максимальной эффективности
-              каждого шага
+              <AnimationFadeIn>
+                Наша работа строится по принципу максимальной эффективности
+                каждого шага
+              </AnimationFadeIn>
             </Content>
           </Header>
         </Container>
         <List>
           {list.map((item, index) => (
-            <Card key={index} index={index}>
-              <ImageWrapper>
-                <Image
-                  src={item.img}
-                  width={750}
-                  height={415}
-                  alt="interier"
-                  style={{
-                    marginLeft: 'auto',
-                    maxWidth: '100%',
-                    maxHeight: 'min(70vw, 415px)',
-                    objectFit: 'cover',
-                  }}
-                />
+            <Card key={index} index={index} isDarkMode={isDarkMode}>
+              <ImageWrapper isDarkMode={isDarkMode}>
+                <AnimationFadeIn>
+                  <Image
+                    src={item.img}
+                    width={750}
+                    height={415}
+                    alt="interier"
+                    style={{
+                      marginLeft: 'auto',
+                      maxWidth: '100%',
+                      maxHeight: 'min(70vw, 415px)',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </AnimationFadeIn>
               </ImageWrapper>
               <CardContent>
-                <CardTitle>{item.title}</CardTitle>
+                <CardTitle isDarkMode={isDarkMode}>
+                  <AnimationFadeIn>{item.title}</AnimationFadeIn>
+                </CardTitle>
                 <DesciptionList>
                   {item.description.map((item, index) => (
-                    <DesciptionItem key={index}>{item}</DesciptionItem>
+                    <DesciptionItem key={index} isDarkMode={isDarkMode}>
+                      <AnimationFadeIn>{item}</AnimationFadeIn>
+                    </DesciptionItem>
                   ))}
                 </DesciptionList>
               </CardContent>

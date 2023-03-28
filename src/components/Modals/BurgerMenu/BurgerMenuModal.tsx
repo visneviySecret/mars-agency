@@ -3,7 +3,7 @@ import Toggler from '@/components/UI/Toggler/Toggler'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
 import { Color } from '@/utils/color'
-import Link from 'next/link'
+import { handleLink } from '@/utils/helpers/smoothScroll'
 import React from 'react'
 import {
   ButtonWrapper,
@@ -39,11 +39,11 @@ function BurgerMenuModal({ onClose, isActive, theme }: IProps) {
       <FlexWrapper>
         <ButtonWrapper />
         <ButtonWrapper>
-          <Link href={'#form'}>
+          <a onClick={handleLink}>
             <Button onClick={handleClick} style={customButton}>
               Оставить заявку
             </Button>
-          </Link>
+          </a>
         </ButtonWrapper>
 
         <SocialWrapper>

@@ -2,6 +2,8 @@ import React from 'react'
 import CSS from 'csstype'
 import { Error, Input, Wrapper } from './TextField.style'
 import { getFormattedValue } from './TextField.utils'
+import { useTheme } from 'next-themes'
+import { Theme } from '@/utils/helpers/getThemeColors'
 
 interface IProps {
   name: string
@@ -24,6 +26,9 @@ function TextField({
   isQuize,
   type = 'text',
 }: IProps) {
+  const { theme } = useTheme()
+  const isDarkMode = theme === Theme.dark
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     const formattedValue = getFormattedValue(value, name)
@@ -41,6 +46,7 @@ function TextField({
         onChange={(e) => handleChange(e)}
         isError={!!errorMessage}
         isQuize={isQuize}
+        isDarkMode={isDarkMode}
       />
       <Error isQuize={isQuize}>{errorMessage}</Error>
     </Wrapper>

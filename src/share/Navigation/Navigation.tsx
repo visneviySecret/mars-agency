@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { handleLink } from '@/utils/helpers/smoothScroll'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -39,7 +39,13 @@ function Navigation({ onClose }: { onClose?: () => void }) {
     <List>
       {navList.map((item, index) => (
         <Item key={index} onClick={onClose}>
-          <Link href={item.ancor}>{item.title}</Link>
+          <a
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+              handleLink(e, item.ancor)
+            }
+          >
+            {item.title}
+          </a>
         </Item>
       ))}
     </List>

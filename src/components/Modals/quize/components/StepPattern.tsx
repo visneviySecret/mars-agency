@@ -5,6 +5,8 @@ import Chip from '@/components/UI/Chip/Chip'
 import Selector from '@/components/UI/Selector/Selector'
 import { DealStatus } from '../quize.utils'
 import TextField from '@/components/UI/TextField/TextField'
+import { useTheme } from 'next-themes'
+import { Theme } from '@/components/UI/Button/Button.utils'
 
 interface IProps {
   children?: ReactNode
@@ -31,8 +33,11 @@ function StepPattern({
   isSelector,
   isActiveNode,
 }: IProps) {
+  const { theme } = useTheme()
+  const isDarkMode = theme === Theme.dark
+
   return (
-    <Wrapper>
+    <Wrapper isDarkMode={isDarkMode}>
       <Title>{title}</Title>
       <FieldsWrapper>
         {isSelector && handleClick && (

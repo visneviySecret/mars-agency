@@ -3,8 +3,12 @@ import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
-export const Section = styled.section`
-  background-color: ${Color.WHITE};
+const getModeBackground = (isDarkMode: boolean) => {
+  return isDarkMode ? Color.GREY : Color.WHITE
+}
+
+export const Section = styled.section<{ isDarkMode: boolean }>`
+  background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
 `
 
 export const ClosePanel = styled.div`

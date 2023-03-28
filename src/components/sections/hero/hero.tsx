@@ -8,6 +8,7 @@ import ModalQuize from '@/components/Modals/quize/ModalQuize'
 import { DealStatus } from '@/components/Modals/quize/quize.utils'
 import { blockScroll, unlockScroll } from './utils'
 import { useTheme } from 'next-themes'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -16,6 +17,7 @@ export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { theme } = useTheme()
   const picture = theme === Theme.light ? '/Hero.png' : '/HeroNight.png'
+
   const handleClick = (status: DealStatus) => {
     blockScroll()
     openModal(status)
@@ -35,37 +37,43 @@ export default function Hero() {
     <>
       <Container>
         <Section>
-          <Title>Агентство недвижимости с космическим сервисом</Title>
+          <AnimationFadeIn delay={0.8}>
+            <Title>Агентство недвижимости с космическим сервисом</Title>
+          </AnimationFadeIn>
           <ButtonsWrapper>
-            <Button
-              onClick={() => handleClick(DealStatus.buy)}
-              customTheme={Theme.coral}
-              style={customButtonStyle}
-              isBig
-            >
-              Купить
-            </Button>
-            <Button
-              onClick={() => handleClick(DealStatus.sail)}
-              customTheme={Theme.coral}
-              style={customButtonStyle}
-              isBig
-            >
-              Продать
-            </Button>
+            <AnimationFadeIn style={customButtonStyle} delay={1}>
+              <Button
+                onClick={() => handleClick(DealStatus.buy)}
+                customTheme={Theme.coral}
+                isBig
+              >
+                Купить
+              </Button>
+            </AnimationFadeIn>
+            <AnimationFadeIn style={customButtonStyle} delay={1}>
+              <Button
+                onClick={() => handleClick(DealStatus.sail)}
+                customTheme={Theme.coral}
+                isBig
+              >
+                Продать
+              </Button>
+            </AnimationFadeIn>
           </ButtonsWrapper>
-          <Image
-            alt="City wallpaper"
-            src={picture}
-            width={1560}
-            height={560}
-            style={{
-              width: '100%',
-              objectFit: 'cover',
-              objectPosition: '47%',
-              height: 'clamp(375px, 50vw, 560px)',
-            }}
-          />
+          <AnimationFadeIn delay={1.5}>
+            <Image
+              alt="City wallpaper"
+              src={picture}
+              width={1560}
+              height={560}
+              style={{
+                width: '100%',
+                objectFit: 'cover',
+                objectPosition: '47%',
+                height: 'clamp(375px, 50vw, 560px)',
+              }}
+            />
+          </AnimationFadeIn>
         </Section>
       </Container>
       <ModalQuize

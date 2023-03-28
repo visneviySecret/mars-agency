@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 import { Color } from '@/utils/color'
 import { indents } from '@/utils/indents'
+import { NeueMachina } from '@/styles/GlobalStyles'
 
-const getColor = (isQuize?: boolean) => {
-  return isQuize ? Color.GREY : Color.WHITE
+const getThemeColor = (isDarkMode?: boolean) => {
+  return isDarkMode ? Color.WHITE : Color.GREY
+}
+
+const getColor = (isQuize?: boolean, isDarkMode?: boolean) => {
+  return isQuize ? getThemeColor(isDarkMode) : Color.WHITE
 }
 
 const getQuizeColor = (isQuize?: boolean) => {
@@ -14,22 +19,27 @@ export const Wrapper = styled.div`
   position: relative;
 `
 
-export const Input = styled.input<{ isError?: boolean; isQuize?: boolean }>`
+export const Input = styled.input<{
+  isError?: boolean
+  isQuize?: boolean
+  isDarkMode?: boolean
+}>`
   font-weight: 400;
   font-size: clamp(10px, 1.9vw, 14px);
   line-height: 140%;
-  color: ${({ isQuize }) => getColor(isQuize)};
+  color: ${({ isQuize, isDarkMode }) => getColor(isQuize, isDarkMode)};
   width: 100%;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid
-    ${({ isError, isQuize }) =>
-      isError ? getQuizeColor(isQuize) : getColor(isQuize)};
+    ${({ isError, isQuize, isDarkMode }) =>
+      isError ? getQuizeColor(isQuize) : getColor(isQuize, isDarkMode)};
   padding-bottom: ${indents.indent5};
 
   &::placeholder {
+    font-family: ${NeueMachina.style.fontFamily}, 'Inter';
     opacity: 0.4;
-    color: ${({ isQuize }) => getColor(isQuize)};
+    color: ${({ isQuize, isDarkMode }) => getColor(isQuize, isDarkMode)};
     text-transform: uppercase;
   }
 

@@ -13,6 +13,7 @@ import {
 import { Container } from '@/components/UI/Container/container.style'
 import { Key } from '@/assets/Icons/key'
 import useMeasure from 'react-use-measure'
+import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function About() {
   const [ref, { width }] = useMeasure()
@@ -21,49 +22,65 @@ export default function About() {
     <Section id="about-us">
       <Container>
         <Header>
-          <Title>О НАС</Title>
+          <Title>
+            <AnimationFadeIn>О НАС</AnimationFadeIn>
+          </Title>
           <Content>
-            Ваш <Accented>надежный</Accented> партнер в мире недвижимости
-            Санкт-Петербурга и Ленинградской области
+            <AnimationFadeIn>
+              Ваш <Accented>надежный</Accented> партнер в мире недвижимости
+              Санкт-Петербурга и Ленинградской области
+            </AnimationFadeIn>
           </Content>
         </Header>
         <List>
-          <Item>
-            <IconWrapper ref={ref}>
-              <Key size={width} />
-            </IconWrapper>
-            <ItemTitle>Осуществление сделки под ключ</ItemTitle>
-          </Item>
-          <Item>
-            <IconWrapper>
-              <Key size={width} />
-            </IconWrapper>
-            <ItemTitle>Гарантия юридической чистоты</ItemTitle>
-          </Item>
-          <Item>
-            <IconWrapper>
-              <Key size={width} />
-            </IconWrapper>
-            <ItemTitle>Обеспечение выгодной сделки</ItemTitle>
-          </Item>
-          <Item>
-            <IconWrapper>
-              <Key size={width} />
-            </IconWrapper>
-            <ItemTitle>Подготовка объекта к продаже</ItemTitle>
-          </Item>
-          <Item>
-            <IconWrapper>
-              <Key size={width} />
-            </IconWrapper>
-            <ItemTitle>Эффективное продвижение объекта</ItemTitle>
-          </Item>
-          <Item>
-            <IconWrapper>
-              <Key size={width} />
-            </IconWrapper>
-            <ItemTitle>Дистанционное одобрение ипотеки</ItemTitle>
-          </Item>
+          <AnimationFadeIn>
+            <Item>
+              <IconWrapper ref={ref}>
+                <Key size={width} />
+              </IconWrapper>
+              <ItemTitle>Осуществление сделки под ключ</ItemTitle>
+            </Item>
+          </AnimationFadeIn>
+          <AnimationFadeIn>
+            <Item>
+              <IconWrapper>
+                <Key size={width} />
+              </IconWrapper>
+              <ItemTitle>Гарантия юридической чистоты</ItemTitle>
+            </Item>
+          </AnimationFadeIn>
+          <AnimationFadeIn>
+            <Item>
+              <IconWrapper>
+                <Key size={width} />
+              </IconWrapper>
+              <ItemTitle>Обеспечение выгодной сделки</ItemTitle>
+            </Item>
+          </AnimationFadeIn>
+          <AnimationFadeIn>
+            <Item>
+              <IconWrapper>
+                <Key size={width} />
+              </IconWrapper>
+              <ItemTitle>Подготовка объекта к продаже</ItemTitle>
+            </Item>
+          </AnimationFadeIn>
+          <AnimationFadeIn>
+            <Item>
+              <IconWrapper>
+                <Key size={width} />
+              </IconWrapper>
+              <ItemTitle>Эффективное продвижение объекта</ItemTitle>
+            </Item>
+          </AnimationFadeIn>
+          <AnimationFadeIn>
+            <Item>
+              <IconWrapper>
+                <Key size={width} />
+              </IconWrapper>
+              <ItemTitle>Дистанционное одобрение ипотеки</ItemTitle>
+            </Item>
+          </AnimationFadeIn>
         </List>
       </Container>
     </Section>

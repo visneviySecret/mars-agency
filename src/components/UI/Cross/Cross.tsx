@@ -1,4 +1,5 @@
 import { Color } from '@/utils/color'
+import { Theme } from '@/utils/helpers/getThemeColors'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -9,7 +10,7 @@ export enum CrossSize {
 
 export const CrossIcon = styled.span<{
   size: CrossSize
-  isLightBackground?: boolean
+  isDarkMode?: boolean
 }>`
   position: relative;
   width: ${({ size }) =>
@@ -22,13 +23,13 @@ export const CrossIcon = styled.span<{
   &::before {
     content: '';
     position: absolute;
-    background-color: ${({ isLightBackground }) =>
-      isLightBackground ? Color.DARK_GREY : Color.WHITE};
+    background-color: ${({ isDarkMode }) =>
+      isDarkMode ? Color.DARK_GREY : Color.WHITE};
     width: ${({ size }) =>
       size === CrossSize.small ? '1.13px' : 'clamp(1.5px, 0.5vw, 3.96px)'};
     height: ${({ size }) =>
       size === CrossSize.small ? '10.8px' : 'clamp(15.5px, 3.5vw,35.64px)'};
-    translate: 350%;
+    translate: 350% ${({ size }) => (size === CrossSize.big ? '-20%' : '40%')};
   }
 
   &::after {
@@ -39,8 +40,15 @@ export const CrossIcon = styled.span<{
   }
 `
 
-function Cross({ size = CrossSize.small }: { size?: CrossSize }) {
-  return <CrossIcon size={size}></CrossIcon>
+function Cross({
+  size = CrossSize.small,
+  currentTheme,
+}: {
+  size?: CrossSize
+  currentTheme?: string
+}) {
+  const isDarkMode = currentTheme === Theme.dark
+  return <CrossIcon size={size} isDarkMode={isDarkMode}></CrossIcon>
 }
 
 export default Cross

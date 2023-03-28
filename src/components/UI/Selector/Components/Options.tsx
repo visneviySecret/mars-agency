@@ -7,12 +7,18 @@ interface OptionsProps {
   options: Array<string>
   selected: Array<string>
   handleOption: (value: string) => void
+  isDarkMode: boolean
 }
 
-function Options({ options, selected, handleOption }: OptionsProps) {
+function Options({
+  options,
+  selected,
+  handleOption,
+  isDarkMode,
+}: OptionsProps) {
   return (
-    <OptionsWrapper>
-      <OptionsList>
+    <OptionsWrapper isDarkMode={isDarkMode}>
+      <OptionsList isDarkMode={isDarkMode}>
         {options.map((option, index) => {
           const isActiveOption = selected.indexOf(option) !== -1
           return (
