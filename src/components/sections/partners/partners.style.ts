@@ -27,8 +27,9 @@ export const List = styled.ul<{ theme: Theme }>`
   display: flex;
   list-style: none;
   overflow: hidden;
-  max-width: 300px;
   width: 100%;
+  max-width: clamp(225px, 48vw, 590px);
+  max-width: 320px;
   height: 80px;
   margin: 0 auto;
   margin-top: clamp(70px, 15vw, 219px);

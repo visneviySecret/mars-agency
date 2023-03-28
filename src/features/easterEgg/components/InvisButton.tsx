@@ -4,10 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { callTheBats } from '@/features/easterEgg/easterEgg'
 
-const Button = styled.span`
-  cursor: pointer;
-  color: purple;
-`
+const Button = styled.span``
 
 const InvisButton = ({
   value,

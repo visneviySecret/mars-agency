@@ -58,6 +58,7 @@ export default function Partners() {
                       position: 'absolute',
                       display: 'flex',
                       width: width,
+                      // width: '100%',
                     }}
                   />
                 </motion.div>

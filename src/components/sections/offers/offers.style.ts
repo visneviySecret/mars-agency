@@ -95,6 +95,7 @@ export const Item = styled.li`
 export const ItemTitle = styled.h3`
   flex: 1;
   font-size: clamp(18px, 5.5vw, 53px);
+  font-weight: 400;
   line-height: 130%;
   text-transform: uppercase;
 `
