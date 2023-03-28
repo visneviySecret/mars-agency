@@ -7,7 +7,7 @@ const getColor = (isQuize?: boolean) => {
 }
 
 const getQuizeColor = (isQuize?: boolean) => {
-  return isQuize ? Color.RED : Color.DARKRED
+  return isQuize ? Color.RED : Color.DARK_RED
 }
 
 export const Wrapper = styled.div`
@@ -49,5 +49,5 @@ export const Error = styled.span<{ isQuize?: boolean }>`
   line-height: 140%;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: ${({ isQuize }) => (isQuize ? Color.RED : Color.DARKRED)};
+  color: ${({ isQuize }) => (isQuize ? Color.RED : Color.DARK_RED)};
 `

@@ -9,7 +9,7 @@ export const OptionsWrapper = styled.div`
   padding: ${indents.indent20};
   border: 1px solid ${Color.GREY};
   border-radius: 30px;
-  background: ${Color.WHITE};
+  background: ${Color.DARK_LIGHT};
   width: 100%;
 `
 
@@ -24,14 +24,15 @@ export const OptionsList = styled.ul`
   max-height: 240px;
 
   &::-webkit-scrollbar {
-    width: 0.3vw;
+    width: 0.2vw;
     height: 2em;
   }
   &::-webkit-scrollbar-thumb {
     background-color: ${Color.GREY};
+    border-radius: 20px;
   }
   &::-webkit-scrollbar-track {
-    background-color: ${Color.LIGHT};
+    background-color: ${Color.DARK_LIGHT};
   }
 `
 

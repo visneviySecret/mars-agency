@@ -23,7 +23,7 @@ export const CrossIcon = styled.span<{
     content: '';
     position: absolute;
     background-color: ${({ isLightBackground }) =>
-      isLightBackground ? Color.DARKGREY : Color.WHITE};
+      isLightBackground ? Color.DARK_GREY : Color.WHITE};
     width: ${({ size }) =>
       size === CrossSize.small ? '1.13px' : 'clamp(1.5px, 0.5vw, 3.96px)'};
     height: ${({ size }) =>

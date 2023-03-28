@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
-  background-color: ${Color.LIGHT};
+  background-color: ${Color.DARK_LIGHT};
   padding: clamp(${indents.indent10}, 2.5vw, ${indents.indent20});
 
   @media (max-width: ${breakPoints.Tablet}) {

@@ -26,10 +26,11 @@ export const NeueMachina = localFont({
 
 export const GlobalStyle = createGlobalStyle`
     html::-webkit-scrollbar {
-      width: 0.8vw;
+      width: 0.5vw;
     }
     html::-webkit-scrollbar-thumb {
-      background-color: ${Color.GREY};
+      background-color: ${Color.CORAL};
+      border-radius: 20px;
     }
     html::-webkit-scrollbar-track {
       background-color: ${Color.LIGHT};
