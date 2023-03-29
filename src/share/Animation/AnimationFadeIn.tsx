@@ -14,8 +14,8 @@ function AnimationFadeIn({ children, delay = 0.2, style }: AnimationProps) {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
   }
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function AnimationFadeIn({ children, delay = 0.2, style }: AnimationProps) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0 }}
       animate={controls}
       transition={{
         duration: 0.5,

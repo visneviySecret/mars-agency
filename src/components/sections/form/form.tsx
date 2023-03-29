@@ -14,6 +14,7 @@ import ContactForm from '@/share/ContactForm/ContactForm'
 import { breakPoints } from '@/utils/breakPoints'
 import { useMediaQuery } from '@/hooks/useMedia'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
+import WarningForm from '@/components/Modals/WarningForm/WarningForm'
 
 const initialState = {
   name: '',
@@ -25,10 +26,11 @@ export default function Form() {
   const [form, setForm] = useState(initialState)
   const [isChecked, setIsChecked] = useState(true)
   const [errorMessage, setErrorMessage] = useState(initialState)
+  const [isActive, setIsActive] = useState(false)
 
   const handleClick = () => {
     if (!isChecked) return
-    if (form.name !== '' && form.phone !== '') return alert(form)
+    if (form.name !== '' && form.phone !== '') return setIsActive(true)
     const errorText = 'Это поле не может быть пустым'
     setErrorMessage({
       name: (form.name === '' && errorText) || '',
@@ -82,6 +84,16 @@ export default function Form() {
             </FormWrapper>
           </Wrapper>
         </Container>
+        {isActive && (
+          <WarningForm
+            setIsActive={setIsActive}
+            title={'Спасибо!'}
+            content={
+              'Ваша заявка отправлена! В ближайшее время мы свяжемся с вами.'
+            }
+            closingText={'Хорошо'}
+          />
+        )}
       </Section>
     </AnimationFadeIn>
   )

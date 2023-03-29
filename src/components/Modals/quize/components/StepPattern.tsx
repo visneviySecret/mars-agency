@@ -1,5 +1,10 @@
 import React, { ReactNode } from 'react'
-import { List, FieldsWrapper, Title, Wrapper } from './step.style'
+import {
+  List,
+  FieldsWrapper,
+  Title,
+  Wrapper,
+} from './SailBlank/components/step.style'
 
 import Chip from '@/components/UI/Chip/Chip'
 import Selector from '@/components/UI/Selector/Selector'
@@ -11,27 +16,31 @@ import { Theme } from '@/components/UI/Button/Button.utils'
 interface IProps {
   children?: ReactNode
   title?: string
+  name?: string
   nodes?: Array<string>
   dictionaries?: Array<string>
   handleClick?: (value: string) => void
   handleChange?: (key: string, value: string) => void
   textFieldValue?: string
+  placeholder?: string
   dealStatus?: DealStatus
   isSelector?: boolean
   isActiveNode?: boolean
+  isReset?: boolean
 }
 
 function StepPattern({
   children,
   title,
+  name,
   nodes,
   dictionaries,
   handleClick,
   handleChange,
   textFieldValue,
+  placeholder,
   dealStatus,
   isSelector,
-  isActiveNode,
 }: IProps) {
   const { theme } = useTheme()
   const isDarkMode = theme === Theme.dark
@@ -61,7 +70,6 @@ function StepPattern({
                 <Chip
                   key={item}
                   onClick={() => handleClick(item)}
-                  isActiveNode={isActiveNode}
                   order={newOrder}
                 >
                   {item}
@@ -69,11 +77,12 @@ function StepPattern({
               )
             })}
         </List>
-        {textFieldValue && handleChange && (
+        {handleChange && placeholder && (
           <TextField
-            name={'area'}
-            placeholder={textFieldValue}
-            value={textFieldValue}
+            name={name || ''}
+            type="tel"
+            placeholder={placeholder}
+            value={textFieldValue || ''}
             onChange={handleChange}
             isQuize
             style={{ marginTop: nodes?.length && '30px' }}

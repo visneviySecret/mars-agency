@@ -6,18 +6,20 @@ import styled from 'styled-components'
 interface PortalProps {
   children: ReactNode
   isActive: boolean
+  opacity?: number
 }
 
-const Overlay = styled.div<{ isActive: boolean }>`
+const Overlay = styled.div<{ isActive: boolean; opacity?: number }>`
   z-index: 1000;
   position: fixed;
   top: ${({ isActive }) => (isActive ? '50%' : '100%')};
   left: ${({ isActive }) => (isActive ? '50%' : '100%')};
   translate: ${({ isActive }) => isActive && '-50% -50%'};
-  background-color: ${Color.WHITE};
+  /* background-color: ${Color.WHITE}; */
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  opacity: ${({ opacity }) => opacity || '1'};
 
   transition: translate 0.3s;
 
@@ -33,7 +35,7 @@ const Overlay = styled.div<{ isActive: boolean }>`
   }
 `
 
-function Portal({ isActive, children }: PortalProps) {
+function Portal({ isActive, children, opacity }: PortalProps) {
   const ref = useRef<Element | null>(null)
   const [mounted, setMounted] = useState(false)
 
@@ -45,7 +47,9 @@ function Portal({ isActive, children }: PortalProps) {
   if (!mounted || !ref.current) return null
 
   return createPortal(
-    <Overlay isActive={isActive}>{children}</Overlay>,
+    <Overlay isActive={isActive} opacity={opacity}>
+      {children}
+    </Overlay>,
     ref.current,
   )
 }

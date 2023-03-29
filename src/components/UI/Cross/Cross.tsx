@@ -2,9 +2,11 @@ import { Color } from '@/utils/color'
 import { Theme } from '@/utils/helpers/getThemeColors'
 import React from 'react'
 import styled from 'styled-components'
+import { getHeight, getSize, getWidth } from './Cross.utils'
 
 export enum CrossSize {
   small = 'Small',
+  medium = 'Medium',
   big = 'Big',
 }
 
@@ -13,11 +15,8 @@ export const CrossIcon = styled.span<{
   isDarkMode?: boolean
 }>`
   position: relative;
-  width: ${({ size }) =>
-    size === CrossSize.small ? '8px' : 'clamp(12px, 2.5vw, 28px)'};
-  height: ${({ size }) =>
-    size === CrossSize.small ? '8px' : 'clamp(12px, 2.5vw, 28px)'};
-  height: 16px;
+  width: ${({ size }) => getSize(size)};
+  height: ${({ size }) => getSize(size)};
 
   &::after,
   &::before {
@@ -25,11 +24,9 @@ export const CrossIcon = styled.span<{
     position: absolute;
     background-color: ${({ isDarkMode }) =>
       isDarkMode ? Color.DARK_GREY : Color.WHITE};
-    width: ${({ size }) =>
-      size === CrossSize.small ? '1.13px' : 'clamp(1.5px, 0.5vw, 3.96px)'};
-    height: ${({ size }) =>
-      size === CrossSize.small ? '10.8px' : 'clamp(15.5px, 3.5vw,35.64px)'};
-    translate: 350% ${({ size }) => (size === CrossSize.big ? '-20%' : '40%')};
+    width: ${({ size }) => getWidth(size)};
+    height: ${({ size }) => getHeight(size)};
+    translate: 350% ${({ size }) => (size === CrossSize.big ? '-20%' : '-10%')};
   }
 
   &::after {

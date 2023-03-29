@@ -43,6 +43,7 @@ export default function Step4({ dealStatus, handleForm }: IProps) {
       title={title}
       nodes={dictionaries}
       handleClick={handleClick}
+      placeholder={(dealStatus === DealStatus.sail && 'Свой вариант') || ''}
       textFieldValue={(dealStatus === DealStatus.sail && 'Свой вариант') || ''}
       handleChange={handleChange}
     />

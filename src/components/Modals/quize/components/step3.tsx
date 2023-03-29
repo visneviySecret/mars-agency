@@ -9,6 +9,7 @@ interface IProps {
 
 export default function Step3({ dealStatus, handleForm }: IProps) {
   const [areas, setAreas] = useState<string[]>([])
+  const [area, setArea] = useState('')
 
   const title =
     dealStatus === DealStatus.buy
@@ -25,22 +26,24 @@ export default function Step3({ dealStatus, handleForm }: IProps) {
     setAreas(result)
   }
 
-  const handleChange = (value: string) => {
-    const result = `${value}, м²`
-    setAreas([result])
+  const handleChange = (key: string, value: string) => {
+    setArea(value)
   }
 
   useEffect(() => {
+    if (area) return handleForm(title, [area])
     handleForm(title, areas)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [areas])
+    // eslint-disable-next-line
+  }, [areas, area])
 
   return (
     <StepPattern
       title={title}
+      name={'area'}
+      placeholder={(dealStatus === DealStatus.sail && 'Площадь, м²') || ''}
+      textFieldValue={(dealStatus === DealStatus.sail && area) || ''}
       nodes={(dealStatus === DealStatus.buy && preferences) || []}
       handleClick={handleClick}
-      textFieldValue={(dealStatus === DealStatus.sail && 'Площадь, м²') || ''}
       handleChange={handleChange}
     />
   )

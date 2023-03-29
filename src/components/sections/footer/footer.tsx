@@ -52,9 +52,7 @@ export default function Footer() {
                 <Logo width={width} height={height} />
               </AnimationFadeIn>
             </LogoWrapper>
-            <AnimationFadeIn>
-              <Social />
-            </AnimationFadeIn>
+            <Social />
           </SocialWrapper>
         </Wrapper>
         <BottomLine />

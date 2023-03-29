@@ -11,12 +11,12 @@ export const Section = styled.section<{ isDarkMode: boolean }>`
   background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
 `
 
-export const ClosePanel = styled.div`
+export const ClosePanel = styled.div<{ isDarkMode: boolean }>`
   display: flex;
   justify-content: flex-end;
   padding-block: clamp(${indents.indent12}, 3vw, ${indents.indent23});
   padding-inline: clamp(${indents.indent10}, 2.5vw, ${indents.indent20});
-  border-bottom: 1px solid ${Color.GREY};
+  border-bottom: 1px solid ${({ isDarkMode }) => getModeBackground(!isDarkMode)};
   cursor: pointer;
 `
 

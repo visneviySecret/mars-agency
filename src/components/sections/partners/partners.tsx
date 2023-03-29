@@ -36,7 +36,10 @@ export default function Partners() {
             onMouseLeave={handleMouseLeave}
             theme={theme}
           >
-            <CursorHandler onClick={handleBankCount} />
+            <CursorHandler
+              onClick={handleBankCount}
+              isSmallScreen={isSmallScreen}
+            />
             <Title>
               <AnimationFadeIn>партнеры</AnimationFadeIn>
             </Title>
@@ -61,7 +64,6 @@ export default function Partners() {
                       position: 'absolute',
                       display: 'flex',
                       width: width,
-                      // width: '100%',
                     }}
                   />
                 </motion.div>
@@ -73,7 +75,10 @@ export default function Partners() {
             onMouseLeave={handleMouseLeave}
             theme={theme}
           >
-            <CursorHandler onClick={handleDevelopCount} />
+            <CursorHandler
+              onClick={handleDevelopCount}
+              isSmallScreen={isSmallScreen}
+            />
             <Title
               style={{
                 paddingLeft: (!isSmallScreen && '20px') || '',
