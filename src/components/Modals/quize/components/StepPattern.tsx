@@ -1,10 +1,5 @@
 import React, { ReactNode } from 'react'
-import {
-  List,
-  FieldsWrapper,
-  Title,
-  Wrapper,
-} from './SailBlank/components/step.style'
+import { List, FieldsWrapper, Title, Wrapper } from './step.style'
 
 import Chip from '@/components/UI/Chip/Chip'
 import Selector from '@/components/UI/Selector/Selector'
