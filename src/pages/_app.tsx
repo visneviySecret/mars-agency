@@ -9,7 +9,7 @@ function App({ Component, ...rest }: AppProps) {
 
   return (
     <Provider store={store}>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>

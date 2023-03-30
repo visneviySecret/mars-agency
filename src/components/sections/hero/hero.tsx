@@ -9,6 +9,7 @@ import { DealStatus } from '@/components/Modals/quize/quize.utils'
 import { blockScroll, unlockScroll } from './utils'
 import { useTheme } from 'next-themes'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
+import AnimationMaskText from '@/share/Animation/AnimationMaskText'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -37,9 +38,14 @@ export default function Hero() {
     <>
       <Container>
         <Section>
-          <AnimationFadeIn delay={0.8}>
-            <Title>Агентство недвижимости с космическим сервисом</Title>
-          </AnimationFadeIn>
+          <Title>
+            <AnimationMaskText delay={0.5}>
+              Агентство недвижимости
+            </AnimationMaskText>
+            <AnimationMaskText delay={0.6}>
+              с космическим сервисом
+            </AnimationMaskText>
+          </Title>
           <ButtonsWrapper>
             <AnimationFadeIn style={customButtonStyle} delay={1}>
               <Button

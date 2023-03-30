@@ -42,12 +42,12 @@ export const usePartners = () => {
   const [isHovered, setIsHoverd] = useState('')
   const { theme } = useTheme()
 
-  const handleBankCount = (direction: string) => {
+  const handleBankCount = (direction?: string) => {
     const increment = direction === 'right' ? 1 : -1
     setBankCount((prev) => prev + increment)
   }
 
-  const handleDevelopCount = (direction: string) => {
+  const handleDevelopCount = (direction?: string) => {
     const increment = direction === 'right' ? 1 : -1
     setDevelopCount((prev) => prev + increment)
   }
@@ -71,7 +71,7 @@ export const usePartners = () => {
   useEffect(() => {
     if (isHovered === 'bank') return
     const bankInterval = setInterval(() => {
-      // handleBankCount()
+      handleBankCount()
     }, 4444)
 
     return () => {
@@ -83,7 +83,7 @@ export const usePartners = () => {
     if (isHovered === 'developer') return
 
     const devInterval = setInterval(() => {
-      // handleDevelopCount()
+      handleDevelopCount()
     }, 3333)
 
     return () => {

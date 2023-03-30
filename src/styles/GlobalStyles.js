@@ -124,5 +124,10 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
     
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+}
 
 `
