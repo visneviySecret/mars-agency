@@ -17,6 +17,7 @@ export const CrossIcon = styled.span<{
   position: relative;
   width: ${({ size }) => getSize(size)};
   height: ${({ size }) => getSize(size)};
+  cursor: pointer;
 
   &::after,
   &::before {

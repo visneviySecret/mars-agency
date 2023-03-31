@@ -53,20 +53,18 @@ export default function Steps() {
           {list.map((item, index) => (
             <Card key={index} index={index} isDarkMode={isDarkMode}>
               <ImageWrapper isDarkMode={isDarkMode}>
-                <AnimationFadeIn>
-                  <Image
-                    src={item.img}
-                    width={750}
-                    height={415}
-                    alt="interier"
-                    style={{
-                      marginLeft: 'auto',
-                      maxWidth: '100%',
-                      maxHeight: 'min(70vw, 415px)',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </AnimationFadeIn>
+                <Image
+                  src={item.img}
+                  width={750}
+                  height={415}
+                  alt="interier"
+                  style={{
+                    marginLeft: 'auto',
+                    maxWidth: '100%',
+                    maxHeight: 'min(70vw, 415px)',
+                    objectFit: 'cover',
+                  }}
+                />
               </ImageWrapper>
               <CardContent>
                 <CardTitle isDarkMode={isDarkMode}>

@@ -22,8 +22,8 @@ export const List = styled.nav`
 export const Item = styled.li<{ onClick?: () => void }>`
   font-size: ${({ onClick }) => onClick && '35px'};
   line-height: ${({ onClick }) => onClick && '140%'};
-
   margin-bottom: ${({ onClick }) => onClick && '15px'};
+  cursor: pointer;
 
   &:last-child {
     margin-bottom: 0;

@@ -31,6 +31,7 @@ export const Input = styled.input<{
   width: 100%;
   background-color: transparent;
   border: none;
+  -webkit-border-before: none;
   border-bottom: 1px solid
     ${({ isError, isQuize, isDarkMode }) =>
       isError ? getQuizeColor(isQuize) : getColor(isQuize, isDarkMode)};

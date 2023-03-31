@@ -84,16 +84,15 @@ export default function Form() {
             </FormWrapper>
           </Wrapper>
         </Container>
-        {isActive && (
-          <WarningForm
-            setIsActive={setIsActive}
-            title={'Спасибо!'}
-            content={
-              'Ваша заявка отправлена! В ближайшее время мы свяжемся с вами.'
-            }
-            closingText={'Хорошо'}
-          />
-        )}
+        <WarningForm
+          isActive={isActive}
+          setIsActive={setIsActive}
+          title={'Спасибо!'}
+          content={
+            'Ваша заявка отправлена! В ближайшее время мы свяжемся с вами.'
+          }
+          closingText={'Хорошо'}
+        />
       </Section>
     </AnimationFadeIn>
   )

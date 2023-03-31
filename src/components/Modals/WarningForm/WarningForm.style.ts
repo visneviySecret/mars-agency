@@ -6,13 +6,11 @@ const getThemeColor = (isDarkMode: boolean) => {
   return isDarkMode ? Color.WHITE : Color.GREY
 }
 
-export const Container = styled.div`
-  z-index: 10000;
-  position: fixed;
-  inset: 0;
-  width: 99.5vw;
+export const Container = styled.div<{ isActive: boolean }>`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  transition: opacity 0.3s ease-out;
 `
 export const Wrapper = styled.div<{ isDarkMode: boolean }>`
   position: absolute;

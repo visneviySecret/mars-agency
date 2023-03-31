@@ -37,7 +37,7 @@ export const ButtonComponent = styled.button<{
       appTheme === 'dark' ? darkThemeHover : lightThemeHover};
     background-color: transparent;
     border: 1px solid;
-    padding-block: ${({ isBig }) => isBig && '20px 17px'};
+    padding-block: ${({ isBig }) => isBig && '19px 17px'};
   }
 
   @media (max-width: ${breakPoints.Touch}) {

@@ -7,21 +7,26 @@ interface PortalProps {
   children: ReactNode
   isActive: boolean
   opacity?: number
+  isDisableTransition?: boolean
 }
 
-const Overlay = styled.div<{ isActive: boolean; opacity?: number }>`
+const Overlay = styled.div<{
+  isActive: boolean
+  opacity?: number
+  isDisableTransition?: boolean
+}>`
   z-index: 1000;
   position: fixed;
   top: ${({ isActive }) => (isActive ? '50%' : '100%')};
   left: ${({ isActive }) => (isActive ? '50%' : '100%')};
   translate: ${({ isActive }) => isActive && '-50% -50%'};
-  /* background-color: ${Color.WHITE}; */
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  opacity: ${({ opacity }) => opacity || '1'};
+  opacity: ${({ opacity, isActive }) => (isActive ? opacity || 1 : 0)};
 
-  transition: translate 0.3s;
+  transition: ${({ isDisableTransition }) =>
+    !isDisableTransition && 'translate 0.3s'};
 
   &::-webkit-scrollbar {
     width: 0.5vw;
@@ -35,7 +40,12 @@ const Overlay = styled.div<{ isActive: boolean; opacity?: number }>`
   }
 `
 
-function Portal({ isActive, children, opacity }: PortalProps) {
+function Portal({
+  isActive,
+  children,
+  opacity,
+  isDisableTransition,
+}: PortalProps) {
   const ref = useRef<Element | null>(null)
   const [mounted, setMounted] = useState(false)
 
@@ -47,7 +57,11 @@ function Portal({ isActive, children, opacity }: PortalProps) {
   if (!mounted || !ref.current) return null
 
   return createPortal(
-    <Overlay isActive={isActive} opacity={opacity}>
+    <Overlay
+      isActive={isActive}
+      opacity={opacity}
+      isDisableTransition={isDisableTransition}
+    >
       {children}
     </Overlay>,
     ref.current,

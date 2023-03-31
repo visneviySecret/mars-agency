@@ -29,7 +29,7 @@ export const MenuWrapper = styled.div`
   flex: 1;
   display: flex;
 
-  @media (max-width: ${breakPoints.Tablet}) {
+  @media (max-width: ${breakPoints.Medium}) {
     display: none;
   }
 `

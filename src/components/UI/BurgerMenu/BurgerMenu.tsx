@@ -37,7 +37,7 @@ export const BurgerMenu = styled.span<{ isActive: boolean }>`
     rotate: ${({ isActive }) => isActive && '180deg'};
   }
 
-  @media (max-width: ${breakPoints.Tablet}) {
+  @media (max-width: ${breakPoints.Medium}) {
     display: block;
   }
 
