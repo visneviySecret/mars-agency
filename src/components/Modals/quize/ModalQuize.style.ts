@@ -10,9 +10,9 @@ const getModeBackground = (isDarkMode: boolean) => {
 export const Section = styled.section<{ isDarkMode: boolean }>`
   background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
 
-  @media (max-width: ${breakPoints.Touch}) {
+  @media (max-width: ${breakPoints.Tablet}) {
     //необхоидимая оптимизация для мобилок
-    top: calc(100px - 12vw);
+    margin-top: calc(100px - 14vw);
   }
 `
 
