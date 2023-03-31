@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const Section = styled.section`
   margin-top: -0.6rem;
   margin-bottom: 4.68rem;
-  margin-left: -0.9vw;
 
   @media (max-width: ${breakPoints.Tablet}) {
     margin-top: calc(40px - 0.6rem - 1.7vw);
@@ -37,7 +36,7 @@ export const Title = styled.h1`
     font-size: 8.6vw;
   }
   @media (max-width: 840px) {
-    letter-spacing: -5px;
+    letter-spacing: -6px;
   }
   @media (max-width: ${breakPoints.Tablet}) {
     letter-spacing: -3px;

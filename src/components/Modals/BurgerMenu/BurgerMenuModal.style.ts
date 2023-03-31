@@ -7,7 +7,7 @@ export const Wrapper = styled.div<{ isActive: boolean; color: string }>`
   position: fixed;
   width: 100%;
   height: 100vh;
-  bottom: -50px;
+  top: calc(100px - 8vw);
   right: -100%;
   translate: ${({ isActive }) => isActive && '-100% 0%'};
   background-color: ${({ color }) => color};

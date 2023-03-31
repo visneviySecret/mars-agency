@@ -1,3 +1,4 @@
+import { breakPoints } from '@/utils/breakPoints'
 import { Color } from '@/utils/color'
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -37,6 +38,8 @@ const Overlay = styled.div<{
   }
   &::-webkit-scrollbar-track {
     background-color: ${Color.LIGHT10};
+  }
+  @media (max-width: ${breakPoints.Tablet}) {
   }
 `
 
