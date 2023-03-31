@@ -15,7 +15,7 @@ export const FooterWrapper = styled.footer`
 `
 
 export const Wrapper = styled.div`
-  padding-inline: 20px;
+  padding-inline: clamp(${indents.indent10}, 2.4vw, ${indents.indent20});
 `
 
 export const ColumnWrapper = styled.div`

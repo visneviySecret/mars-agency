@@ -48,15 +48,10 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  gap: clamp(0.5rem, 2vw, ${indents.indent10});
+  gap: clamp(10px, 2vw, 20px);
 
   @media (max-width: ${breakPoints.Tablet}) {
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-  }
-
-  @media (max-width: ${breakPoints.Touch}) {
-    column-gap: 10px;
   }
 `
 

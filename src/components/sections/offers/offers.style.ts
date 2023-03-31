@@ -52,9 +52,13 @@ export const Title = styled.h2`
   }
 `
 
+export const ContentWrapper = styled.div`
+  max-width: 620px;
+`
+
 export const Content = styled.p`
   flex: 1;
-  font-size: clamp(14px, 3.13vw, 25px);
+  font-size: clamp(14px, 2.2vw, 25px);
   line-height: 130%;
   margin-top: ${indents.indent10};
   padding-left: ${indents.indent10};

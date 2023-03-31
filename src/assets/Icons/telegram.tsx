@@ -1,16 +1,16 @@
 import { Color } from '@/utils/color'
 
 export const Telegram = ({
-  width,
+  size,
   color = Color.WHITE,
 }: {
-  width: number
+  size: number
   color?: string
 }) => {
   return (
     <svg
-      width={width}
-      height="25"
+      width={size}
+      height={size}
       viewBox="0 0 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

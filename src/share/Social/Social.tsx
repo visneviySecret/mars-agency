@@ -9,7 +9,7 @@ import useMeasure from 'react-use-measure'
 
 export const Icons = styled.ul`
   display: flex;
-  gap: ${indents.indent20};
+  gap: clamp(${indents.indent12}, 2.5vw, ${indents.indent20});
   list-style-type: none;
   align-items: flex-end;
   max-height: 30px;
@@ -24,7 +24,7 @@ export const Icons = styled.ul`
 `
 
 export const IconWrapper = styled.div`
-  width: clamp(${indents.indent15}, 3.2vw, ${indents.indent25});
+  width: clamp(${indents.indent20}, 3.2vw, ${indents.indent25});
 `
 
 function Social({ color }: { color?: string }) {
@@ -33,18 +33,18 @@ function Social({ color }: { color?: string }) {
   return (
     <Icons>
       <Link href={''}>
+        <IconWrapper>
+          <Telegram size={width} color={color} />
+        </IconWrapper>
+      </Link>
+      <Link href={''}>
+        <IconWrapper>
+          <Instagram size={width} color={color} />
+        </IconWrapper>
+      </Link>
+      <Link href={''}>
         <IconWrapper ref={ref}>
-          <Telegram width={width} color={color} />
-        </IconWrapper>
-      </Link>
-      <Link href={''}>
-        <IconWrapper>
-          <Instagram width={width} color={color} />
-        </IconWrapper>
-      </Link>
-      <Link href={''}>
-        <IconWrapper>
-          <Whatsup width={width} color={color} />
+          <Whatsup size={width} color={color} />
         </IconWrapper>
       </Link>
     </Icons>
