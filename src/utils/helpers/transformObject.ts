@@ -24,7 +24,7 @@ export function convertToStringObject(obj: FormValues): {
 
 export function cleanObject(obj: { [key: string]: string }) {
   const filteredEntries = Object.entries(obj).filter(
-    ([key, value]) => value !== '',
+    ([, value]) => value !== '',
   )
 
   return Object.fromEntries(filteredEntries)
