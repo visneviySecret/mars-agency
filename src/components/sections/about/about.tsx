@@ -10,15 +10,15 @@ import {
   Accented,
   IconWrapper,
 } from './about.style'
-import { Container } from '@/components/UI/Container/container.style'
-import { Key } from '@/assets/Icons/Key'
 import useMeasure from 'react-use-measure'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
-import { Garant } from '@/assets/Icons/Garant'
-import { Deal } from '@/assets/Icons/Deal'
-import { Document } from '@/assets/Icons/Document'
-import { Remote } from '@/assets/Icons/Remote'
-import { Promotion } from '@/assets/Icons/Propmotion'
+import { Container } from '@/components/UI/Container/container.style'
+import { Key } from '@/assets/Icons/About/Key'
+import { Garant } from '@/assets/Icons/About/Garant'
+import { Deal } from '@/assets/Icons/About/Deal'
+import { Document } from '@/assets/Icons/About/Document'
+import { Remote } from '@/assets/Icons/About/Remote'
+import { Promotion } from '@/assets/Icons/About/Propmotion'
 
 export default function About() {
   const [ref, { width }] = useMeasure()
