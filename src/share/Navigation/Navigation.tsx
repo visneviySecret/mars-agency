@@ -19,7 +19,9 @@ export const List = styled.nav`
   font-size: clamp(10px, 1.9vw, 16px);
 `
 
-export const Item = styled.li<{ onClick?: () => void }>`
+export const Item = styled.a<{
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
+}>`
   font-size: ${({ onClick }) => onClick && '35px'};
   line-height: ${({ onClick }) => onClick && '140%'};
   margin-bottom: ${({ onClick }) => onClick && '15px'};
@@ -29,23 +31,21 @@ export const Item = styled.li<{ onClick?: () => void }>`
     margin-bottom: 0;
   }
 
-  & > a {
-    text-decoration: none;
-  }
+  text-decoration: none;
 `
 
 function Navigation({ onClose }: { onClose?: () => void }) {
   return (
     <List>
       {navList.map((item, index) => (
-        <Item key={index} onClick={onClose}>
-          <a
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-              handleLink(e, item.ancor)
-            }
-          >
-            {item.title}
-          </a>
+        <Item
+          key={index}
+          onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+            onClose && onClose()
+            handleLink(event, item.ancor)
+          }}
+        >
+          {item.title}
         </Item>
       ))}
     </List>

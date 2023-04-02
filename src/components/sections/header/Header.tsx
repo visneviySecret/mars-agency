@@ -43,10 +43,6 @@ export default function Header() {
     unlockScroll()
   }
 
-  const handleEmptyClick = () => {
-    return
-  }
-
   useEffect(() => {
     if (!isSmallScreen) handleClose()
   }, [isSmallScreen])
@@ -69,7 +65,7 @@ export default function Header() {
             <TogglerAndButtonWrapper>
               <Toggler />
               <a onClick={handleLink}>
-                <Button onClick={handleEmptyClick}>Обратный звонок</Button>
+                <Button>Обратный звонок</Button>
               </a>
             </TogglerAndButtonWrapper>
           </MenuWrapper>
