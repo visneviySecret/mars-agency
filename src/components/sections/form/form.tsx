@@ -69,8 +69,8 @@ export default function Form() {
             />
           </Wrapper>
 
-          <Wrapper onSubmit={handleSubmit(onSubmit)}>
-            <FormWrapper>
+          <Wrapper>
+            <FormWrapper onSubmit={handleSubmit(onSubmit)}>
               <Header>
                 <Title>
                   <AnimationFadeIn delay={0.5}>

@@ -56,7 +56,7 @@ export const ContentWrapper = styled.div`
   max-width: 620px;
 `
 
-export const Content = styled.p`
+export const Content = styled.div`
   flex: 1;
   font-size: clamp(14px, 2.2vw, 25px);
   line-height: 130%;

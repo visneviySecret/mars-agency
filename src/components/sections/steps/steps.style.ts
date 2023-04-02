@@ -42,7 +42,7 @@ export const Title = styled.h2`
   }
 `
 
-export const Content = styled.p`
+export const Content = styled.div`
   flex: 1;
   font-size: clamp(14px, 3.13vw, 25px);
   line-height: 130%;

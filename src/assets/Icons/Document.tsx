@@ -9,56 +9,56 @@ export const Document = ({ size }: { size: number }) => {
     >
       <title>Document</title>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M0 1.5C0 0.671573 0.671573 0 1.5 0H58.5C59.3284 0 60 0.671573 60 1.5V64.0446C60 64.4408 59.8432 64.821 59.5639 65.102L42.2161 82.5574C41.9345 82.8407 41.5516 83 41.1522 83H1.5C0.671573 83 0 82.3284 0 81.5V1.5ZM3 3V80H40.5281L57 63.426V3H3Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M39.2109 63.9473C39.2109 63.1188 39.8825 62.4473 40.7109 62.4473H58.1641C58.9926 62.4473 59.6641 63.1188 59.6641 63.9473C59.6641 64.7757 58.9926 65.4473 58.1641 65.4473H42.2109V81.3491C42.2109 82.1775 41.5394 82.8491 40.7109 82.8491C39.8825 82.8491 39.2109 82.1775 39.2109 81.3491V63.9473Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9 24V54H51V24H9ZM6 23.5C6 22.1193 7.11929 21 8.5 21H51.5C52.8807 21 54 22.1193 54 23.5V54.5C54 55.8807 52.8807 57 51.5 57H8.5C7.11929 57 6 55.8807 6 54.5V23.5Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9 10V15H17V10H9ZM6 9.5C6 8.11929 7.11929 7 8.5 7H17.5C18.8807 7 20 8.11929 20 9.5V15.5C20 16.8807 18.8807 18 17.5 18H8.5C7.11929 18 6 16.8807 6 15.5V9.5Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M26 10V15H51V10H26ZM23 9.5C23 8.11929 24.1193 7 25.5 7H51.5C52.8807 7 54 8.11929 54 9.5V15.5C54 16.8807 52.8807 18 51.5 18H25.5C24.1193 18 23 16.8807 23 15.5V9.5Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7 64C7 63.1716 7.67157 62.5 8.5 62.5H20C20.8284 62.5 21.5 63.1716 21.5 64C21.5 64.8284 20.8284 65.5 20 65.5H8.5C7.67157 65.5 7 64.8284 7 64Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7 72.5C7 71.6716 7.67157 71 8.5 71H27C27.8284 71 28.5 71.6716 28.5 72.5C28.5 73.3284 27.8284 74 27 74H8.5C7.67157 74 7 73.3284 7 72.5Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M29.0359 29.2216C29.6217 28.6358 30.5714 28.6358 31.1572 29.2216L41.7694 39.8338C42.3552 40.4196 42.3552 41.3693 41.7694 41.9551C41.1836 42.5409 40.2339 42.5409 39.6481 41.9551L30.0966 32.4035L20.545 41.9551C19.9592 42.5409 19.0095 42.5409 18.4237 41.9551C17.8379 41.3693 17.8379 40.4196 18.4237 39.8338L29.0359 29.2216Z"
         fill="#262626"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M30.0781 29C30.9066 29 31.5781 29.6716 31.5781 30.5V54.4164C31.5781 55.2448 30.9066 55.9164 30.0781 55.9164C29.2497 55.9164 28.5781 55.2448 28.5781 54.4164V30.5C28.5781 29.6716 29.2497 29 30.0781 29Z"
         fill="#262626"
       />
@@ -67,8 +67,8 @@ export const Document = ({ size }: { size: number }) => {
         fill="#F4F4F4"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M17 41.5C17 42.3284 17.6716 43 18.5 43C19.3284 43 20 42.3284 20 41.5C20 40.6716 19.3284 40 18.5 40C17.6716 40 17 40.6716 17 41.5ZM18.5 46C16.0147 46 14 43.9853 14 41.5C14 39.0147 16.0147 37 18.5 37C20.9853 37 23 39.0147 23 41.5C23 43.9853 20.9853 46 18.5 46Z"
         fill="#262626"
       />
@@ -77,8 +77,8 @@ export const Document = ({ size }: { size: number }) => {
         fill="#F4F4F4"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M40 41.5C40 42.3284 40.6716 43 41.5 43C42.3284 43 43 42.3284 43 41.5C43 40.6716 42.3284 40 41.5 40C40.6716 40 40 40.6716 40 41.5ZM41.5 46C39.0147 46 37 43.9853 37 41.5C37 39.0147 39.0147 37 41.5 37C43.9853 37 46 39.0147 46 41.5C46 43.9853 43.9853 46 41.5 46Z"
         fill="#262626"
       />
@@ -87,8 +87,8 @@ export const Document = ({ size }: { size: number }) => {
         fill="#F4F4F4"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M28.5 30.5C28.5 31.3284 29.1716 32 30 32C30.8284 32 31.5 31.3284 31.5 30.5C31.5 29.6716 30.8284 29 30 29C29.1716 29 28.5 29.6716 28.5 30.5ZM30 35C27.5147 35 25.5 32.9853 25.5 30.5C25.5 28.0147 27.5147 26 30 26C32.4853 26 34.5 28.0147 34.5 30.5C34.5 32.9853 32.4853 35 30 35Z"
         fill="#262626"
       />
@@ -97,8 +97,8 @@ export const Document = ({ size }: { size: number }) => {
         fill="#F4F4F4"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M26 12.5C26 13.3284 26.6716 14 27.5 14C28.3284 14 29 13.3284 29 12.5C29 11.6716 28.3284 11 27.5 11C26.6716 11 26 11.6716 26 12.5ZM27.5 17C25.0147 17 23 14.9853 23 12.5C23 10.0147 25.0147 8 27.5 8C29.9853 8 32 10.0147 32 12.5C32 14.9853 29.9853 17 27.5 17Z"
         fill="#262626"
       />
@@ -107,8 +107,8 @@ export const Document = ({ size }: { size: number }) => {
         fill="#F4F4F4"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9 12.5C9 13.3284 9.67157 14 10.5 14C11.3284 14 12 13.3284 12 12.5C12 11.6716 11.3284 11 10.5 11C9.67157 11 9 11.6716 9 12.5ZM10.5 17C8.01472 17 6 14.9853 6 12.5C6 10.0147 8.01472 8 10.5 8C12.9853 8 15 10.0147 15 12.5C15 14.9853 12.9853 17 10.5 17Z"
         fill="#262626"
       />

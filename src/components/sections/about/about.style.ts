@@ -36,7 +36,7 @@ export const Title = styled.h2`
   }
 `
 
-export const Content = styled.p`
+export const Content = styled.div`
   flex: 2;
   line-height: 110%;
   text-align: justify;

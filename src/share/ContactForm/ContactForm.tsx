@@ -19,7 +19,7 @@ interface IProps {
   errors?: FieldErrors<FormValues>
 }
 
-const Wrapper = styled.form`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: clamp(${indents.indent10}, 4.4vw, ${indents.indent35});

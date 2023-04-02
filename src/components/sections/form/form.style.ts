@@ -7,7 +7,7 @@ export const Section = styled.section`
   margin-bottom: clamp(${indents.indent10}, 4.5vw, ${indents.indent20});
 `
 
-export const Wrapper = styled.form`
+export const Wrapper = styled.div`
   flex: 1;
   background-color: ${Color.CORAL};
   @media (max-width: ${breakPoints.Tablet}) {
@@ -15,7 +15,7 @@ export const Wrapper = styled.form`
   }
 `
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled.form`
   padding-inline: clamp(${indents.indent10}, 2.4vw, ${indents.indent20});
 `
 

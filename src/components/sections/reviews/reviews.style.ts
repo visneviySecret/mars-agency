@@ -99,7 +99,7 @@ export const ItemDescription = styled.span`
 
 export const ItemPhotoWrapper = styled.div``
 
-export const ItemComment = styled.p`
+export const ItemComment = styled.div`
   flex: 1;
   font-weight: 400;
   font-size: clamp(12px, 3.7vw, 18px);
