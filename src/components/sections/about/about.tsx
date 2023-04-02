@@ -11,9 +11,14 @@ import {
   IconWrapper,
 } from './about.style'
 import { Container } from '@/components/UI/Container/container.style'
-import { Key } from '@/assets/Icons/key'
+import { Key } from '@/assets/Icons/Key'
 import useMeasure from 'react-use-measure'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
+import { Garant } from '@/assets/Icons/Garant'
+import { Deal } from '@/assets/Icons/Deal'
+import { Document } from '@/assets/Icons/Document'
+import { Remote } from '@/assets/Icons/Remote'
+import { Promotion } from '@/assets/Icons/Propmotion'
 
 export default function About() {
   const [ref, { width }] = useMeasure()
@@ -44,7 +49,7 @@ export default function About() {
           <AnimationFadeIn>
             <Item>
               <IconWrapper>
-                <Key size={width} />
+                <Garant size={width} />
               </IconWrapper>
               <ItemTitle>Гарантия юридической чистоты</ItemTitle>
             </Item>
@@ -52,7 +57,7 @@ export default function About() {
           <AnimationFadeIn>
             <Item>
               <IconWrapper>
-                <Key size={width} />
+                <Deal size={width} />
               </IconWrapper>
               <ItemTitle>Обеспечение выгодной сделки</ItemTitle>
             </Item>
@@ -60,7 +65,7 @@ export default function About() {
           <AnimationFadeIn>
             <Item>
               <IconWrapper>
-                <Key size={width} />
+                <Document size={width} />
               </IconWrapper>
               <ItemTitle>Подготовка объекта к продаже</ItemTitle>
             </Item>
@@ -68,7 +73,7 @@ export default function About() {
           <AnimationFadeIn>
             <Item>
               <IconWrapper>
-                <Key size={width} />
+                <Promotion size={width} />
               </IconWrapper>
               <ItemTitle>Эффективное продвижение объекта</ItemTitle>
             </Item>
@@ -76,7 +81,7 @@ export default function About() {
           <AnimationFadeIn>
             <Item>
               <IconWrapper>
-                <Key size={width} />
+                <Remote size={width} />
               </IconWrapper>
               <ItemTitle>Дистанционное одобрение ипотеки</ItemTitle>
             </Item>

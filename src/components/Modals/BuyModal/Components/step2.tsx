@@ -1,7 +1,7 @@
 import Selector from '@/components/UI/Selector/Selector'
 import ChipList from '@/share/ChipList/ChipList'
 import React from 'react'
-import { locations } from '../../quize/quize.utils'
+import { locations } from './quize.utils'
 import { FormValues } from '../BuyModal.types'
 import { useController } from 'react-hook-form'
 import { StepPattern } from './StepPattern'

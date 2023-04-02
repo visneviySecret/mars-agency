@@ -1,6 +1,6 @@
 import ChipList from '@/share/ChipList/ChipList'
 import React from 'react'
-import { cost_range } from '../../quize/quize.utils'
+import { cost_range } from './quize.utils'
 import { FormValues } from '../BuyModal.types'
 import { useController } from 'react-hook-form'
 import { StepPattern } from './StepPattern'

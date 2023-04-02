@@ -39,7 +39,7 @@ function ContactForm({
       <TextField
         name="name"
         value={value?.name}
-        placeholder={'Введите имя'}
+        placeholder={'имя'}
         onChange={onChange}
         errorMessage={errors?.contacts?.name?.message}
         isQuize={isQuize}
@@ -48,7 +48,7 @@ function ContactForm({
         type="tel"
         name="phone"
         value={value?.phone}
-        placeholder={'Введите номер'}
+        placeholder={'телефон'}
         onChange={onChange}
         errorMessage={errors?.contacts?.phone?.message}
         isQuize={isQuize}

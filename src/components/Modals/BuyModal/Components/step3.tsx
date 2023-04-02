@@ -2,7 +2,7 @@ import ChipList from '@/share/ChipList/ChipList'
 import React from 'react'
 import { FormValues } from '../BuyModal.types'
 import { useController } from 'react-hook-form'
-import { preferences } from '../../quize/quize.utils'
+import { preferences } from './quize.utils'
 import { StepPattern } from './StepPattern'
 import { Control } from 'react-hook-form/dist/types/form'
 

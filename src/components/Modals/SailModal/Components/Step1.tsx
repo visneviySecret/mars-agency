@@ -1,6 +1,6 @@
 import React from 'react'
 import ChipList from '@/share/ChipList/ChipList'
-import { rent_types_to_sail } from '../../quize/quize.utils'
+import { rent_types_to_sail } from './quize.utils'
 import { useController } from 'react-hook-form'
 import { StepPattern } from './StepPattern'
 import { FormValues } from '../SailModal.types'

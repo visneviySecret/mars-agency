@@ -1,5 +1,4 @@
 import * as yup from 'yup'
-import { FormValues } from './SailModal.types'
 import {
   cleanObject,
   objectToString,
@@ -41,7 +40,7 @@ export const schema = yup
   })
   .required()
 
-export const getFormattedData = (data: FormValues) => {
+export const getFormattedData = (data: any) => {
   const result = convertToStringObject(data)
   const cleared = cleanObject(result)
   const translated = translateObjectKeys(cleared)

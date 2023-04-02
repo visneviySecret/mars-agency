@@ -1,41 +1,26 @@
-import { FormValues } from '@/components/Modals/SailModal/SailModal.types'
-
-export function convertToStringObject(obj: FormValues): {
+interface StringsObject {
   [key: string]: string
-} {
-  const result = {} as { [key: string]: string }
-
-  Object.keys(obj).forEach((key) => {
-    const value = obj[key]
-    if (Array.isArray(value)) {
-      result[key] = value.join(', ')
-    } else {
-      const subObj = value
-      Object.keys(subObj).forEach((subkey) => {
-        const newKey = `${subkey}`
-        result[newKey] = subObj[subkey]
-      })
-    }
-  })
-
-  return result
 }
 
-function flattenObject(obj: { [key: string]: { value: string } }): {
-  [key: string]: string
-} {
-  const result: { [key: string]: string } = {}
+export function convertToStringObject(
+  input: { [key: string]: string[] } & { [key: string]: any },
+): StringsObject {
+  const output: StringsObject = {}
 
-  for (const [key, value] of Object.entries(obj)) {
-    result[key] = value.value
+  for (const key in input) {
+    if (Array.isArray(input[key])) {
+      output[key] = input[key].join('')
+    } else {
+      output[key] = input[key]
+    }
   }
 
-  return result
+  return output
 }
 
 export function cleanObject(obj: { [key: string]: string }) {
   const filteredEntries = Object.entries(obj).filter(
-    ([key, value]) => value !== '',
+    ([, value]) => value !== '',
   )
 
   return Object.fromEntries(filteredEntries)

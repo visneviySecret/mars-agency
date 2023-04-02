@@ -3,7 +3,7 @@ import { Input, Component, Wrapper } from './Selector.style'
 import { useTheme } from 'next-themes'
 import { ArrowCursor } from '../ArrowCursor/ArrowCursor'
 import Options from './Components/Options'
-import { DealStatus } from '@/components/Modals/quize/quize.utils'
+import { DealStatus } from '@/components/Modals/BuyModal/Components/quize.utils'
 
 interface IProps {
   options: string[]

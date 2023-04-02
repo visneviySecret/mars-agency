@@ -1,6 +1,6 @@
 import ChipList from '@/share/ChipList/ChipList'
 import React from 'react'
-import { deal_date } from '../../quize/quize.utils'
+import { deal_date } from './quize.utils'
 import { FormValues } from '../SailModal.types'
 import { useController } from 'react-hook-form'
 import { StepPattern } from './StepPattern'
