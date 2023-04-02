@@ -32,7 +32,7 @@ function useMediaQuery(query: string): boolean {
         matchMedia.removeEventListener('change', handleChange)
       }
     }
-  }, [query])
+  }, [query]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return matches
 }
