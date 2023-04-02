@@ -44,6 +44,7 @@ export const getFormattedData = (data: any) => {
   const result = convertToStringObject(data)
   const cleared = cleanObject(result)
   const translated = translateObjectKeys(cleared)
+  console.log(translated)
   const array = objectToString(translated)
   return array
 }
