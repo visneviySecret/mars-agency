@@ -36,6 +36,11 @@ export default function Step1({ dealStatus, handleForm }: IProps) {
   }, [selected])
 
   return (
-    <StepPattern title={title} nodes={dictionaries} handleClick={handleClick} />
+    <StepPattern
+      title={title}
+      nodes={dictionaries}
+      handleClick={handleClick}
+      selected={selected}
+    />
   )
 }

@@ -3,49 +3,54 @@ import TextField from '@/components/UI/TextField/TextField'
 import { indents } from '@/utils/indents'
 import React from 'react'
 import styled from 'styled-components'
+import { FieldErrors } from 'react-hook-form'
+import {
+  FormContacts,
+  FormValues,
+} from '../../components/Modals/BuyModal/BuyModal.types'
 
 interface IProps {
-  form: { [key: string]: string }
+  value: FormContacts
   isChecked: boolean
+  onChange: (key: string, value: string) => void
   setIsChecked: (val: boolean) => void
-  handleChange: (key: string, value: string) => void
   isQuize?: boolean
   isLanding?: boolean
-  errorMessage?: { name: string; phone: string }
+  errors?: FieldErrors<FormValues>
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: clamp(${indents.indent10}, 4.4vw, ${indents.indent35});
 `
 
 function ContactForm({
-  form,
+  value,
   isChecked,
   setIsChecked,
-  handleChange,
+  onChange,
   isQuize,
   isLanding,
-  errorMessage,
+  errors,
 }: IProps) {
   return (
     <Wrapper>
       <TextField
         name="name"
-        placeholder="ИМЯ"
-        onChange={handleChange}
-        value={form.name}
-        errorMessage={errorMessage?.name || ''}
+        value={value?.name}
+        placeholder={'Введите имя'}
+        onChange={onChange}
+        errorMessage={errors?.contacts?.name?.message}
         isQuize={isQuize}
       />
       <TextField
-        name="phone"
         type="tel"
-        placeholder="ТЕЛЕФОН"
-        onChange={handleChange}
-        value={form.phone}
-        errorMessage={errorMessage?.phone || ''}
+        name="phone"
+        value={value?.phone}
+        placeholder={'Введите номер'}
+        onChange={onChange}
+        errorMessage={errors?.contacts?.phone?.message}
         isQuize={isQuize}
       />
       <PersonalAgreement

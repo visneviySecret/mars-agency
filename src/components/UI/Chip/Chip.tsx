@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode } from 'react'
 import { ChipComponent } from './Chip.styled'
 import { useTheme } from 'next-themes'
 import Cross from '../Cross/Cross'
@@ -6,35 +6,34 @@ import Cross from '../Cross/Cross'
 interface IProps {
   onClick: () => void
   children: ReactNode
-  isActiveNode?: boolean
+  isActiveNode: boolean
   order?: number
 }
 
 export default function Chip({
   onClick,
   children,
-  isActiveNode = false,
+  isActiveNode,
   order,
 }: IProps) {
   const { theme } = useTheme()
   const currentTheme = theme
-  const [isActive, setIsActive] = useState(isActiveNode)
 
   const handleClick = () => {
     onClick()
-    setIsActive((prev) => !prev)
   }
 
   return (
     <>
       <ChipComponent
+        type="button"
         theme={currentTheme}
         onClick={handleClick}
-        isActive={isActive}
+        isActive={isActiveNode}
         order={order}
       >
         {children}
-        {isActive && <Cross currentTheme={currentTheme} />}
+        {isActiveNode && <Cross currentTheme={currentTheme} />}
       </ChipComponent>
     </>
   )

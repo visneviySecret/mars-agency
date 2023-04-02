@@ -5,11 +5,12 @@ import { useTheme } from 'next-themes'
 import { Theme } from './Button.utils'
 
 interface IProps {
-  onClick: () => void
+  onClick?: () => void
   children: ReactNode
   style?: CSS.Properties
   customTheme?: Theme
   isBig?: boolean
+  type?: 'submit' | 'button'
 }
 
 export default function Button({
@@ -18,12 +19,14 @@ export default function Button({
   style,
   customTheme,
   isBig,
+  type = 'button',
 }: IProps) {
   const { theme } = useTheme()
 
   return (
     <>
       <ButtonComponent
+        type={type}
         onClick={onClick}
         style={style}
         appTheme={theme}

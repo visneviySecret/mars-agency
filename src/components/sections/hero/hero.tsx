@@ -4,33 +4,33 @@ import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
 import { Container } from '@/components/UI/Container/container.style'
 import { Theme } from '@/components/UI/Button/Button.utils'
-import ModalQuize from '@/components/Modals/quize/ModalQuize'
-import { DealStatus } from '@/components/Modals/quize/quize.utils'
 import { blockScroll, unlockScroll } from './utils'
 import { useTheme } from 'next-themes'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 import AnimationMaskText from '@/share/Animation/AnimationMaskText'
+import BuyModal from '@/components/Modals/BuyModal/BuyModal'
+import SailModal from '@/components/Modals/SailModal/SailModal'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
 export default function Hero() {
-  const [dealStatus, setDealStatus] = useState<DealStatus>(DealStatus.buy)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isOpenBuy, setIsOpenBuy] = useState(false)
+  const [isOpenSail, setIsOpenSail] = useState(false)
   const { theme } = useTheme()
   const picture = theme === Theme.light ? '/Hero.png' : '/HeroNight.png'
 
-  const handleClick = (status: DealStatus) => {
+  const handleBuyBlank = () => {
     blockScroll()
-    openModal(status)
+    setIsOpenBuy(true)
   }
-
-  const openModal = (status: DealStatus) => {
-    setIsModalOpen(true)
-    setDealStatus(status)
+  const handleSailBlank = () => {
+    blockScroll()
+    setIsOpenSail(true)
   }
 
   const onClose = () => {
-    setIsModalOpen(false)
+    setIsOpenBuy(false)
+    setIsOpenSail(false)
     unlockScroll()
   }
 
@@ -48,20 +48,12 @@ export default function Hero() {
           </Title>
           <ButtonsWrapper>
             <AnimationFadeIn style={customButtonStyle} delay={1}>
-              <Button
-                onClick={() => handleClick(DealStatus.buy)}
-                customTheme={Theme.coral}
-                isBig
-              >
+              <Button onClick={handleBuyBlank} customTheme={Theme.coral} isBig>
                 Купить
               </Button>
             </AnimationFadeIn>
             <AnimationFadeIn style={customButtonStyle} delay={1}>
-              <Button
-                onClick={() => handleClick(DealStatus.sail)}
-                customTheme={Theme.coral}
-                isBig
-              >
+              <Button onClick={handleSailBlank} customTheme={Theme.coral} isBig>
                 Продать
               </Button>
             </AnimationFadeIn>
@@ -82,11 +74,8 @@ export default function Hero() {
           </AnimationFadeIn>
         </Section>
       </Container>
-      <ModalQuize
-        isActive={isModalOpen}
-        onClose={onClose}
-        dealStatus={dealStatus}
-      />
+      <BuyModal isActive={isOpenBuy} onClose={onClose} />
+      <SailModal isActive={isOpenSail} onClose={onClose} />
     </>
   )
 }

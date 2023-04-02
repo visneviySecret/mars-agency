@@ -13,6 +13,7 @@ interface IProps {
   title?: string
   name?: string
   nodes?: Array<string>
+  selected?: Array<string>
   dictionaries?: Array<string>
   handleClick?: (value: string) => void
   handleChange?: (key: string, value: string) => void
@@ -29,6 +30,7 @@ function StepPattern({
   title,
   name,
   nodes,
+  selected,
   dictionaries,
   handleClick,
   handleChange,
@@ -54,7 +56,8 @@ function StepPattern({
         )}
         <List>
           {handleClick &&
-            nodes?.map((item, index) => {
+            nodes?.map((item: string, index) => {
+              const isActiveNode = selected && selected.indexOf(item) !== -1
               const newOrder =
                 (item === 'Планировка' && 7) ||
                 (item === 'Объекты без ремонта' && 4) ||
@@ -66,13 +69,14 @@ function StepPattern({
                   key={item}
                   onClick={() => handleClick(item)}
                   order={newOrder}
+                  isActiveNode={isActiveNode || false}
                 >
                   {item}
                 </Chip>
               )
             })}
         </List>
-        {handleChange && placeholder && (
+        {/* {handleChange && placeholder && (
           <TextField
             name={name || ''}
             type="tel"
@@ -82,7 +86,7 @@ function StepPattern({
             isQuize
             style={{ marginTop: nodes?.length && '30px' }}
           />
-        )}
+        )} */}
         {children}
       </FieldsWrapper>
     </Wrapper>

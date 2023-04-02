@@ -21,6 +21,7 @@ export const rent_types_to_sail = [
   'Загородный дом',
   'Коммерческая недвижимость',
   'Земельный участок',
+  'Другое',
 ]
 
 export const locations = [
@@ -63,7 +64,7 @@ export const state_of_repaire = [
   'Элитный',
 ]
 
-export const deal_date = ['2 месяца', '6 месяцев']
+export const deal_date = ['2 месяца', '6 месяцев', 'Более 6 месяцев']
 
 export const cost_range = [
   'От 3,5 до 5 млн. руб.',

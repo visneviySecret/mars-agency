@@ -4,13 +4,18 @@ import { Error, Input, Wrapper } from './TextField.style'
 import { getFormattedValue } from './TextField.utils'
 import { useTheme } from 'next-themes'
 import { Theme } from '@/utils/helpers/getThemeColors'
+import { FieldError, FieldErrorsImpl } from 'react-hook-form/dist/types/errors'
+import { Merge } from 'react-hook-form/dist/types/utils'
 
 interface IProps {
-  name: string
+  name: 'name' | 'phone' | 'number'
   placeholder: string
   value: string
   onChange: (key: string, value: string) => void
-  errorMessage?: string
+  errorMessage?:
+    | string
+    | FieldError
+    | Merge<FieldError, FieldErrorsImpl<FieldError>>
   isQuize?: boolean
   style?: CSS.Properties
   type?: string
@@ -18,10 +23,10 @@ interface IProps {
 
 function TextField({
   name,
-  placeholder,
   value,
-  onChange,
+  placeholder,
   errorMessage,
+  onChange,
   style,
   isQuize,
   type = 'text',
@@ -48,7 +53,7 @@ function TextField({
         isQuize={isQuize}
         isDarkMode={isDarkMode}
       />
-      <Error isQuize={isQuize}>{errorMessage}</Error>
+      <Error isQuize={isQuize}>{errorMessage?.toString()}</Error>
     </Wrapper>
   )
 }

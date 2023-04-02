@@ -18,6 +18,7 @@ import { Contacts } from '@/utils/consts'
 import Step4 from './components/step4'
 import Step5 from './components/step5'
 import useQuize from './useQuize'
+import WarningForm from '../WarningForm/WarningForm'
 
 interface ModadProps {
   isActive: boolean
@@ -36,6 +37,8 @@ function ModalQuize({ isActive, onClose, dealStatus }: ModadProps) {
     handleForm,
     submitForm,
     errorMessage,
+    isActiveWarning,
+    setIsActiveWarning,
   } = useQuize({
     dealStatus,
     onClose,
@@ -68,6 +71,14 @@ function ModalQuize({ isActive, onClose, dealStatus }: ModadProps) {
           </Wrapper>
         </Container>
       </Section>
+      <WarningForm
+        title="несохраненные изменения"
+        closingText="вернуться"
+        content="Вы уверены, что хотите закрыть форму? Изменения не будут сохранены."
+        onClose={onClose}
+        isActive={isActiveWarning}
+        setIsActive={setIsActiveWarning}
+      />
     </Portal>
   )
 }

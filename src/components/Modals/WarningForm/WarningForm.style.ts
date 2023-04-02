@@ -56,17 +56,3 @@ export const ButtonsWrapper = styled.div`
     flex-direction: column;
   }
 `
-
-export const ButtonWrapper = styled.div<{ isDarkMode: boolean }>`
-  & > * {
-    background-color: transparent;
-    color: ${({ isDarkMode }) => getThemeColor(isDarkMode)};
-    border: 1px solid ${({ isDarkMode }) => getThemeColor(isDarkMode)};
-  }
-
-  &:hover > * {
-    background-color: ${({ isDarkMode }) => getThemeColor(isDarkMode)};
-    color: ${({ isDarkMode }) => getThemeColor(!isDarkMode)};
-    border: 2px solid;
-  }
-`

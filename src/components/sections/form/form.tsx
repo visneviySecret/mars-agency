@@ -15,32 +15,44 @@ import { breakPoints } from '@/utils/breakPoints'
 import { useMediaQuery } from '@/hooks/useMedia'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 import WarningForm from '@/components/Modals/WarningForm/WarningForm'
-
-const initialState = {
-  name: '',
-  phone: '',
-}
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
+import {
+  initialState,
+  schema,
+  FormValues,
+  getFormattedData,
+} from './form.utils'
+import { useController } from 'react-hook-form'
+import { sendMessageToTelegram } from '@/pages/api/sendMessageToTelegram'
 
 export default function Form() {
   const isSmallScreen = useMediaQuery(`(max-width: ${breakPoints.Tablet})`)
-  const [form, setForm] = useState(initialState)
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: yupResolver(schema),
+    defaultValues: initialState,
+    mode: 'onSubmit',
+  })
+  const { field } = useController({ control, name: 'contacts' })
   const [isChecked, setIsChecked] = useState(true)
-  const [errorMessage, setErrorMessage] = useState(initialState)
   const [isActive, setIsActive] = useState(false)
 
-  const handleClick = () => {
+  const onSubmit = (data: FormValues) => {
     if (!isChecked) return
-    if (form.name !== '' && form.phone !== '') return setIsActive(true)
-    const errorText = 'Это поле не может быть пустым'
-    setErrorMessage({
-      name: (form.name === '' && errorText) || '',
-      phone: (form.phone === '' && errorText) || '',
-    })
+    const formattedData = getFormattedData(data)
+    sendMessageToTelegram(formattedData)
+    setIsActive(true)
+    reset()
   }
 
   const handleChange = (key: string, value: string) => {
-    setForm((prev) => ({ ...prev, [key]: value }))
-    setErrorMessage((prev) => ({ ...prev, [key]: '' }))
+    const result = { ...field.value, [key]: value }
+    field.onChange(result)
   }
 
   return (
@@ -57,7 +69,7 @@ export default function Form() {
             />
           </Wrapper>
 
-          <Wrapper>
+          <Wrapper onSubmit={handleSubmit(onSubmit)}>
             <FormWrapper>
               <Header>
                 <Title>
@@ -69,16 +81,16 @@ export default function Form() {
               </Header>
 
               <ContactForm
-                form={form}
+                value={field.value}
                 isChecked={isChecked}
                 setIsChecked={setIsChecked}
-                handleChange={handleChange}
-                errorMessage={errorMessage}
+                errors={errors}
+                onChange={handleChange}
                 isLanding
               />
               <ButtonWrapper>
                 <AnimationFadeIn delay={0.5}>
-                  <Button onClick={handleClick}>Оставить заявку</Button>
+                  <Button type="submit">Оставить заявку</Button>
                 </AnimationFadeIn>
               </ButtonWrapper>
             </FormWrapper>
