@@ -29,17 +29,17 @@ function Landing() {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Агенство недвижимости MARS" />
+        <meta property="type" content="website" />
+        <meta property="title" content="Агенство недвижимости MARS" />
         <meta
-          property=" og:description"
+          property="description"
           content="Помогаем с покупкой и продажей недвижимости в Санкт-Петербурге и Ленинградской области"
         />
-        <meta property="og:image" content="/public/SMMimage.png" />
-        <meta property="og:url" content="https://mars-home.com" />
-        <meta property="og:site_name" content="Maritime Salary Statistics" />
+        <meta property="image" content="/public/SMMimage.png" />
+        <meta property="url" content="https://mars-home.com" />
+        <meta property="site_name" content="Maritime Salary Statistics" />
         <meta
-          name="og:keywords"
+          name="keywords"
           content="покапка недвижимости, продажа недвижимости, квартиры в новостройках, переуступки, оформление импотеки, покупка готового бизнеса, продажа готового бизнеса, коммерческая недвижимость, вторичная недвижимость, сделка под ключ"
         />
         <link rel="icon" href="/favicon.ico" />
