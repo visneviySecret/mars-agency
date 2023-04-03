@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Section, Title, ButtonsWrapper } from './hero.style'
+import { Section, Title, ButtonsWrapper, TitleWrapper } from './hero.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
 import { Container } from '@/components/UI/Container/container.style'
@@ -7,10 +7,9 @@ import { Theme } from '@/components/UI/Button/Button.utils'
 import { blockScroll, unlockScroll } from './utils'
 import { useTheme } from 'next-themes'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
+import AnimationMaskText from '@/share/Animation/AnimationMaskText'
 import BuyModal from '@/components/Modals/BuyModal/BuyModal'
 import SailModal from '@/components/Modals/SailModal/SailModal'
-import { SplitText } from '@/share/Animation/AnimationSplitText'
-import { AnimatePresence, motion } from 'framer-motion'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -39,30 +38,14 @@ export default function Hero() {
     <>
       <Container>
         <Section>
-          <Title>
-            <AnimatePresence>
-              <motion.div
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <SplitText
-                  initial={{ y: '100%' }}
-                  animate="visible"
-                  variants={{
-                    visible: (i: number) => ({
-                      y: 0,
-                      transition: {
-                        delay: i * 0.1,
-                      },
-                    }),
-                  }}
-                >
-                  Агентство недвижимости с космическим сервисом
-                </SplitText>
-              </motion.div>
-            </AnimatePresence>
-          </Title>
+          <TitleWrapper>
+            <AnimationMaskText delay={0.5}>
+              <Title>Агентство недвижимости</Title>
+            </AnimationMaskText>
+            <AnimationMaskText delay={0.6}>
+              <Title>с космическим сервисом</Title>
+            </AnimationMaskText>
+          </TitleWrapper>
           <ButtonsWrapper>
             <AnimationFadeIn style={customButtonStyle} delay={1}>
               <Button onClick={handleBuyBlank} customTheme={Theme.coral} isBig>

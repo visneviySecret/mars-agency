@@ -21,16 +21,17 @@ export const ButtonsWrapper = styled.div`
   }
 `
 
+export const TitleWrapper = styled.div`
+  width: calc(100% + 1vw);
+  margin-bottom: calc(10px + 0.6vw);
+  translate: -5px -4px;
+`
 export const Title = styled.h1`
-  font-size: clamp(25px, 8.5vw, 134px);
+  font-size: clamp(25px, 8.4vw, 134px);
   font-weight: 400;
   line-height: 70%;
   letter-spacing: -7px;
   text-align: center;
-
-  width: calc(100% + 1vw);
-  margin-bottom: calc(10px + 0.6vw);
-  translate: -5px -4px;
 
   @media (max-width: 1010px) {
     letter-spacing: -6px;
