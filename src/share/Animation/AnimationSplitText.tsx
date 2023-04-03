@@ -1,11 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-interface IProps {
-  children: string
-  rest: any
-}
-
 export function SplitText({ children, ...rest }: any) {
   const words = children.split(' ')
   return words.map((word: string, i: number) => {
