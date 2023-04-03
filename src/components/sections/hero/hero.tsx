@@ -7,9 +7,10 @@ import { Theme } from '@/components/UI/Button/Button.utils'
 import { blockScroll, unlockScroll } from './utils'
 import { useTheme } from 'next-themes'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
-import AnimationMaskText from '@/share/Animation/AnimationMaskText'
 import BuyModal from '@/components/Modals/BuyModal/BuyModal'
 import SailModal from '@/components/Modals/SailModal/SailModal'
+import { SplitText } from '@/share/Animation/AnimationSplitText'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -39,12 +40,28 @@ export default function Hero() {
       <Container>
         <Section>
           <Title>
-            <AnimationMaskText delay={0.5}>
-              Агентство недвижимости
-            </AnimationMaskText>
-            <AnimationMaskText delay={0.6}>
-              с космическим сервисом
-            </AnimationMaskText>
+            <AnimatePresence>
+              <motion.div
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <SplitText
+                  initial={{ y: '100%' }}
+                  animate="visible"
+                  variants={{
+                    visible: (i: number) => ({
+                      y: 0,
+                      transition: {
+                        delay: i * 0.1,
+                      },
+                    }),
+                  }}
+                >
+                  Агентство недвижимости с космическим сервисом
+                </SplitText>
+              </motion.div>
+            </AnimatePresence>
           </Title>
           <ButtonsWrapper>
             <AnimationFadeIn style={customButtonStyle} delay={1}>

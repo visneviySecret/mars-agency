@@ -27,6 +27,7 @@ export const Title = styled.h1`
   line-height: 70%;
   letter-spacing: -7px;
   text-align: center;
+
   width: calc(100% + 1vw);
   margin-bottom: calc(10px + 0.6vw);
   translate: -5px -4px;
