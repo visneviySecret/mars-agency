@@ -2,7 +2,7 @@ import { setWord, selectWord } from '@/redux/wordSlice'
 import React, { ReactNode } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import { callTheBats } from '@/features/easterEgg/easterEgg'
+import { callTheBats } from '../easterEgg'
 
 const Button = styled.span``
 

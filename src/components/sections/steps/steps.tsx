@@ -15,7 +15,7 @@ import {
 } from './steps.style'
 import { Container } from '@/components/UI/Container/container.style'
 import { list } from './steps.utils'
-import InvisButton from '@/features/easterEgg/components/InvisButton'
+import InvisButton from '@/share/Animation/easterEgg/components/InvisButton'
 import Image from 'next/image'
 import { useMediaQuery } from '@/hooks/useMedia'
 import { breakPoints } from '@/utils/breakPoints'

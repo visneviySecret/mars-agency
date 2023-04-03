@@ -15,7 +15,7 @@ import {
 import { Container } from '@/components/UI/Container/container.style'
 import { list } from './offers.utils'
 import { useTheme } from 'next-themes'
-import InvisButton from '@/features/easterEgg/components/InvisButton'
+import InvisButton from '@/share/Animation/easterEgg/components/InvisButton'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 
 export default function Offers() {
