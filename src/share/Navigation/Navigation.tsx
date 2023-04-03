@@ -20,11 +20,11 @@ export const List = styled.nav`
 `
 
 export const Item = styled.a<{
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
+  isBurger?: boolean
 }>`
-  font-size: ${({ onClick }) => onClick && '35px'};
-  line-height: ${({ onClick }) => onClick && '140%'};
-  margin-bottom: ${({ onClick }) => onClick && '15px'};
+  font-size: ${({ isBurger }) => isBurger && '35px'};
+  line-height: ${({ isBurger }) => isBurger && '140%'};
+  margin-bottom: ${({ isBurger }) => isBurger && '15px'};
   cursor: pointer;
 
   &:last-child {
@@ -34,7 +34,13 @@ export const Item = styled.a<{
   text-decoration: none;
 `
 
-function Navigation({ onClose }: { onClose?: () => void }) {
+function Navigation({
+  onClose,
+  isBurger,
+}: {
+  onClose?: () => void
+  isBurger?: boolean
+}) {
   return (
     <List>
       {navList.map((item, index) => (
@@ -44,6 +50,7 @@ function Navigation({ onClose }: { onClose?: () => void }) {
             onClose && onClose()
             handleLink(event, item.ancor)
           }}
+          isBurger={isBurger}
         >
           {item.title}
         </Item>

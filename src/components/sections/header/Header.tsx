@@ -74,13 +74,13 @@ export default function Header() {
             theme={theme}
             isActive={isOpenMenu}
           />
-          <BurgerMenuModal
-            onClose={handleClose}
-            isActive={isOpenMenu}
-            theme={theme}
-          />
         </Wrapper>
       </Container>
+      <BurgerMenuModal
+        onClose={handleClose}
+        isActive={isOpenMenu}
+        theme={theme}
+      />
     </Section>
   )
 }

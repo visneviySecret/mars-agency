@@ -33,7 +33,7 @@ function BurgerMenuModal({ onClose, isActive, theme }: IProps) {
   return (
     <Wrapper isActive={isActive} color={bgColor}>
       <NavWrapper>
-        <Navigation onClose={onClose} />
+        <Navigation onClose={onClose} isBurger />
       </NavWrapper>
 
       <FlexWrapper>

@@ -11,13 +11,13 @@ export const callTheBats = () => {
 
   audio.play()
 
-  // body.classList.add('call-the-bats')
+  body.classList.add('call-the-bats')
   setTimeout(() => {
     html.appendChild(img)
   }, 500)
 
   setTimeout(() => {
-    // body.classList.remove('call-the-bats')
+    body.classList.remove('call-the-bats')
     html.removeChild(img)
   }, 2000)
 }

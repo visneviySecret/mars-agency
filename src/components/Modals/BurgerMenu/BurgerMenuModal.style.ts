@@ -1,11 +1,10 @@
-import { breakPoints } from '@/utils/breakPoints'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div<{ isActive: boolean; color: string }>`
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100vh;
   top: 50px;
@@ -15,11 +14,6 @@ export const Wrapper = styled.div<{ isActive: boolean; color: string }>`
   padding: 20px;
   transition: translate 0.3s, background-color 0.3s;
   overflow: auto;
-
-  @media (max-width: ${breakPoints.Touch}) {
-    //необхоидимая оптимизация для мобилок
-    top: calc(100px - 12vw);
-  }
 `
 
 export const NavWrapper = styled.div`
