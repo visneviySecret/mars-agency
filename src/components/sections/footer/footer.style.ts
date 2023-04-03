@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 export const ColumnWrapper = styled.div`
   display: flex;
   padding-bottom: clamp(${indents.indent30}, 9.4vw, ${indents.indent80});
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ${Color.GREY10};
 `
 
 export const EmptyColumn = styled.div`
@@ -37,7 +37,7 @@ export const Contacts = styled.div`
 
 export const Contact = styled.div`
   display: flex;
-  border-bottom: 1px solid ${Color.WHITE};
+  border-bottom: 1px solid ${Color.GREY10};
   padding-block: clamp(${indents.indent5}, 1.25vw, ${indents.indent20});
   font-size: clamp(11px, 2.2vw, 16px);
 `

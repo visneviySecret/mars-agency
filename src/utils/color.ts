@@ -4,6 +4,7 @@ export const Color = {
   LIGHT10: '#F8F8F8',
   DARK10: '#2D2D2D',
   GREY: '#262626',
+  GREY10: '#4B4B4B',
   DARK_GREY: '#5C5C5C',
   BLACK: '#202020',
   CORAL: '#C4542B',

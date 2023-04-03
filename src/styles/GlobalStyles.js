@@ -39,7 +39,6 @@ export const GlobalStyle = createGlobalStyle`
     body, html {
       color: ${Color.GREY};
       background: ${Color.WHITE};
-      border-color: ${Color.GREY};
       transition-property: background-color, color;
       transition-duration: ${Consts.toggleModDuration} ;
 
@@ -51,7 +50,6 @@ export const GlobalStyle = createGlobalStyle`
     [data-theme='dark'] body {
       color: ${Color.WHITE};
       background: ${Color.GREY};
-      border-color: ${Color.WHITE};
       
       scrollbar-color: ${Color.LIGHT} ${Color.GREY};
     }
@@ -71,7 +69,6 @@ export const GlobalStyle = createGlobalStyle`
       font-family: ${NeueMachina.style.fontFamily}, 'Inter';
       font-style: 400;
       line-height: 140%;
-      font-size: clamp(12px, 2.5vw, 16px);
       color: ${Color.GREY}
     }
     
@@ -89,6 +86,11 @@ export const GlobalStyle = createGlobalStyle`
       animation-delay: 0.5s;
       animation-name: callTheBats;
       animation-timing-function: linear;
+    }
+
+    body{
+      font-size: clamp(12px, 2.5vw, 16px);
+
     }
     
     @keyframes callTheBats {

@@ -7,6 +7,10 @@ const getCustomThemeColor = (isLightTheme: boolean) => {
   return isLightTheme ? Color.GREY : Color.WHITE
 }
 
+const getModeBorder = (isDarkMode: boolean) => {
+  return isDarkMode ? Color.GREY : Color.GREY10
+}
+
 export const Section = styled.section`
   margin-bottom: clamp(${indents.indent50}, 12.5vw, ${indents.indent120});
 `
@@ -57,15 +61,15 @@ export const List = styled.ul`
   list-style: none;
 `
 
-export const Item = styled.li`
+export const Item = styled.li<{ isDarkMode: boolean }>`
   display: flex;
   padding-top: clamp(${indents.indent10}, 3.5vw, ${indents.indent20});
   padding-bottom: clamp(${indents.indent20}, 6.5vw, ${indents.indent40});
   align-items: center;
-  border-top: 1px solid;
+  border-top: 1px solid ${({ isDarkMode }) => getModeBorder(!isDarkMode)};
 
   &:last-child {
-    border-bottom: solid 1px;
+    border-bottom: solid 1px ${({ isDarkMode }) => getModeBorder(!isDarkMode)};
   }
 
   @media (max-width: ${breakPoints.Tablet}) {

@@ -74,8 +74,8 @@ export const Item = styled.li`
   display: flex;
   width: 100%;
   list-style-type: none;
-  border-top: solid 1px;
-  border-bottom: solid 1px;
+  border-top: solid 1px ${Color.GREY10};
+  border-bottom: solid 1px ${Color.GREY10};
   padding-top: ${indents.indent10};
   padding-bottom: clamp(${indents.indent20}, 4.55vw, ${indents.indent60});
 
@@ -98,6 +98,10 @@ export const ItemTitle = styled.h3`
   font-weight: 400;
   line-height: 130%;
   text-transform: uppercase;
+
+  @media (max-width: ${breakPoints.Tablet}) {
+    padding-bottom: max(5px, 1.5vw);
+  }
 `
 
 export const ItemDescriptionWrapper = styled.div`

@@ -15,7 +15,8 @@ export const ButtonComponent = styled.button<{
   isBig?: boolean
 }>`
   width: 100%;
-  font-size: clamp(10px, 1.9vw, 14px);
+  font-size: ${({ isBig }) =>
+    isBig ? 'clamp(14px, 2vw, 18px)' : 'clamp(10px, 1.9vw, 14px)'};
   line-height: 140%;
   font-family: ${NeueMachina.style.fontFamily};
   text-transform: uppercase;

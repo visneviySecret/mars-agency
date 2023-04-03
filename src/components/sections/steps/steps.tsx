@@ -30,7 +30,7 @@ export default function Steps() {
 
   return (
     <Section>
-      <Wrapper>
+      <Wrapper isDarkMode={isDarkMode}>
         <Container isDeactive={isLargeScreen}>
           <Header>
             <Title>

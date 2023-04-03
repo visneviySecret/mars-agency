@@ -25,6 +25,7 @@ import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 export default function Reviews() {
   const [isActive, setIsActive] = useState(false)
   const { theme } = useTheme()
+  const isDarkMode = theme === 'dark'
 
   const handleClick = () => {
     setIsActive((prev) => !prev)
@@ -47,7 +48,7 @@ export default function Reviews() {
           {clients.map((client, index) => {
             if (index < 3 || isActive)
               return (
-                <Item key={index}>
+                <Item key={index} isDarkMode={isDarkMode}>
                   <ItemWrapper>
                     <ItemPhotoWrapper>
                       <AnimationFadeIn>

@@ -68,12 +68,12 @@ export default function Hero() {
             <Image
               alt="City wallpaper"
               src={picture}
-              width={1560}
-              height={560}
+              width={2560}
+              height={1560}
               style={{
                 width: '100%',
                 objectFit: 'cover',
-                objectPosition: '47%',
+                objectPosition: '45% 0%',
                 height: 'clamp(375px, 50vw, 560px)',
               }}
             />
