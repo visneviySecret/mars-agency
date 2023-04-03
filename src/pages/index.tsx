@@ -1,3 +1,3 @@
-import { Landing } from '@/features/landing/landing'
+import { IndexPage } from '@/features/index'
 
-export default Landing
+export default IndexPage

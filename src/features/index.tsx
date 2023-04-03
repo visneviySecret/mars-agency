@@ -10,7 +10,7 @@ import Footer from '@/components/sections/footer/footer'
 import Partners from '@/components/sections/partners/partners'
 import Form from '@/components/sections/form/form'
 
-function Landing() {
+function IndexPage() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -64,4 +64,4 @@ function Landing() {
   )
 }
 
-export { Landing }
+export { IndexPage }
