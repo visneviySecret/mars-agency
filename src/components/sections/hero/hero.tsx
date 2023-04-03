@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { Section, Title, ButtonsWrapper, TitleWrapper } from './hero.style'
+import {
+  Section,
+  Title,
+  ButtonsWrapper,
+  TitleWrapper,
+  HideOverflow,
+} from './hero.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
 import { Container } from '@/components/UI/Container/container.style'
@@ -35,7 +41,7 @@ export default function Hero() {
   }
 
   return (
-    <>
+    <HideOverflow>
       <Container>
         <Section>
           <TitleWrapper>
@@ -76,6 +82,6 @@ export default function Hero() {
       </Container>
       <BuyModal isActive={isOpenBuy} onClose={onClose} />
       <SailModal isActive={isOpenSail} onClose={onClose} />
-    </>
+    </HideOverflow>
   )
 }

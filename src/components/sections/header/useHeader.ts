@@ -11,8 +11,6 @@ function useHeader() {
   const { theme } = useTheme()
   const isSmallScreen = useMediaQuery(`(max-width: ${breakPoints.Tablet})`)
   const [isOpenMenu, setIsOpeMenu] = useState(false)
-  const [previousMenuState, setPreviousMenuState] = useState(false)
-  const [delayedIsOpenMenu, setDelayedIsOpeMenu] = useState(false)
   const color = theme === 'dark' ? Color.WHITE : Color.GREY
   const handleMenu = () => {
     setIsOpeMenu((prev) => !prev)
@@ -31,16 +29,6 @@ function useHeader() {
     if (!isSmallScreen) handleClose()
   }, [isSmallScreen])
 
-  useEffect(() => {
-    setPreviousMenuState(true)
-    setTimeout(() => {
-      setDelayedIsOpeMenu(isOpenMenu)
-    }, 0)
-    setTimeout(() => {
-      setPreviousMenuState(false)
-    }, 500)
-  }, [isOpenMenu])
-
   return {
     ref,
     width,
@@ -50,8 +38,6 @@ function useHeader() {
     isOpenMenu,
     handleMenu,
     handleClose,
-    previousMenuState,
-    delayedIsOpenMenu,
   }
 }
 

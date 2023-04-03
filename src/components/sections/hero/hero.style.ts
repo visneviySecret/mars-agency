@@ -1,6 +1,10 @@
 import { breakPoints } from '@/utils/breakPoints'
 import styled from 'styled-components'
 
+export const HideOverflow = styled.div`
+  overflow-x: hidden;
+`
+
 export const Section = styled.section`
   margin-top: -0.6rem;
   margin-bottom: 4.68rem;

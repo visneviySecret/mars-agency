@@ -30,8 +30,6 @@ export default function Header() {
     isOpenMenu,
     handleMenu,
     handleClose,
-    previousMenuState,
-    delayedIsOpenMenu,
   } = useHeader()
 
   return (
@@ -59,14 +57,14 @@ export default function Header() {
           <BurgerMenu
             onClick={handleMenu}
             theme={theme}
-            isActive={delayedIsOpenMenu}
+            isActive={isOpenMenu}
           />
         </Wrapper>
       </Container>
-      {(isOpenMenu || previousMenuState) && (
+      {isOpenMenu && (
         <BurgerMenuModal
           onClose={handleClose}
-          isActive={delayedIsOpenMenu}
+          isActive={isOpenMenu}
           theme={theme}
         />
       )}

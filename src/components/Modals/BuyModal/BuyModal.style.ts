@@ -11,8 +11,9 @@ export const Section = styled.section<{ isDarkMode: boolean }>`
   background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
   min-height: 100%;
 
-  @media (max-width: ${breakPoints.Tablet}) {
+  @media (max-width: ${breakPoints.Touch}) {
     //необхоидимая оптимизация для мобилок
+    margin-top: calc(100px - 22vw);
   }
 `
 
