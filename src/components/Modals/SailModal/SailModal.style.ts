@@ -13,7 +13,6 @@ export const Section = styled.section<{ isDarkMode: boolean }>`
 
   @media (max-width: ${breakPoints.Tablet}) {
     //необхоидимая оптимизация для мобилок
-    margin-top: calc(100px - 16vw);
   }
 `
 
