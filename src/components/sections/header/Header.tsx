@@ -7,6 +7,7 @@ import {
   NavigationWrapper,
   TogglerAndButtonWrapper,
   LogoWidthWrapper,
+  BurgerWrapper,
 } from './Header.style'
 import { Logo } from '@/assets/Logo'
 import { Container } from '@/components/UI/Container/container.style'
@@ -54,11 +55,9 @@ export default function Header() {
               </a>
             </TogglerAndButtonWrapper>
           </MenuWrapper>
-          <BurgerMenu
-            onClick={handleMenu}
-            theme={theme}
-            isActive={isOpenMenu}
-          />
+          <BurgerWrapper onClick={handleMenu}>
+            <BurgerMenu theme={theme} isActive={isOpenMenu} />
+          </BurgerWrapper>
         </Wrapper>
       </Container>
       <BurgerMenuModal

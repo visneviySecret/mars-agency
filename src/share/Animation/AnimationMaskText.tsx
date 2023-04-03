@@ -11,7 +11,7 @@ function AnimationMaskText({ children, delay = 0.2 }: AnimationProps) {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { y: 0, opacity: 1 },
+    visible: { y: 15, opacity: 1 },
     hidden: { y: 200, opacity: 0 },
   }
 

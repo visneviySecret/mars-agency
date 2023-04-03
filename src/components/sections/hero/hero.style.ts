@@ -27,7 +27,7 @@ export const ButtonsWrapper = styled.div`
 
 export const TitleWrapper = styled.div`
   width: calc(100% + 1vw);
-  margin-bottom: calc(10px + 0.6vw);
+  margin-bottom: calc(15px + 2vw);
   translate: -5px -4px;
 `
 export const Title = styled.h1`
