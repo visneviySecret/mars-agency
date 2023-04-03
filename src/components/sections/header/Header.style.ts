@@ -15,6 +15,7 @@ export const Section = styled.section`
 export const Wrapper = styled.nav`
   position: relative;
   display: flex;
+  min-height: 12px;
 `
 
 export const LogoWrapper = styled.div`

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function usePrevious(value: number) {
+export function usePrevious(value: number | boolean) {
   const [tuple, setTuple] = useState([0, value])
 
   if (tuple[1] !== value) {

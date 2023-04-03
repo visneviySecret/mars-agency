@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div<{ isActive: boolean; color: string }>`
-  display: flex;
-  flex-direction: column;
   z-index: 1000;
   position: absolute;
-  width: 100%;
-  height: 100vh;
   top: 50px;
   right: -100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
   translate: ${({ isActive }) => isActive && '-100% 0%'};
   background-color: ${({ color }) => color};
   padding: 20px;

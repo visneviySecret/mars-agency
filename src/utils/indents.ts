@@ -1,6 +1,6 @@
 const pxToRem = (value: number) => {
   const result = value / 16
-  return `clamp(calc(${result}rem - 10px), 10vw, ${result}rem)`
+  return `${result}rem`
 }
 
 export const indents = {
