@@ -26,21 +26,26 @@ function Landing() {
       <Head>
         <title>Агенство недвижимости MARS</title>
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
+          name="description"
+          content="Помогаем с покупкой и продажей недвижимости в Санкт-Петербурге и Ленинградской области"
+          key="desc"
         />
-        <meta property="type" content="website" />
-        <meta property="title" content="Агенство недвижимости MARS" />
+        <meta property="og:title" content="Агенство недвижимости MARS" />
         <meta
-          property="description"
+          property="og:description"
           content="Помогаем с покупкой и продажей недвижимости в Санкт-Петербурге и Ленинградской области"
         />
-        <meta property="image" content="/public/SMMimage.png" />
-        <meta property="url" content="https://mars-home.com" />
-        <meta property="site_name" content="Maritime Salary Statistics" />
+        <meta property="og:image" content="/public/SMMimage.png" />
+        <meta name="type" content="website" />
+        <meta name="url" content="https://mars-home.com" />
+        <meta name="site_name" content="Maritime Salary Statistics" />
         <meta
           name="keywords"
-          content="покапка недвижимости, продажа недвижимости, квартиры в новостройках, переуступки, оформление импотеки, покупка готового бизнеса, продажа готового бизнеса, коммерческая недвижимость, вторичная недвижимость, сделка под ключ"
+          content="покупка недвижимости, продажа недвижимости, квартиры в новостройках, переуступки, оформление ипотеки, покупка готового бизнеса, продажа готового бизнеса, коммерческая недвижимость, вторичная недвижимость, сделка под ключ"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
