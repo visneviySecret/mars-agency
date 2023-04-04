@@ -21,7 +21,7 @@ const Overlay = styled.div<{
   left: ${({ isActive }) => (isActive ? '50%' : '100%')};
   translate: ${({ isActive }) => isActive && '-50% -50%'};
   width: 100vw;
-  height: 100lvh;
+  height: 100svh;
   overflow: auto;
   opacity: ${({ opacity, isActive }) => (isActive ? opacity || 1 : 0)};
 

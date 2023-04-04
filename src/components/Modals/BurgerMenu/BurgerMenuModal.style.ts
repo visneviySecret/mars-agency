@@ -9,7 +9,7 @@ export const Wrapper = styled.div<{ isActive: boolean; color: string }>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   translate: ${({ isActive }) => isActive && '-100% 0%'};
   background-color: ${({ color }) => color};
   padding: 20px;
