@@ -10,15 +10,6 @@ const getModeBackground = (isDarkMode: boolean) => {
 export const Section = styled.section<{ isDarkMode: boolean }>`
   background-color: ${({ isDarkMode }) => getModeBackground(isDarkMode)};
   min-height: 100%;
-
-  @media (max-width: ${breakPoints.Tablet}) {
-    //необхоидимая оптимизация для мобилок
-    padding-top: calc(100px - 16vw);
-  }
-  @media (max-width: ${breakPoints.Touch}) {
-    //необхоидимая оптимизация для мобилок
-    padding-top: calc(100px - 25vw);
-  }
 `
 
 export const ClosePanel = styled.div<{ isDarkMode: boolean }>`
