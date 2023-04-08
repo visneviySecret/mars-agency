@@ -43,7 +43,7 @@ export const Component = styled.span<{
   }
 `
 
-function ArrowCursor({ isActive, isDarkMode }: ArrowProps) {
+function SelectorArrow({ isActive, isDarkMode }: ArrowProps) {
   return (
     <CursorWrapper>
       <Component isDarkMode={isDarkMode} isActive={isActive} />
@@ -51,4 +51,4 @@ function ArrowCursor({ isActive, isDarkMode }: ArrowProps) {
   )
 }
 
-export { ArrowCursor }
+export { SelectorArrow }

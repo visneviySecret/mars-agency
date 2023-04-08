@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Input, Component, Wrapper } from './Selector.style'
 import { useTheme } from 'next-themes'
-import { ArrowCursor } from '../ArrowCursor/ArrowCursor'
+import { SelectorArrow } from '../SelectorArrow/SelectorArrow'
 import Options from './Components/Options'
 import { DealStatus } from '@/components/Modals/BuyModal/Components/quize.utils'
 
@@ -49,7 +49,7 @@ export default function Selector({
           theme={theme}
           onClick={handleClick}
         />
-        <ArrowCursor isActive={isActive} isDarkMode={isDarkMode} />
+        <SelectorArrow isActive={isActive} isDarkMode={isDarkMode} />
         {isActive && (
           <Options
             options={searchingOptions}

@@ -19,6 +19,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/ArrowLeft.svg"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "public/ArrowLeft.svg",
+    "public/Arrows/BigArrowLeft.svg"
+  ],
   "exclude": ["node_modules"]
 }
