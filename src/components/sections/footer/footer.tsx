@@ -14,15 +14,20 @@ import {
   Wrapper,
   BottomLine,
   SocialWrapper,
+  CopyWriteText,
+  BottomWrapper,
 } from './footer.style'
 import { contacts } from './footer.utils'
 import Navigation from '@/share/Navigation/Navigation'
 import { Social } from '@/share/Social/Social'
 import useMeasure from 'react-use-measure'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
+import Link from 'next/link'
 
 export default function Footer() {
   const [ref, { width, height }] = useMeasure()
+  const date = new Date().getFullYear()
+  const displayedDate = date !== 2023 ? ` - ${date}` : ''
 
   return (
     <Container id="footer">
@@ -56,6 +61,27 @@ export default function Footer() {
           </SocialWrapper>
         </Wrapper>
         <BottomLine />
+        <Wrapper>
+          <BottomWrapper>
+            <AnimationFadeIn>
+              <CopyWriteText>© ООО «Марс», 2023{displayedDate}</CopyWriteText>
+            </AnimationFadeIn>
+            <AnimationFadeIn>
+              <CopyWriteText>
+                <Link
+                  href={'https://www.behance.net/anvlagord'}
+                  target="_blank"
+                >
+                  Anna Gordeiko
+                </Link>{' '}
+                &{' '}
+                <Link href={'https://www.uprock.pro/'} target="_blank">
+                  uprock agency
+                </Link>
+              </CopyWriteText>
+            </AnimationFadeIn>
+          </BottomWrapper>
+        </Wrapper>
       </FooterWrapper>
     </Container>
   )

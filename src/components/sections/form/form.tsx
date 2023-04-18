@@ -56,56 +56,54 @@ export default function Form() {
   }
 
   return (
-    <AnimationFadeIn delay={0.1}>
-      <Section id="form">
-        <Container isFlex={!isSmallScreen}>
-          <Wrapper>
-            <Image
-              src={'/picture/form.png'}
-              alt="client"
-              width={780}
-              height={631}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </Wrapper>
+    <Section id="form">
+      <Container isFlex={!isSmallScreen}>
+        <Wrapper>
+          <Image
+            src={'/picture/form.png'}
+            alt="client"
+            width={780}
+            height={631}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </Wrapper>
 
-          <Wrapper>
-            <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-              <Header>
-                <Title>
-                  <AnimationFadeIn delay={0.5}>
-                    Оставьте заявку на бесплатную консультацию и мы свяжемся с
-                    вами в ближайшее время
-                  </AnimationFadeIn>
-                </Title>
-              </Header>
-
-              <ContactForm
-                value={field.value}
-                isChecked={isChecked}
-                setIsChecked={setIsChecked}
-                errors={errors}
-                onChange={handleChange}
-                isLanding
-              />
-              <ButtonWrapper>
+        <Wrapper>
+          <FormWrapper onSubmit={handleSubmit(onSubmit)}>
+            <Header>
+              <Title>
                 <AnimationFadeIn delay={0.5}>
-                  <Button type="submit">Оставить заявку</Button>
+                  Оставьте заявку на бесплатную консультацию и мы свяжемся с
+                  вами в ближайшее время
                 </AnimationFadeIn>
-              </ButtonWrapper>
-            </FormWrapper>
-          </Wrapper>
-        </Container>
-        <WarningForm
-          isActive={isActive}
-          setIsActive={setIsActive}
-          title={'Спасибо!'}
-          content={
-            'Ваша заявка отправлена! В ближайшее время мы свяжемся с вами.'
-          }
-          closingText={'Хорошо'}
-        />
-      </Section>
-    </AnimationFadeIn>
+              </Title>
+            </Header>
+
+            <ContactForm
+              value={field.value}
+              isChecked={isChecked}
+              setIsChecked={setIsChecked}
+              errors={errors}
+              onChange={handleChange}
+              isLanding
+            />
+            <ButtonWrapper>
+              <AnimationFadeIn delay={0.5}>
+                <Button type="submit">Оставить заявку</Button>
+              </AnimationFadeIn>
+            </ButtonWrapper>
+          </FormWrapper>
+        </Wrapper>
+      </Container>
+      <WarningForm
+        isActive={isActive}
+        setIsActive={setIsActive}
+        title={'Спасибо!'}
+        content={
+          'Ваша заявка отправлена! В ближайшее время мы свяжемся с вами.'
+        }
+        closingText={'Хорошо'}
+      />
+    </Section>
   )
 }

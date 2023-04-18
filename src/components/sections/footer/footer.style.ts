@@ -7,7 +7,7 @@ export const FooterWrapper = styled.footer`
   background-color: ${Color.GREY};
   color: ${Color.WHITE};
   padding-top: clamp(${indents.indent10}, 5vw, ${indents.indent20});
-  padding-bottom: clamp(0px, 7vw, ${indents.indent50});
+  margin-bottom: clamp(${indents.indent10}, 3.2vw, ${indents.indent20});
 
   @media (max-width: ${breakPoints.Touch}) {
     padding-bottom: 0;
@@ -59,19 +59,26 @@ export const Name = styled.span`
 export const SocialWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-bottom: ${indents.indent20};
+  align-items: center;
+  padding-bottom: clamp(9px, 2.3vw, 20px);
+`
+
+export const BottomWrapper = styled(SocialWrapper)`
+  padding-block: 7px 7px;
+  padding-block: clamp(5px, 1.1vw, 16px) clamp(4px, 1.1vw, 17px);
+`
+
+export const CopyWriteText = styled.span`
+  font-size: clamp(8px, 1.88vw, 14px);
+  line-height: 130%;
+  text-transform: uppercase;
 `
 
 export const LogoWrapper = styled.div`
-  cursor: pointer;
   width: clamp(${indents.indent60}, 15.5vw, ${indents.indent150});
   height: clamp(12px, 3.3vw, 30px);
 `
 
 export const BottomLine = styled.div`
   border-bottom: 1px solid ${Color.WHITE};
-
-  @media (max-width: ${breakPoints.Touch}) {
-    border-bottom: none;
-  }
 `

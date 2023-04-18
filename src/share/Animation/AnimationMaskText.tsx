@@ -27,7 +27,7 @@ function AnimationMaskText({ children, delay = 0.2 }: AnimationProps) {
       initial={{ y: 70, opacity: 0 }}
       animate={controls}
       transition={{
-        duration: 0.3,
+        duration: 0.5,
         delay: delay,
         ease: 'easeOut',
       }}

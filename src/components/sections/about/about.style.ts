@@ -68,7 +68,7 @@ export const Item = styled.li`
 
 export const IconWrapper = styled.div`
   width: 70px;
-  width: clamp(32px, 8vw, 104px);
+  width: clamp(32px, 7vw, 90px);
 `
 
 export const ItemTitle = styled.span`

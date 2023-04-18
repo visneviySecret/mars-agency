@@ -30,9 +30,8 @@ function AnimationFadeIn({ children, delay = 0.2, style }: AnimationProps) {
       initial={{ opacity: 0 }}
       animate={controls}
       transition={{
-        duration: 0.5,
+        duration: 0.6,
         delay: delay,
-        ease: [0, 0.71, 0.2, 1.01],
       }}
       variants={variants}
       style={style}

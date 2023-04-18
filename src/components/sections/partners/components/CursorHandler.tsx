@@ -1,5 +1,6 @@
 import { ArrowLeft } from '@/assets/Arrows/ArrowLeft'
 import { ArrowRight } from '@/assets/Arrows/ArrowRight'
+import { breakPoints } from '@/utils/breakPoints'
 import React from 'react'
 import useMeasure from 'react-use-measure'
 import styled from 'styled-components'
@@ -14,6 +15,10 @@ const CursorComponent = styled.div<{ isSmallScreen: boolean }>`
   height: ${({ isSmallScreen }) => (isSmallScreen ? '23px' : '100%')};
   translate: ${({ isSmallScreen }) => !isSmallScreen && '0% -4%'};
   right: ${({ isSmallScreen }) => isSmallScreen && '30px'};
+
+  @media (max-width: ${breakPoints.Tablet}) {
+    gap: 30px;
+  }
 `
 
 const LeftSide = styled.div`
@@ -40,10 +45,10 @@ function CursorHandler({ onClick, isSmallScreen }: CursorProps) {
   }
 
   const handleMouseEnterRight = () => {
-    document.body.style.cursor = 'url("/ArrowRight.svg") 52 52, auto'
+    document.body.style.cursor = 'url("/ArrowRight.svg") 52 52, pointer'
   }
   const handleMouseEnterLeft = () => {
-    document.body.style.cursor = 'url("/ArrowLeft.svg") 52 52, auto'
+    document.body.style.cursor = 'url("/ArrowLeft.svg") 52 52, pointer'
   }
 
   const handleMouseLeave = () => {

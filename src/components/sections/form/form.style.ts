@@ -4,7 +4,7 @@ import { indents } from '@/utils/indents'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin-bottom: clamp(${indents.indent10}, 4.5vw, ${indents.indent20});
+  margin-bottom: clamp(${indents.indent10}, 3.2vw, ${indents.indent20});
 `
 
 export const Wrapper = styled.div`

@@ -25,6 +25,7 @@ export const Icons = styled.ul`
 
 export const IconWrapper = styled.div`
   width: clamp(${indents.indent20}, 3.2vw, ${indents.indent25});
+  height: clamp(${indents.indent20}, 3.2vw, ${indents.indent25});
 `
 
 function Social({ color }: { color?: string }) {

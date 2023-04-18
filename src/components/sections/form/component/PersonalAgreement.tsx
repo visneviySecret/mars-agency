@@ -1,7 +1,7 @@
 import { Checkbox } from '@/components/UI/Checkbox/Checkbox'
 import React from 'react'
 import { Wrapper, Label, Text, Underlined } from './PersonalAgreement.style'
-
+import Link from 'next/link'
 function PersonalAgreement({
   isChecked,
   setIsChecked,
@@ -24,7 +24,16 @@ function PersonalAgreement({
         />
       </Label>
       <Text isLanding={isLanding}>
-        Даю согласие на обработку <Underlined>Персональных данных</Underlined>
+        Даю согласие на обработку{' '}
+        <Underlined>
+          <Link
+            href={`/5_pdfmenus_71_5f8d52f60f665.pdf`}
+            passHref
+            target="_blank"
+          >
+            Персональных данных
+          </Link>
+        </Underlined>
       </Text>
     </Wrapper>
   )
