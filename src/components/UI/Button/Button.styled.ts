@@ -14,6 +14,7 @@ export const ButtonComponent = styled.button<{
   customTheme?: Theme
   isBig?: boolean
 }>`
+  box-sizing: inline;
   width: 100%;
   font-size: ${({ isBig }) =>
     isBig ? 'clamp(14px, 2vw, 18px)' : 'clamp(10px, 1.9vw, 14px)'};
@@ -38,7 +39,7 @@ export const ButtonComponent = styled.button<{
       appTheme === 'dark' ? darkThemeHover : lightThemeHover};
     background-color: transparent;
     border: 1px solid;
-    padding-block: ${({ isBig }) => isBig && '19px 17px'};
+    padding-block: ${({ isBig }) => isBig && '20px 17px'};
   }
 
   @media (max-width: ${breakPoints.Touch}) {

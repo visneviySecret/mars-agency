@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes'
 import { SelectorArrow } from '../SelectorArrow/SelectorArrow'
 import Options from './Components/Options'
 import { DealStatus } from '@/components/Modals/BuyModal/Components/quize.utils'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 
 interface IProps {
   options: string[]
@@ -18,14 +19,14 @@ export default function Selector({
   setStash,
   dealStatus,
 }: IProps) {
-  const [isActive, setIsActive] = useState(false)
+  const [isShowOption, setIsShowOption] = useState(false)
   const [searchingOptions, setSearchingOptions] = useState(options)
   const { theme } = useTheme()
   const isDarkMode = theme === 'dark'
   const placeHolder = dealStatus === DealStatus.buy ? 'Выбрать' : 'Название'
 
   const handleClick = () => {
-    setIsActive((prev) => !prev)
+    setIsShowOption(true)
   }
 
   const handleOption = (value: string) => {
@@ -33,15 +34,19 @@ export default function Selector({
   }
 
   const handleChange = (value: string) => {
-    setIsActive(true)
     const search = options.filter((option) => option.indexOf(value) !== -1)
     const result = search.length === 0 ? [value] : search
     setSearchingOptions(result)
   }
 
+  const stopShow = () => {
+    setIsShowOption(false)
+  }
+  const ref = useOutsideClick(stopShow)
+
   return (
     <Component>
-      <Wrapper>
+      <Wrapper ref={ref}>
         <Input
           type="text"
           placeholder={placeHolder}
@@ -49,8 +54,8 @@ export default function Selector({
           theme={theme}
           onClick={handleClick}
         />
-        <SelectorArrow isActive={isActive} isDarkMode={isDarkMode} />
-        {isActive && (
+        <SelectorArrow isActive={isShowOption} isDarkMode={isDarkMode} />
+        {isShowOption && (
           <Options
             options={searchingOptions}
             selected={selected}
