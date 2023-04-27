@@ -26,9 +26,10 @@ export const ButtonsWrapper = styled.div`
 `
 
 export const TitleWrapper = styled.div`
-  width: calc(100% + 1vw);
+  width: calc(105%);
+  margin-left: -3%;
   margin-bottom: calc(15px + 2vw);
-  translate: -5px -4px;
+  translate: 0px -4px;
 `
 export const Title = styled.h1`
   font-size: clamp(25px, 8.4vw, 134px);
