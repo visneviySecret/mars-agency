@@ -4,30 +4,45 @@ import { useEffect, useState } from 'react'
 import useMeasure from 'react-use-measure'
 import { useMediaQuery } from '@/hooks/useMedia'
 import { breakPoints } from '@/utils/breakPoints'
+import BankImg1 from '/public/partners/bank1.png'
+import BankImg2 from '/public/partners/bank2.png'
+import BankImg3 from '/public/partners/bank3.png'
+import BankImg4 from '/public/partners/bank4.png'
+import BankImg5 from '/public/partners/bank5.png'
+import BankImg6 from '/public/partners/bank6.png'
+import DevImg1 from '/public/partners/Develop1.png'
+import DevImg2 from '/public/partners/Develop2.png'
+import DevImg3 from '/public/partners/Develop3.png'
+import DevImg4 from '/public/partners/Develop4.png'
+import DevImg5 from '/public/partners/Develop5.png'
+import DevImg6 from '/public/partners/Develop6.png'
+import DevImg7 from '/public/partners/Develop7.png'
+import DevImg8 from '/public/partners/Develop8.png'
+import DevImg9 from '/public/partners/Develop9.png'
 
 interface VariantProps {
   [key: string]: number
 }
 
 const banks = [
-  { img: '/partners/bank1.png' },
-  { img: '/partners/bank2.png' },
-  { img: '/partners/bank3.png' },
-  { img: '/partners/bank4.png' },
-  { img: '/partners/bank5.png' },
-  { img: '/partners/bank6.png' },
+  { img: BankImg1 },
+  { img: BankImg2 },
+  { img: BankImg3 },
+  { img: BankImg4 },
+  { img: BankImg5 },
+  { img: BankImg6 },
 ]
 
 const developers = [
-  { img: '/partners/Develop1.png' },
-  { img: '/partners/Develop2.png' },
-  { img: '/partners/Develop3.png' },
-  { img: '/partners/Develop4.png' },
-  { img: '/partners/Develop5.png' },
-  { img: '/partners/Develop6.png' },
-  { img: '/partners/Develop7.png' },
-  { img: '/partners/Develop8.png' },
-  { img: '/partners/Develop9.png' },
+  { img: DevImg1 },
+  { img: DevImg2 },
+  { img: DevImg3 },
+  { img: DevImg4 },
+  { img: DevImg5 },
+  { img: DevImg6 },
+  { img: DevImg7 },
+  { img: DevImg8 },
+  { img: DevImg9 },
 ]
 
 export const usePartners = () => {
@@ -37,8 +52,8 @@ export const usePartners = () => {
   const [devCount, setDevelopCount] = useState(0)
   const prevBankCount = usePrevious(bankCount)
   const prevDevCount = usePrevious(devCount)
-  const bankDirection = bankCount > prevBankCount ? 1 : -1
-  const devDirection = devCount > prevDevCount ? 1 : -1
+  const bankDirection = bankCount < prevBankCount ? 1 : -1
+  const devDirection = devCount < prevDevCount ? 1 : -1
   const [isHovered, setIsHoverd] = useState('')
   const { theme } = useTheme()
 
@@ -72,7 +87,7 @@ export const usePartners = () => {
     if (isHovered === 'bank') return
     const bankInterval = setInterval(() => {
       handleBankCount()
-    }, 4444)
+    }, 2345)
 
     return () => {
       clearInterval(bankInterval)
@@ -84,7 +99,7 @@ export const usePartners = () => {
 
     const devInterval = setInterval(() => {
       handleDevelopCount()
-    }, 3333)
+    }, 3456)
 
     return () => {
       clearInterval(devInterval)

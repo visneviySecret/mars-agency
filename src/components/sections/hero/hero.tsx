@@ -16,6 +16,8 @@ import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 import AnimationMaskText from '@/share/Animation/AnimationMaskText'
 import BuyModal from '@/components/Modals/BuyModal/BuyModal'
 import SailModal from '@/components/Modals/SailModal/SailModal'
+import HeroImg from '/public/Hero.png'
+import HeroNightImg from '/public/HeroNight.png'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -23,7 +25,7 @@ export default function Hero() {
   const [isOpenBuy, setIsOpenBuy] = useState(false)
   const [isOpenSail, setIsOpenSail] = useState(false)
   const { theme } = useTheme()
-  const picture = theme === Theme.light ? '/Hero.png' : '/HeroNight.png'
+  const picture = theme === Theme.light ? HeroImg : HeroNightImg
 
   const handleBuyBlank = () => {
     blockScroll()
@@ -76,6 +78,7 @@ export default function Hero() {
                 objectPosition: '45% 0%',
                 height: 'clamp(375px, 50vw, 560px)',
               }}
+              priority
             />
           </AnimationFadeIn>
         </Section>

@@ -10,6 +10,7 @@ import {
 import { Container } from '@/components/UI/Container/container.style'
 import Button from '@/components/UI/Button/Button'
 import Image from 'next/image'
+import picture from '/public/picture/form.png'
 import ContactForm from '@/share/ContactForm/ContactForm'
 import { breakPoints } from '@/utils/breakPoints'
 import { useMediaQuery } from '@/hooks/useMedia'
@@ -60,7 +61,7 @@ export default function Form() {
       <Container isFlex={!isSmallScreen}>
         <Wrapper>
           <Image
-            src={'/picture/form.png'}
+            src={picture}
             alt="client"
             width={780}
             height={631}
