@@ -11,7 +11,8 @@ const getThemeColor = (theme: Theme) => {
 const Wrapper = styled.div<{ theme: Theme }>`
   position: relative;
   min-width: 46px;
-  height: 25px;
+  height: 26px;
+  box-sizing: border-box;
   border: 1px solid ${({ theme }) => getThemeColor(theme)};
   border-radius: 20px;
 
