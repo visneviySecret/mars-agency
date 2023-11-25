@@ -26,11 +26,7 @@ function PersonalAgreement({
       <Text isLanding={isLanding}>
         Даю согласие на обработку{' '}
         <Underlined>
-          <Link
-            href={`/5_pdfmenus_71_5f8d52f60f665.pdf`}
-            passHref
-            target="_blank"
-          >
+          <Link href={`/agreement.pdf`} passHref target="_blank">
             Персональных данных
           </Link>
         </Underlined>
