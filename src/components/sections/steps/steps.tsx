@@ -16,7 +16,7 @@ import {
 import { Container } from '@/components/UI/Container/container.style'
 import { list } from './steps.utils'
 import InvisButton from '@/share/Animation/easterEgg/components/InvisButton'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useMediaQuery } from '@/hooks/useMedia'
 import { breakPoints } from '@/utils/breakPoints'
 import { useTheme } from 'next-themes'
@@ -53,7 +53,7 @@ export default function Steps() {
           {list.map((item, index) => (
             <Card key={index} index={index} isDarkMode={isDarkMode}>
               <ImageWrapper isDarkMode={isDarkMode}>
-                <Image
+                <img
                   src={item.img}
                   width={750}
                   height={415}

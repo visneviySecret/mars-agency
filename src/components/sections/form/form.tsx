@@ -9,8 +9,8 @@ import {
 } from './form.style'
 import { Container } from '@/components/UI/Container/container.style'
 import Button from '@/components/UI/Button/Button'
-import Image from 'next/image'
-import picture from '/public/picture/form.png'
+// import Image from 'next/image'
+// import picture from '/public/picture/form.png'
 import ContactForm from '@/share/ContactForm/ContactForm'
 import { breakPoints } from '@/utils/breakPoints'
 import { useMediaQuery } from '@/hooks/useMedia'
@@ -60,8 +60,8 @@ export default function Form() {
     <Section id="form">
       <Container isFlex={!isSmallScreen}>
         <Wrapper>
-          <Image
-            src={picture}
+          <img
+            src="/picture/form.png"
             alt="client"
             width={780}
             height={631}

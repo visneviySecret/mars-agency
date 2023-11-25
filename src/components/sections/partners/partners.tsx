@@ -2,7 +2,7 @@ import React from 'react'
 import { Section, Title, Wrapper, List, Partner } from './partners.style'
 import { Container } from '@/components/UI/Container/container.style'
 import { usePartners } from './partners.utils'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import CursorHandler from './components/CursorHandler'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
@@ -54,7 +54,7 @@ export default function Partners() {
                   custom={{ bankDirection, width }}
                   transition={{ bounce: 0 }}
                 >
-                  <Image
+                  <img
                     src={getBankImg()}
                     alt="bank"
                     width={300}
@@ -97,7 +97,7 @@ export default function Partners() {
                   custom={{ devDirection, width }}
                   transition={{ bounce: 0 }}
                 >
-                  <Image
+                  <img
                     src={getDevImg()}
                     alt="developer"
                     width={300}

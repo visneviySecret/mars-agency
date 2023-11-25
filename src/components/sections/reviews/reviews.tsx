@@ -17,7 +17,7 @@ import {
 import { Container } from '@/components/UI/Container/container.style'
 import { clients } from './reviews.utils'
 import Button from '@/components/UI/Button/Button'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Theme } from '@/utils/helpers/getThemeColors'
 import { useTheme } from 'next-themes'
 import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
@@ -52,7 +52,7 @@ export default function Reviews() {
                   <ItemWrapper>
                     <ItemPhotoWrapper>
                       <AnimationFadeIn>
-                        <Image
+                        <img
                           src={client.photo}
                           alt="client"
                           width={80}

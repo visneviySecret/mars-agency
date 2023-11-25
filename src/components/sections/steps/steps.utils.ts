@@ -1,13 +1,13 @@
-import pic1 from '/public/picture/step1.png'
-import pic2 from '/public/picture/step2.png'
-import pic3 from '/public/picture/step3.png'
-import pic4 from '/public/picture/step4.png'
+// import pic1 from '/public/picture/step1.png'
+// import pic2 from '/public/picture/step2.png'
+// import pic3 from '/public/picture/step3.png'
+// import pic4 from '/public/picture/step4.png'
 
 export const list = [
   {
     title: 'Подбор недвижимости',
     description: ['Служба индивидуальных показов', 'Онлайн-сервис'],
-    img: pic1,
+    img: '/picture/step1.png',
   },
   {
     title: 'Подготовка к сделке',
@@ -17,7 +17,7 @@ export const list = [
       'Проверка документов',
       'Трейд-ин: из вторички в новостройку',
     ],
-    img: pic2,
+    img: '/picture/step2.png',
   },
   {
     title: 'Совершение сделки',
@@ -25,7 +25,7 @@ export const list = [
       'Организация и проведение сделок любой сложности',
       'Присутствие менеджера на всех этапах сделки',
     ],
-    img: pic3,
+    img: '/picture/step3.png',
   },
   {
     title: 'ПОСТ-сопровождение',
@@ -34,6 +34,6 @@ export const list = [
       'Ремонтные работы',
       'Мебель и фурнитура',
     ],
-    img: pic4,
+    img: '/picture/step4.png',
   },
 ]

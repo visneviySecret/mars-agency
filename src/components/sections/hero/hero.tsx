@@ -7,7 +7,7 @@ import {
   HideOverflow,
 } from './hero.style'
 import Button from '@/components/UI/Button/Button'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Container } from '@/components/UI/Container/container.style'
 import { Theme } from '@/components/UI/Button/Button.utils'
 import { blockScroll, unlockScroll } from './utils'
@@ -16,8 +16,8 @@ import AnimationFadeIn from '@/share/Animation/AnimationFadeIn'
 import AnimationMaskText from '@/share/Animation/AnimationMaskText'
 import BuyModal from '@/components/Modals/BuyModal/BuyModal'
 import SailModal from '@/components/Modals/SailModal/SailModal'
-import HeroImg from '/public/Hero.png'
-import HeroNightImg from '/public/HeroNight.png'
+// import HeroImg from '/public/Hero.png'
+// import HeroNightImg from '/public/HeroNight.png'
 
 const customButtonStyle = { flex: 1, width: '100%' }
 
@@ -25,7 +25,7 @@ export default function Hero() {
   const [isOpenBuy, setIsOpenBuy] = useState(false)
   const [isOpenSail, setIsOpenSail] = useState(false)
   const { theme } = useTheme()
-  const picture = theme === Theme.light ? HeroImg : HeroNightImg
+  const picture = theme === Theme.light ? '/Hero.png' : '/HeroNight.png'
 
   const handleBuyBlank = () => {
     blockScroll()
@@ -67,7 +67,7 @@ export default function Hero() {
             </AnimationFadeIn>
           </ButtonsWrapper>
           <AnimationFadeIn delay={1.5}>
-            <Image
+            <img
               alt="City wallpaper"
               src={picture}
               width={2560}
@@ -78,7 +78,7 @@ export default function Hero() {
                 objectPosition: '45% 0%',
                 height: 'clamp(375px, 50vw, 560px)',
               }}
-              priority
+              // priority
             />
           </AnimationFadeIn>
         </Section>
