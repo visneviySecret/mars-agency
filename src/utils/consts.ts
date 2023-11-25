@@ -3,6 +3,6 @@ export const Consts = {
 }
 
 export const Contacts = {
-  phone: '+7 999 999 99-99',
-  email: 'Mars-rent@gmail.com',
+  phone: '+7 931 538 13-00',
+  email: 'admin@mars-agency.ru',
 }

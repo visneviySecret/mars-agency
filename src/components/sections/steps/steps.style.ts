@@ -127,6 +127,10 @@ export const DesciptionItem = styled.li<{ isDarkMode: boolean }>`
     border-top: none;
   }
 
+  &:last-child {
+    border-bottom: 0;
+  }
+
   @media (max-width: ${breakPoints.Tablet}) {
     padding-left: 0;
   }

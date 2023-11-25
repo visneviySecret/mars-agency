@@ -34,10 +34,7 @@ export const MenuWrapper = styled.div`
     display: none;
   }
 `
-export const BurgerWrapper = styled.div`
-  margin-right: auto
-  width: 100%;
-`
+export const BurgerWrapper = styled.div``
 export const NavigationWrapper = styled.div`
   flex: 1;
 `

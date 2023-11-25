@@ -29,7 +29,11 @@ export const TitleWrapper = styled.div`
   width: calc(105%);
   margin-left: -3%;
   margin-bottom: calc(15px + 2vw);
-  translate: 0px -4px;
+  translate: 0px 7px;
+
+  @media (max-width: 1010px) {
+    translate: 0px -4px;
+  }
 `
 export const Title = styled.h1`
   font-size: clamp(25px, 8.4vw, 134px);
